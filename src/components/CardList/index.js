@@ -1,6 +1,6 @@
 import {EXERCISES} from '../../../backend/db';
+import StyledCard from '../Card/styled';
 import StyledHeadline from '../CardHeadline/styled';
-import StyledCard from '../CardHeadline/styled';
 
 import StyledCardlist from './styled';
 

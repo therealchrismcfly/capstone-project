@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 const StyledCardlist = styled.div`
-	border: 2px solid black;
+	width: 400px;
+	height: 500px;
 `;
 export default StyledCardlist;

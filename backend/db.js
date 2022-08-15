@@ -7,4 +7,8 @@ export const EXERCISES = [
 		id: 1,
 		name: 'Biceps Curls',
 	},
+	{
+		id: 3,
+		name: 'Shoulder Press',
+	},
 ];

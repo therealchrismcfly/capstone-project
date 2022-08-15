@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 const StyledCard = styled.section`
-	width: 300px;
-	height: 300px;
+	width: 400px;
+	height: 400px;
 	background-color: lightblue;
 `;
 
