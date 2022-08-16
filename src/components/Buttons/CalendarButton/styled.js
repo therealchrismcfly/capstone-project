@@ -5,7 +5,7 @@ const StyledCalendarButton = styled.button`
 	top: 5px;
 	right: 5px;
 	padding: 10px;
-	border: 2px solid blue;
+	border: 4px solid blue;
 `;
 
 export default StyledCalendarButton;
