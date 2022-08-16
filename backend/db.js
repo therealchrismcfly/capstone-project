@@ -8,7 +8,7 @@ export const exercises = [
 		name: 'Biceps Curls',
 	},
 	{
-		id: 3,
+		id: 2,
 		name: 'Shoulder Press',
 	},
 ];

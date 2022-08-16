@@ -1,14 +1,10 @@
-import Head from 'next/head';
-
+import StyledCardlist from '../components/CardList/styled';
 import Layout from '../components/Layout';
 
 export default function PlannerPage() {
 	return (
 		<Layout>
-			<Head>
-				<title key="title">My Project</title>
-				<meta key="description" name="description" content="This is my project" />
-			</Head>
+			<StyledCardlist>Hi there</StyledCardlist>
 		</Layout>
 	);
 }

@@ -1,21 +1,36 @@
 import {exercises} from '../../../backend/db';
-import StyledCalendarButton from '../Buttons/CalendarButton/styled';
 import StyledCard from '../Card/styled';
-import StyledHeadline from '../CardHeadline/styled';
+import useStore from '../hooks/useStore';
 
 import StyledCardlist from './styled';
 
-export default function Cardlist() {
+function Cardlist() {
+	const cards = useStore(state => state.cards);
+	const addCard = useStore(state => state.addCard);
+
 	return (
-		<StyledCardlist>
-			{exercises.map(exercise => {
-				return (
-					<StyledCard key={exercise.id}>
-						<StyledHeadline>{exercise.name}</StyledHeadline>
-						<StyledCalendarButton>Calendar</StyledCalendarButton>
-					</StyledCard>
-				);
+		<>
+			<p>Ausgewählte Übungen</p>
+			{cards.map(card => {
+				return <StyledCard key={card.id}>{card.name}</StyledCard>;
 			})}
-		</StyledCardlist>
+			<p>Alle Übungen</p>
+			<StyledCardlist>
+				{exercises.map(exercise => {
+					return (
+						<StyledCard
+							key={exercise._id}
+							onClick={() => {
+								addCard(exercise.name);
+							}}
+						>
+							{exercise.name}
+						</StyledCard>
+					);
+				})}
+			</StyledCardlist>
+		</>
 	);
 }
+
+export default Cardlist;
