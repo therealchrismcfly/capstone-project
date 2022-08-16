@@ -1,5 +1,5 @@
 import {exercises} from '../../../backend/db';
-import StyledCalenderButton from '../Buttons/CalenderButton/styled';
+import StyledCalendarButton from '../Buttons/CalendarButton/styled';
 import StyledCard from '../Card/styled';
 import StyledHeadline from '../CardHeadline/styled';
 
@@ -12,7 +12,7 @@ export default function Cardlist() {
 				return (
 					<StyledCard key={exercise.id}>
 						<StyledHeadline>{exercise.name}</StyledHeadline>
-						<StyledCalenderButton>Calender</StyledCalenderButton>
+						<StyledCalendarButton>Calendar</StyledCalendarButton>
 					</StyledCard>
 				);
 			})}
