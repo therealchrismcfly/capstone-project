@@ -1,5 +1,6 @@
 import useStore from '../../hooks/useStore';
 import StyledCard from '../Card/styled';
+import StyledHeadline from '../CardHeadline/styled';
 
 import StyledCardlist from './styled';
 
@@ -19,7 +20,7 @@ function CardlistPlanner() {
 								deleteCard(card.id);
 							}}
 						>
-							{card.name}
+							<StyledHeadline>{card.name}</StyledHeadline>
 						</StyledCard>
 					);
 				})}

@@ -1,4 +1,4 @@
-import CardlistPlanner from '../components/CardList/planner';
+import CardlistPlanner from '../components/CardLists/planner';
 import Layout from '../components/Layout';
 
 export default function PlannerPage() {

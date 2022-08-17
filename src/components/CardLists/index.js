@@ -16,14 +16,14 @@ function CardlistIndex() {
 				{exercises.map(exercise => {
 					return (
 						<StyledCard key={exercise._id}>
+							<StyledHeadline>{exercise.name}</StyledHeadline>
 							<StyledCalendarButton
 								onClick={() => {
 									addCard(exercise.name);
 								}}
 							>
-								{'hello'}
+								{'add to planner'}
 							</StyledCalendarButton>
-							<StyledHeadline>{exercise.name}</StyledHeadline>
 						</StyledCard>
 					);
 				})}

@@ -1,16 +1,16 @@
 import Link from 'next/link';
 
 import StyledCalendarButton from '../Buttons/CalendarButton/styled';
-import StyledSearchButton from '../Buttons/Search Button/styled';
+import StyledHomeButton from '../Buttons/HomeButton/styled';
 
 import StyledNavbar from './styled';
 
 export default function Navbar() {
 	return (
 		<StyledNavbar>
-			<StyledSearchButton>
+			<StyledHomeButton>
 				<Link href="/">Home</Link>
-			</StyledSearchButton>
+			</StyledHomeButton>
 			<StyledCalendarButton>
 				<Link href="/planner">Planner</Link>
 			</StyledCalendarButton>

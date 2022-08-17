@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const StyledSearchButton = styled.button`
+const StyledHomeButton = styled.button`
 	position: absolute;
 	top: 5px;
 	left: 5px;
@@ -8,4 +8,4 @@ const StyledSearchButton = styled.button`
 	border: 4px solid yellow;
 `;
 
-export default StyledSearchButton;
+export default StyledHomeButton;
