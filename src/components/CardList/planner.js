@@ -1,25 +1,25 @@
-import {exercises} from '../../../backend/db';
 import useStore from '../../hooks/useStore';
 import StyledCard from '../Card/styled';
 
 import StyledCardlist from './styled';
 
-function CardlistIndex() {
-	const addCard = useStore(state => state.addCard);
+function CardlistPlanner() {
+	const cards = useStore(state => state.cards);
+	const deleteCard = useStore(state => state.deleteCard);
 
 	return (
 		<>
-			<p>Alle Übungen</p>
+			<p>Ausgewählte Übungen</p>
 			<StyledCardlist>
-				{exercises.map(exercise => {
+				{cards.map(card => {
 					return (
 						<StyledCard
-							key={exercise._id}
+							key={card.id}
 							onClick={() => {
-								addCard(exercise.name);
+								deleteCard(card.id);
 							}}
 						>
-							{exercise.name}
+							{card.name}
 						</StyledCard>
 					);
 				})}
@@ -28,4 +28,4 @@ function CardlistIndex() {
 	);
 }
 
-export default CardlistIndex;
+export default CardlistPlanner;
