@@ -11,7 +11,7 @@ function CardlistIndex() {
 
 	return (
 		<>
-			<p>Alle Übungen</p>
+			<h1>Alle Übungen</h1>
 			<StyledCardlist>
 				{exercises.map(exercise => {
 					return (

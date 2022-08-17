@@ -10,7 +10,7 @@ function CardlistPlanner() {
 
 	return (
 		<>
-			<p>Ausgewählte Übungen</p>
+			<h1>Ausgewählte Übungen</h1>
 			<StyledCardlist>
 				{cards.map(card => {
 					return (
