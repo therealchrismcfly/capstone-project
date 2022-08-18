@@ -18,12 +18,12 @@ function CardlistIndex() {
 			<StyledCardlist>
 				{exercises.map(exercise => {
 					return (
-						<StyledCard key={exercise._id}>
+						<StyledCard key={exercise.id}>
 							<StyledCardHeader>
 								<StyledHeadline>{exercise.name}</StyledHeadline>
 								<StyledCalendarButton
 									onClick={() => {
-										addCard(exercise.name);
+										addCard(exercise.name, exercise.image);
 									}}
 								>
 									{'add to planner'}
