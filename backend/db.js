@@ -11,4 +11,8 @@ export const exercises = [
 		id: 2,
 		name: 'Shoulder Press',
 	},
+	{
+		id: 3,
+		name: 'Chest Press',
+	},
 ];
