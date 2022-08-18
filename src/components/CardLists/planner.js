@@ -1,4 +1,5 @@
 import useStore from '../../hooks/useStore';
+import StyledDeleteButton from '../Buttons/DeleteButton/styled';
 import StyledCard from '../Card/styled';
 import StyledCardHeader from '../CardHeader/styled';
 import StyledHeadline from '../CardHeadline/styled';
@@ -15,14 +16,16 @@ function CardlistPlanner() {
 			<StyledCardlist>
 				{cards.map(card => {
 					return (
-						<StyledCard
-							key={card.id}
-							onClick={() => {
-								deleteCard(card.id);
-							}}
-						>
+						<StyledCard key={card.id}>
 							<StyledCardHeader>
 								<StyledHeadline>{card.name}</StyledHeadline>
+								<StyledDeleteButton
+									onClick={() => {
+										deleteCard(card.id);
+									}}
+								>
+									delete
+								</StyledDeleteButton>
 							</StyledCardHeader>
 						</StyledCard>
 					);
