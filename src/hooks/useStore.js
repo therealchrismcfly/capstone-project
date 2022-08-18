@@ -12,10 +12,10 @@ const useStore = create(set => ({
 		});
 	},
 
-	addCard: (name, image) => {
+	addCard: (name, image, description) => {
 		set(state => {
 			return {
-				cards: [...state.cards, {id: nanoid(), name, image}],
+				cards: [...state.cards, {id: nanoid(), name, image, description}],
 			};
 		});
 	},

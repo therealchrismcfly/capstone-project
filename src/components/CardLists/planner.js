@@ -2,8 +2,9 @@ import useStore from '../../hooks/useStore';
 import StyledDeleteButton from '../Buttons/DeleteButton/styled';
 import StyledCard from '../Card/styled';
 import StyledCardBody from '../CardBody/styled';
+import StyledCardDescription from '../CardDescription/styled';
 import StyledCardHeader from '../CardHeader/styled';
-import StyledHeadline from '../CardHeadline/styled';
+import StyledCardHeadline from '../CardHeadline/styled';
 import StyledCardImage from '../CardImage/styled';
 
 import StyledCardlist from './styled';
@@ -20,7 +21,7 @@ function CardlistPlanner() {
 					return (
 						<StyledCard key={card.id}>
 							<StyledCardHeader>
-								<StyledHeadline>{card.name}</StyledHeadline>
+								<StyledCardHeadline>{card.name}</StyledCardHeadline>
 								<StyledDeleteButton
 									onClick={() => {
 										deleteCard(card.id);
@@ -31,6 +32,7 @@ function CardlistPlanner() {
 							</StyledCardHeader>
 							<StyledCardBody>
 								<StyledCardImage src={card.image}></StyledCardImage>
+								<StyledCardDescription>{card.description}</StyledCardDescription>
 							</StyledCardBody>
 						</StyledCard>
 					);
