@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-import Cardlist from '../components/CardList/index';
+import CardlistIndex from '../components/CardLists/index';
 import Layout from '../components/Layout';
 
 export default function HomePage() {
@@ -10,8 +10,7 @@ export default function HomePage() {
 				<title key="title">My Project</title>
 				<meta key="description" name="description" content="This is my project" />
 			</Head>
-			<h1>Home</h1>
-			<Cardlist />
+			<CardlistIndex />
 		</Layout>
 	);
 }
