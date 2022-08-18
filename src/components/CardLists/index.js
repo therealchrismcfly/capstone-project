@@ -2,8 +2,10 @@ import {exercises} from '../../../backend/db';
 import useStore from '../../hooks/useStore';
 import StyledCalendarButton from '../Buttons/CalendarButton/styled';
 import StyledCard from '../Card/styled';
+import StyledCardBody from '../CardBody/styled';
 import StyledCardHeader from '../CardHeader/styled';
 import StyledHeadline from '../CardHeadline/styled';
+import StyledCardImage from '../CardImage/styled';
 
 import StyledCardlist from './styled';
 
@@ -27,6 +29,9 @@ function CardlistIndex() {
 									{'add to planner'}
 								</StyledCalendarButton>
 							</StyledCardHeader>
+							<StyledCardBody>
+								<StyledCardImage src={exercise.image}></StyledCardImage>
+							</StyledCardBody>
 						</StyledCard>
 					);
 				})}

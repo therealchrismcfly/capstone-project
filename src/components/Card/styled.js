@@ -2,9 +2,8 @@ import styled from 'styled-components';
 
 const StyledCard = styled.li`
 	width: 400px;
-	height: 200px;
-	margin: 30px 0;
-	background-color: lightblue;
+	height: 300px;
+	margin-bottom: 50px;
 	list-style: none;
 `;
 
