@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 import {exercises} from '../../../backend/db';
 import useStore from '../../hooks/useStore';
 import StyledCalendarButton from '../Buttons/CalendarButton/styled';
@@ -6,7 +8,6 @@ import StyledCardBody from '../CardBody/styled';
 import StyledCardDescription from '../CardDescription/styled';
 import StyledCardHeader from '../CardHeader/styled';
 import StyledCardHeadline from '../CardHeadline/styled';
-import StyledCardImage from '../CardImage/styled';
 
 import StyledCardlist from './styled';
 
@@ -35,7 +36,12 @@ function CardlistIndex() {
 								</StyledCalendarButton>
 							</StyledCardHeader>
 							<StyledCardBody>
-								<StyledCardImage src={exercise.image}></StyledCardImage>
+								<Image
+									src={exercise.image}
+									alt="dummy fitness image"
+									width={300}
+									height={200}
+								/>
 								<StyledCardDescription>
 									{exercise.description}
 								</StyledCardDescription>
