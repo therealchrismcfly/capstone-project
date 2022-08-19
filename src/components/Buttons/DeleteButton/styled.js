@@ -1,9 +1,11 @@
 import styled from 'styled-components';
 
 const StyledDeleteButton = styled.button`
+	width: 27px;
+	height: 27px;
 	margin-right: 10px;
-	padding: 10px;
-	border: 4px solid red;
+	border: 2px solid red;
+	background-color: white;
 `;
 
 export default StyledDeleteButton;

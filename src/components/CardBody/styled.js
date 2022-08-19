@@ -5,6 +5,7 @@ const StyledCardBody = styled.div`
 	flex-direction: column;
 	align-items: center;
 	padding: 20px;
+	border-radius: 0 0 30px 30px;
 	background-color: lightblue;
 `;
 
