@@ -15,13 +15,13 @@ function CardlistPlanner() {
 	const cards = useStore(state => state.cards);
 	const deleteCard = useStore(state => state.deleteCard);
 	const checkCard = useStore(state => state.checkCard);
-	const falseFirst = cards.sort((a, b) => Number(a.isChecked) - Number(b.isChecked));
+	const sortedCard = cards.sort((a, b) => Number(a.isChecked) - Number(b.isChecked));
 
 	return (
 		<>
 			<h1>Ausgewählte Übungen</h1>
 			<StyledCardlist>
-				{falseFirst.map(card => {
+				{sortedCard.map(card => {
 					return (
 						<StyledCard key={card.id}>
 							<StyledCardHeader>
