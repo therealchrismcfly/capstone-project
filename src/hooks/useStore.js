@@ -2,10 +2,7 @@ import {nanoid} from 'nanoid';
 import create from 'zustand';
 
 const useStore = create(set => ({
-	cards: [
-		{id: nanoid(), name: 'Liegestütze', description: 'Lorem Ipsum', checked: false},
-		{id: nanoid(), name: 'Planke', description: 'Lorem Ipçsum', checked: false},
-	],
+	cards: [],
 
 	deleteCard: id => {
 		set(state => {
@@ -18,7 +15,7 @@ const useStore = create(set => ({
 	addCard: (name, image, description) => {
 		set(state => {
 			return {
-				cards: [...state.cards, {id: nanoid(), name, image, description}],
+				cards: [...state.cards, {id: nanoid(), name, image, description, checked: false}],
 			};
 		});
 	},
