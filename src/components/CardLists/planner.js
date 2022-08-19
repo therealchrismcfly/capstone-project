@@ -31,7 +31,7 @@ function CardlistPlanner() {
 										deleteCard(card.id);
 									}}
 								>
-									delete
+									x
 								</StyledDeleteButton>
 								<StyledCheckbox
 									checked={card.checked}
