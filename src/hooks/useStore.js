@@ -15,7 +15,17 @@ const useStore = create(set => ({
 	addCard: (name, image, description) => {
 		set(state => {
 			return {
-				cards: [...state.cards, {id: nanoid(), name, image, description}],
+				cards: [...state.cards, {id: nanoid(), name, image, description, isChecked: false}],
+			};
+		});
+	},
+
+	checkCard: id => {
+		set(state => {
+			return {
+				cards: state.cards.map(card =>
+					card.id === id ? {...card, isChecked: !card.isChecked} : card
+				),
 			};
 		});
 	},

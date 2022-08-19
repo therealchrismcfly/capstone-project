@@ -7,18 +7,21 @@ import StyledCardBody from '../CardBody/styled';
 import StyledCardDescription from '../CardDescription/styled';
 import StyledCardHeader from '../CardHeader/styled';
 import StyledCardHeadline from '../CardHeadline/styled';
+import Checkbox from '../Checkbox/index';
 
 import StyledCardlist from './styled';
 
 function CardlistPlanner() {
 	const cards = useStore(state => state.cards);
 	const deleteCard = useStore(state => state.deleteCard);
+	const checkCard = useStore(state => state.checkCard);
+	const falseFirst = cards.sort((a, b) => Number(a.isChecked) - Number(b.isChecked));
 
 	return (
 		<>
 			<h1>Ausgewählte Übungen</h1>
 			<StyledCardlist>
-				{cards.map(card => {
+				{falseFirst.map(card => {
 					return (
 						<StyledCard key={card.id}>
 							<StyledCardHeader>
@@ -30,6 +33,12 @@ function CardlistPlanner() {
 								>
 									delete
 								</StyledDeleteButton>
+								<Checkbox
+									checked={card.isChecked}
+									onChange={() => {
+										checkCard(card.id);
+									}}
+								/>
 							</StyledCardHeader>
 							<StyledCardBody>
 								<Image
