@@ -3,8 +3,8 @@ import create from 'zustand';
 
 const useStore = create(set => ({
 	cards: [
-		{id: nanoid(), name: 'Liegestütze', description: 'Lorem Ipsum', isChecked: false},
-		{id: nanoid(), name: 'Planke', description: 'Lorem Ipsum', isChecked: false},
+		{id: nanoid(), name: 'Liegestütze', description: 'Lorem Ipsum', checked: false},
+		{id: nanoid(), name: 'Planke', description: 'Lorem Ipçsum', checked: false},
 	],
 
 	deleteCard: id => {

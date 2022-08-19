@@ -7,7 +7,7 @@ import StyledCardBody from '../CardBody/styled';
 import StyledCardDescription from '../CardDescription/styled';
 import StyledCardHeader from '../CardHeader/styled';
 import StyledCardHeadline from '../CardHeadline/styled';
-import Checkbox from '../Checkbox/index';
+import StyledCheckbox from '../Checkbox/styled';
 
 import StyledCardlist from './styled';
 
@@ -15,7 +15,7 @@ function CardlistPlanner() {
 	const cards = useStore(state => state.cards);
 	const deleteCard = useStore(state => state.deleteCard);
 	const checkCard = useStore(state => state.checkCard);
-	const sortedCard = cards.sort((a, b) => Number(a.isChecked) - Number(b.isChecked));
+	const sortedCard = cards.sort((a, b) => Number(a.checked) - Number(b.checked));
 
 	return (
 		<>
@@ -33,8 +33,9 @@ function CardlistPlanner() {
 								>
 									delete
 								</StyledDeleteButton>
-								<Checkbox
-									checked={card.isChecked}
+								<StyledCheckbox
+									checked={card.checked}
+									type="checkbox"
 									onChange={() => {
 										checkCard(card.id);
 									}}
