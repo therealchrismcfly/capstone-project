@@ -6,6 +6,7 @@ import StyledCalendarButton from '../Buttons/CalendarButton/styled';
 import StyledCard from '../Card/styled';
 import StyledCardBody from '../CardBody/styled';
 import StyledCardDescription from '../CardDescription/styled';
+import CardFooter from '../CardFooter';
 import StyledCardHeader from '../CardHeader/styled';
 import StyledCardHeadline from '../CardHeadline/styled';
 
@@ -46,6 +47,7 @@ function CardlistIndex() {
 									{exercise.description}
 								</StyledCardDescription>
 							</StyledCardBody>
+							<CardFooter />
 						</StyledCard>
 					);
 				})}

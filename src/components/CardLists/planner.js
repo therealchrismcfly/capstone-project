@@ -5,6 +5,7 @@ import StyledDeleteButton from '../Buttons/DeleteButton/styled';
 import StyledCard from '../Card/styled';
 import StyledCardBody from '../CardBody/styled';
 import StyledCardDescription from '../CardDescription/styled';
+import CardFooter from '../CardFooter';
 import StyledCardHeader from '../CardHeader/styled';
 import StyledCardHeadline from '../CardHeadline/styled';
 import StyledCheckbox from '../Checkbox/styled';
@@ -50,6 +51,7 @@ function CardlistPlanner() {
 								/>{' '}
 								<StyledCardDescription>{card.description}</StyledCardDescription>
 							</StyledCardBody>
+							<CardFooter />
 						</StyledCard>
 					);
 				})}

@@ -25,6 +25,20 @@ const useStore = create(set => ({
 			cards: cards.map(card => (card.id === id ? {...card, checked: !card.checked} : card)),
 		}));
 	},
+
+	setsEntries: [],
+	addSetentry: name => {
+		set(() => {
+			return {setsEntries: [{name, id: nanoid()}]};
+		});
+	},
+
+	repsEntries: [],
+	addRepentry: name => {
+		set(() => {
+			return {repsEntries: [{name, id: nanoid()}]};
+		});
+	},
 }));
 
 export default useStore;
