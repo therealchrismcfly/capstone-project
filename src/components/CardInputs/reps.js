@@ -1,24 +1,13 @@
-import useStore from '../../hooks/useStore';
-
-export default function CardInputReps() {
-	const addRepentry = useStore(state => state.addRepentry);
-
-	function handleSubmit(event) {
-		event.preventDefault();
-
-		addRepentry(event.target.elements.reps.value);
-
-		event.target.reset();
-	}
-
+export default function CardInputReps({reps, handleRepInput}) {
 	return (
-		<>
-			<form onSubmit={handleSubmit}>
-				<label>
-					Reps:
-					<input type="text" name="reps" />
-				</label>
-			</form>
-		</>
+		<label>
+			Reps:{' '}
+			<input
+				type="text"
+				name="reps"
+				value={reps}
+				onChange={event => handleRepInput(event.target.value)}
+			></input>
+		</label>
 	);
 }

@@ -32,13 +32,6 @@ const useStore = create(set => ({
 			return {setsEntries: [{name, id: nanoid()}]};
 		});
 	},
-
-	repsEntries: [],
-	addRepentry: name => {
-		set(() => {
-			return {repsEntries: [{name, id: nanoid()}]};
-		});
-	},
 }));
 
 export default useStore;
