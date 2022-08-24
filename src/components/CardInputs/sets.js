@@ -7,7 +7,7 @@ export default function CardInputSets({sets, handleSetInput}) {
 				name="sets"
 				value={sets}
 				onChange={event => handleSetInput(event.target.value)}
-			></input>
+			/>
 		</label>
 	);
 }

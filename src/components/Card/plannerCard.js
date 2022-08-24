@@ -65,7 +65,7 @@ function PlannerCard({card}) {
 					handleSetInput={handleSetInput}
 					handleRepInput={handleRepInput}
 					handleWeightInput={handleWeightInput}
-				></CardFooter>
+				/>
 			</form>
 		</StyledCard>
 	);
