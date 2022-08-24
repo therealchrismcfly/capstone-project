@@ -1,7 +1,7 @@
 export default function CardInputSets({sets, handleSetInput}) {
 	return (
 		<label>
-			sets{' '}
+			Sets:{' '}
 			<input
 				type="text"
 				name="sets"
