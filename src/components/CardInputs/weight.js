@@ -7,7 +7,7 @@ export default function CardInputWeight({weight, handleWeightInput}) {
 				name="weight"
 				value={weight}
 				onChange={event => handleWeightInput(event.target.value)}
-			></input>
+			/>
 		</label>
 	);
 }

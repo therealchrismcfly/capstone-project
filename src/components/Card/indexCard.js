@@ -39,7 +39,7 @@ export default function IndexCard({card}) {
 						addToPlanner(card.id);
 					}}
 				>
-					{'add to planner'}
+					add to planner
 				</StyledCalendarButton>
 			</StyledCardHeader>
 			<StyledCardBody>
@@ -54,7 +54,7 @@ export default function IndexCard({card}) {
 					handleSetInput={handleSetInput}
 					handleRepInput={handleRepInput}
 					handleWeightInput={handleWeightInput}
-				></CardFooter>
+				/>
 			</form>
 		</StyledCard>
 	);
