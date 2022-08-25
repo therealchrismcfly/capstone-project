@@ -1,6 +1,10 @@
+import dynamic from 'next/dynamic';
 import Head from 'next/head';
 
-import TheCalendar from '../components/Calendar/calendar';
+const TheCalendar = dynamic(() => import('../components/Calendar/calendar'), {
+	ssr: false,
+});
+
 import CardlistIndex from '../components/CardLists/index';
 import Layout from '../components/Layout';
 
