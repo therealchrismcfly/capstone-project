@@ -12,6 +12,7 @@ const useStore = create(set => ({
 			weight: 0,
 			isDone: false,
 			isBookmarked: false,
+			isPlanned: false,
 			date: [],
 		},
 		{
@@ -24,6 +25,7 @@ const useStore = create(set => ({
 			weight: 0,
 			isDone: false,
 			isBookmarked: false,
+			isPlanned: false,
 			date: [],
 		},
 		{
@@ -36,6 +38,7 @@ const useStore = create(set => ({
 			weight: 0,
 			isDone: false,
 			isBookmarked: false,
+			isPlanned: false,
 			date: [],
 		},
 	],
@@ -67,7 +70,7 @@ const useStore = create(set => ({
 	addToPlanner: (id, date) => {
 		set(state => ({
 			cards: state.cards.map(card =>
-				card.id === id ? {...card, date: [...card.date, date]} : card
+				card.id === id ? {...card, isPlanned: true, date: [...card.date, date]} : card
 			),
 		}));
 	},
