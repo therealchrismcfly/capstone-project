@@ -61,12 +61,11 @@ const useStore = create(set => ({
 		}));
 	},
 
-	/* 	addToPlanner: id => {
+	addToPlanner: id => {
 		set(state => ({
 			cards: state.cards.map(card => (card.id === id ? {...card, isPlanned: true} : card)),
 		}));
-	}, */
-
+	},
 	checkCard: id => {
 		set(state => ({
 			cards: state.cards.map(card =>

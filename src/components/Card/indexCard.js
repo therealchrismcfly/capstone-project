@@ -1,9 +1,12 @@
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import {useState} from 'react';
 
 import useStore from '../../hooks/useStore';
 import StyledCalendarButton from '../Buttons/CalendarButton/styled';
-import TheCalendar from '../Calendar/calendar';
+const TheCalendar = dynamic(() => import('../Calendar/calendar'), {
+	ssr: false,
+});
 import StyledCardBody from '../CardBody/styled';
 import StyledCardDescription from '../CardDescription/styled';
 import CardFooter from '../CardFooter';
@@ -13,8 +16,7 @@ import StyledCardHeadline from '../CardHeadline/styled';
 import StyledCard from './styled';
 
 export default function IndexCard({card}) {
-	/* 	const addToPlanner = useStore(state => state.addToPlanner);
-	 */ const changeSets = useStore(state => state.changeSets);
+	const changeSets = useStore(state => state.changeSets);
 	const changeReps = useStore(state => state.changeReps);
 	const changeWeight = useStore(state => state.changeWeight);
 	const [isShown, setIsShown] = useState(false);
