@@ -1,7 +1,12 @@
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
+import {useState} from 'react';
 
 import useStore from '../../hooks/useStore';
 import StyledCalendarButton from '../Buttons/CalendarButton/styled';
+const IndexCalendar = dynamic(() => import('../Calendar/indexCalendar'), {
+	ssr: false,
+});
 import StyledCardBody from '../CardBody/styled';
 import StyledCardDescription from '../CardDescription/styled';
 import CardFooter from '../CardFooter';
@@ -11,10 +16,10 @@ import StyledCardHeadline from '../CardHeadline/styled';
 import StyledCard from './styled';
 
 export default function IndexCard({card}) {
-	const addToPlanner = useStore(state => state.addToPlanner);
 	const changeSets = useStore(state => state.changeSets);
 	const changeReps = useStore(state => state.changeReps);
 	const changeWeight = useStore(state => state.changeWeight);
+	const [isShown, setIsShown] = useState(false);
 
 	function handleSubmit(event) {
 		event.preventDefault();
@@ -30,17 +35,19 @@ export default function IndexCard({card}) {
 	function handleWeightInput(input) {
 		changeWeight(card.id, Number(input));
 	}
+
 	return (
 		<StyledCard>
 			<StyledCardHeader>
 				<StyledCardHeadline>{card.name}</StyledCardHeadline>
 				<StyledCalendarButton
 					onClick={() => {
-						addToPlanner(card.id);
+						setIsShown(!isShown);
 					}}
 				>
 					add to planner
 				</StyledCalendarButton>
+				{isShown ? <IndexCalendar id={card.id} /> : ''}
 			</StyledCardHeader>
 			<StyledCardBody>
 				<Image src={card.image} alt="dummy fitness image" width={300} height={200} />
