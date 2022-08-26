@@ -4,7 +4,7 @@ import {useState} from 'react';
 
 import useStore from '../../hooks/useStore';
 import StyledCalendarButton from '../Buttons/CalendarButton/styled';
-const TheCalendar = dynamic(() => import('../Calendar/calendar'), {
+const IndexCalendar = dynamic(() => import('../Calendar/indexCalendar'), {
 	ssr: false,
 });
 import StyledCardBody from '../CardBody/styled';
@@ -47,7 +47,7 @@ export default function IndexCard({card}) {
 				>
 					add to planner
 				</StyledCalendarButton>
-				{isShown ? <TheCalendar id={card.id} /> : ''}
+				{isShown ? <IndexCalendar id={card.id} /> : ''}
 			</StyledCardHeader>
 			<StyledCardBody>
 				<Image src={card.image} alt="dummy fitness image" width={300} height={200} />
