@@ -15,7 +15,6 @@ function IndexCalendar({id}) {
 
 	return (
 		<StyledCalendar>
-			<h1>React Calendar</h1>
 			<Calendar onChange={handleChange} />
 		</StyledCalendar>
 	);
