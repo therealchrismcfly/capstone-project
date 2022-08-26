@@ -7,6 +7,7 @@ import StyledCalendarButton from '../Buttons/CalendarButton/styled';
 const IndexCalendar = dynamic(() => import('../Calendar/indexCalendar'), {
 	ssr: false,
 });
+import StyledHideButton from '../Buttons/HideButton/styled';
 import StyledCardBody from '../CardBody/styled';
 import StyledCardDescription from '../CardDescription/styled';
 import CardFooter from '../CardFooter';
@@ -20,6 +21,12 @@ export default function IndexCard({card}) {
 	const changeReps = useStore(state => state.changeReps);
 	const changeWeight = useStore(state => state.changeWeight);
 	const [isShown, setIsShown] = useState(false);
+	const [showText, setShowText] = useState(false);
+	let [buttonText, setButtonText] = useState(true);
+
+	const handleChange = () => {
+		return setButtonText(!buttonText);
+	};
 
 	function handleSubmit(event) {
 		event.preventDefault();
@@ -51,7 +58,19 @@ export default function IndexCard({card}) {
 			</StyledCardHeader>
 			<StyledCardBody>
 				<Image src={card.image} alt="dummy fitness image" width={300} height={200} />
-				<StyledCardDescription>{card.description}</StyledCardDescription>
+				<StyledHideButton
+					onClick={() => {
+						setShowText(!showText);
+						handleChange();
+					}}
+				>
+					{buttonText ? 'Show instruction' : 'Hide instruction'}
+				</StyledHideButton>
+				{showText ? (
+					<StyledCardDescription id={card.id}>{card.description}</StyledCardDescription>
+				) : (
+					''
+				)}
 			</StyledCardBody>
 			<form onSubmit={handleSubmit}>
 				<CardFooter

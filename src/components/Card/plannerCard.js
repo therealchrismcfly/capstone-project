@@ -1,7 +1,9 @@
 import Image from 'next/image';
+import {useState} from 'react';
 
 import useStore from '../../hooks/useStore';
 import StyledDeleteButton from '../Buttons/DeleteButton/styled';
+import StyledHideButton from '../Buttons/HideButton/styled';
 import StyledCard from '../Card/styled';
 import StyledCardBody from '../CardBody/styled';
 import StyledCardDescription from '../CardDescription/styled';
@@ -17,6 +19,12 @@ function PlannerCard({card}) {
 	const changeSets = useStore(state => state.changeSets);
 	const changeReps = useStore(state => state.changeReps);
 	const changeWeight = useStore(state => state.changeWeight);
+	const [showText, setShowText] = useState(false);
+	let [buttonText, setButtonText] = useState(true);
+
+	const handleChange = () => {
+		return setButtonText(!buttonText);
+	};
 
 	function handleSubmit(event) {
 		event.preventDefault();
@@ -54,8 +62,20 @@ function PlannerCard({card}) {
 				/>
 			</StyledCardHeader>
 			<StyledCardBody>
-				<Image src={card.image} alt="dummy fitness image" width={300} height={200} />{' '}
-				<StyledCardDescription>{card.description}</StyledCardDescription>
+				<Image src={card.image} alt="dummy fitness image" width={300} height={200} />
+				<StyledHideButton
+					onClick={() => {
+						setShowText(!showText);
+						handleChange();
+					}}
+				>
+					{buttonText ? 'Show instruction' : 'Hide instruction'}
+				</StyledHideButton>
+				{showText ? (
+					<StyledCardDescription id={card.id}>{card.description}</StyledCardDescription>
+				) : (
+					''
+				)}
 			</StyledCardBody>
 			<form onSubmit={handleSubmit}>
 				<CardFooter
