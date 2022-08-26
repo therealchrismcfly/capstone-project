@@ -1,7 +1,7 @@
 export default function CardInputReps({reps, handleRepInput}) {
 	return (
 		<label>
-			Reps:
+			Reps:{' '}
 			<input
 				type="text"
 				name="reps"

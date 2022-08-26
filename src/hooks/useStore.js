@@ -64,10 +64,11 @@ const useStore = create(set => ({
 	addToPlanner: (id, date) => {
 		set(state => ({
 			cards: state.cards.map(card =>
-				card.id === id ? {...card, isPlanned: true, date: [...card.date, date]} : card
+				card.id === id ? {...card, date: [...card.date, date]} : card
 			),
 		}));
 	},
+
 	checkCard: id => {
 		set(state => ({
 			cards: state.cards.map(card =>
