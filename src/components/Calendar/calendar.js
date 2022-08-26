@@ -1,19 +1,26 @@
-import {useState} from 'react';
-import Calendar from 'react-calendar';
+/* import {useState} from 'react';
+ */ import Calendar from 'react-calendar';
+
+import useStore from '../../hooks/useStore';
+
+import StyledCalendar from './styled';
 
 import 'react-calendar/dist/Calendar.css';
-/* import useStore from '../../hooks/useStore';
- */
-function TheCalendar() {
-	const [date, setDate] = useState(new Date());
-	/* 	const addToPlanner = useStore(state => state.addToPlanner);
-	 */
+function TheCalendar({id}) {
+	/* 	const [date, setDate] = useState(new Date());
+	 */ const addToPlanner = useStore(state => state.addToPlanner);
+
+	function handleChange(selectedDate) {
+		const date = selectedDate.toDateString();
+		addToPlanner(id, date);
+	}
+
 	return (
-		<>
+		<StyledCalendar>
 			<h1>React Calendar</h1>
-			<Calendar onChange={setDate} value={date} />
-			<p>SelectedDate: {date.toDateString()}</p>
-		</>
+			<Calendar onChange={handleChange} />
+			{/* <p>SelectedDate: {date.toDateString()}</p> */}
+		</StyledCalendar>
 	);
 }
 

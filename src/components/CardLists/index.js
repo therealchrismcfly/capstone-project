@@ -12,6 +12,7 @@ function CardlistIndex() {
 				{cards.map(card => {
 					return <IndexCard key={card.id} card={card} />;
 				})}
+				{console.log(cards)}
 			</StyledCardlist>
 		</>
 	);

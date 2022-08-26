@@ -47,7 +47,7 @@ export default function IndexCard({card}) {
 				>
 					add to planner
 				</StyledCalendarButton>
-				{isShown ? <TheCalendar /> : ''}
+				{isShown ? <TheCalendar id={card.id} /> : ''}
 			</StyledCardHeader>
 			<StyledCardBody>
 				<Image src={card.image} alt="dummy fitness image" width={300} height={200} />
