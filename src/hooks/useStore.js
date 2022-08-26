@@ -91,6 +91,14 @@ const useStore = create(set => ({
 			cards: state.cards.map(card => (card.id === id ? {...card, isBookmarked: true} : card)),
 		}));
 	},
+
+	debookmark: id => {
+		set(state => ({
+			cards: state.cards.map(card =>
+				card.id === id ? {...card, isBookmarked: false} : card
+			),
+		}));
+	},
 }));
 
 export default useStore;

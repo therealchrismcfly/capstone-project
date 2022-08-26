@@ -3,7 +3,9 @@ import Image from 'next/image';
 import {useState} from 'react';
 
 import useStore from '../../hooks/useStore';
-import StyledBookmarkButton from '../Buttons/BookmarkButton/styled';
+import BookmarkButton from '../Buttons/BookmarkButton/button';
+import FilledBookmarkIcon from '../Buttons/BookmarkButton/filled';
+import NotFilledBookmarkIcon from '../Buttons/BookmarkButton/notfilled';
 import StyledCalendarButton from '../Buttons/CalendarButton/styled';
 const IndexCalendar = dynamic(() => import('../Calendar/indexCalendar'), {
 	ssr: false,
@@ -25,6 +27,7 @@ export default function IndexCard({card}) {
 	const [isShown, setIsShown] = useState(false);
 	const [showText, setShowText] = useState(false);
 	let [buttonText, setButtonText] = useState(true);
+	const [isBookmarked, setIsBookmarked] = useState(false);
 
 	const handleChange = () => {
 		return setButtonText(!buttonText);
@@ -49,13 +52,18 @@ export default function IndexCard({card}) {
 		<StyledCard>
 			<StyledCardHeader>
 				<StyledCardHeadline>{card.name}</StyledCardHeadline>
-				<StyledBookmarkButton
+				<BookmarkButton
 					onClick={() => {
 						bookmarked(card.id);
+						setIsBookmarked(!isBookmarked);
 					}}
 				>
-					Fav
-				</StyledBookmarkButton>
+					{isBookmarked ? (
+						<FilledBookmarkIcon id={card.id} />
+					) : (
+						<NotFilledBookmarkIcon id={card.id} />
+					)}
+				</BookmarkButton>
 				<StyledCalendarButton
 					onClick={() => {
 						setIsShown(!isShown);
