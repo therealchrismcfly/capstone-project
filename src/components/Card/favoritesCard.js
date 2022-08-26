@@ -3,7 +3,6 @@ import Image from 'next/image';
 import {useState} from 'react';
 
 import useStore from '../../hooks/useStore';
-import StyledBookmarkButton from '../Buttons/BookmarkButton/styled';
 import StyledCalendarButton from '../Buttons/CalendarButton/styled';
 const IndexCalendar = dynamic(() => import('../Calendar/indexCalendar'), {
 	ssr: false,
@@ -17,11 +16,10 @@ import StyledCardHeadline from '../CardHeadline/styled';
 
 import StyledCard from './styled';
 
-export default function IndexCard({card}) {
+export default function FavoritesCard({card}) {
 	const changeSets = useStore(state => state.changeSets);
 	const changeReps = useStore(state => state.changeReps);
 	const changeWeight = useStore(state => state.changeWeight);
-	const bookmarked = useStore(state => state.bookmarked);
 	const [isShown, setIsShown] = useState(false);
 	const [showText, setShowText] = useState(false);
 	let [buttonText, setButtonText] = useState(true);
@@ -49,13 +47,6 @@ export default function IndexCard({card}) {
 		<StyledCard>
 			<StyledCardHeader>
 				<StyledCardHeadline>{card.name}</StyledCardHeadline>
-				<StyledBookmarkButton
-					onClick={() => {
-						bookmarked(card.id);
-					}}
-				>
-					Fav
-				</StyledBookmarkButton>
 				<StyledCalendarButton
 					onClick={() => {
 						setIsShown(!isShown);
