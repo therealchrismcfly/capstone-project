@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
 const StyledCalendar = styled.div`
+	position: absolute;
 	z-index: 10;
-	height: 100px;
+	top: 60px;
 `;
 
 export default StyledCalendar;
