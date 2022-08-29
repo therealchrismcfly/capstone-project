@@ -19,7 +19,7 @@ import StyledCardHeadline from '../CardHeadline/styled';
 
 import StyledCard from './styled';
 
-export default function FavoritesCard({card}) {
+export default function FavoritesCard({exerciseCard}) {
 	const changeSets = useStore(state => state.changeSets);
 	const changeReps = useStore(state => state.changeReps);
 	const changeWeight = useStore(state => state.changeWeight);
@@ -37,31 +37,31 @@ export default function FavoritesCard({card}) {
 		event.preventDefault();
 	}
 	function handleSetInput(input) {
-		changeSets(card.id, Number(input));
+		changeSets(exerciseCard.id, Number(input));
 	}
 
 	function handleRepInput(input) {
-		changeReps(card.id, Number(input));
+		changeReps(exerciseCard.id, Number(input));
 	}
 
 	function handleWeightInput(input) {
-		changeWeight(card.id, Number(input));
+		changeWeight(exerciseCard.id, Number(input));
 	}
 
 	return (
 		<StyledCard>
 			<StyledCardHeader>
-				<StyledCardHeadline>{card.name}</StyledCardHeadline>
+				<StyledCardHeadline>{exerciseCard.name}</StyledCardHeadline>
 				<BookmarkButton
 					onClick={() => {
-						debookmark(card.id);
+						debookmark(exerciseCard.id);
 						setIsBookmarked(!isBookmarked);
 					}}
 				>
 					{isBookmarked ? (
-						<FilledBookmarkIcon id={card.id} />
+						<FilledBookmarkIcon id={exerciseCard.id} />
 					) : (
-						<NotFilledBookmarkIcon id={card.id} />
+						<NotFilledBookmarkIcon id={exerciseCard.id} />
 					)}
 				</BookmarkButton>
 				<StyledCalendarButton
@@ -71,10 +71,15 @@ export default function FavoritesCard({card}) {
 				>
 					add to planner
 				</StyledCalendarButton>
-				{isShown && <IndexCalendar id={card.id} />}
+				{isShown && <IndexCalendar id={exerciseCard.id} />}
 			</StyledCardHeader>
 			<StyledCardBody>
-				<Image src={card.image} alt="dummy fitness image" width={300} height={200} />
+				<Image
+					src={exerciseCard.image}
+					alt="dummy fitness image"
+					width={300}
+					height={200}
+				/>
 				<StyledHideButton
 					onClick={() => {
 						setShowText(!showText);
@@ -84,14 +89,16 @@ export default function FavoritesCard({card}) {
 					{buttonText ? 'Show instruction' : 'Hide instruction'}
 				</StyledHideButton>
 				{showText && (
-					<StyledCardDescription id={card.id}>{card.description}</StyledCardDescription>
+					<StyledCardDescription id={exerciseCard.id}>
+						{exerciseCard.description}
+					</StyledCardDescription>
 				)}
 			</StyledCardBody>
 			<form onSubmit={handleSubmit}>
 				<CardFooter
-					sets={card.sets}
-					reps={card.reps}
-					weight={card.weight}
+					sets={exerciseCard.sets}
+					reps={exerciseCard.reps}
+					weight={exerciseCard.weight}
 					handleSetInput={handleSetInput}
 					handleRepInput={handleRepInput}
 					handleWeightInput={handleWeightInput}

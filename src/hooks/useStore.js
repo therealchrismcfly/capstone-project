@@ -1,7 +1,7 @@
 import create from 'zustand';
 
 const useStore = create(set => ({
-	cards: [
+	exerciseCards: [
 		{
 			id: 0,
 			name: 'Squats',
@@ -45,40 +45,52 @@ const useStore = create(set => ({
 
 	changeSets: (id, sets) => {
 		set(state => ({
-			cards: state.cards.map(card => (card.id === id ? {...card, sets} : card)),
+			exerciseCards: state.exerciseCards.map(exerciseCard =>
+				exerciseCard.id === id ? {...exerciseCard, sets} : exerciseCard
+			),
 		}));
 	},
 
 	changeReps: (id, reps) => {
 		set(state => ({
-			cards: state.cards.map(card => (card.id === id ? {...card, reps} : card)),
+			exerciseCards: state.exerciseCards.map(exerciseCard =>
+				exerciseCard.id === id ? {...exerciseCard, reps} : exerciseCard
+			),
 		}));
 	},
 
 	changeWeight: (id, weight) => {
 		set(state => ({
-			cards: state.cards.map(card => (card.id === id ? {...card, weight} : card)),
+			exerciseCards: state.exerciseCards.map(exerciseCard =>
+				exerciseCard.id === id ? {...exerciseCard, weight} : exerciseCard
+			),
 		}));
 	},
 
 	deleteFromPlanner: id => {
 		set(state => ({
-			cards: state.cards.map(card => (card.id === id ? {...card, isPlanned: false} : card)),
+			exerciseCards: state.exerciseCards.map(exerciseCard =>
+				exerciseCard.id === id ? {...exerciseCard, isPlanned: false} : exerciseCard
+			),
 		}));
 	},
 
 	addToPlanner: (id, date) => {
 		set(state => ({
-			cards: state.cards.map(card =>
-				card.id === id ? {...card, isPlanned: true, date: [...card.date, date]} : card
+			exerciseCards: state.exerciseCards.map(exerciseCard =>
+				exerciseCard.id === id
+					? {...exerciseCard, isPlanned: true, date: [...exerciseCard.date, date]}
+					: exerciseCard
 			),
 		}));
 	},
 
 	checkCard: id => {
 		set(state => ({
-			cards: state.cards.map(card =>
-				card.id === id ? {...card, isDone: !card.isDone} : card
+			exerciseCards: state.exerciseCards.map(exerciseCard =>
+				exerciseCard.id === id
+					? {...exerciseCard, isDone: !exerciseCard.isDone}
+					: exerciseCard
 			),
 		}));
 	},
@@ -91,14 +103,16 @@ const useStore = create(set => ({
 
 	bookmarked: id => {
 		set(state => ({
-			cards: state.cards.map(card => (card.id === id ? {...card, isBookmarked: true} : card)),
+			exerciseCards: state.exerciseCards.map(exerciseCard =>
+				exerciseCard.id === id ? {...exerciseCard, isBookmarked: true} : exerciseCard
+			),
 		}));
 	},
 
 	debookmark: id => {
 		set(state => ({
-			cards: state.cards.map(card =>
-				card.id === id ? {...card, isBookmarked: false} : card
+			exerciseCards: state.exerciseCards.map(exerciseCard =>
+				exerciseCard.id === id ? {...exerciseCard, isBookmarked: false} : exerciseCard
 			),
 		}));
 	},
