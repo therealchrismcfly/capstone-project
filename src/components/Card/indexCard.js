@@ -28,6 +28,7 @@ export default function IndexCard({card}) {
 	const [showText, setShowText] = useState(false);
 	let [buttonText, setButtonText] = useState(true);
 	const [isBookmarked, setIsBookmarked] = useState(false);
+	const cards = useStore(state => state.cards);
 
 	const handleChange = () => {
 		return setButtonText(!buttonText);
@@ -58,7 +59,7 @@ export default function IndexCard({card}) {
 						setIsBookmarked(!isBookmarked);
 					}}
 				>
-					{isBookmarked ? (
+					{cards[card.id].isBookmarked ? (
 						<FilledBookmarkIcon id={card.id} />
 					) : (
 						<NotFilledBookmarkIcon id={card.id} />
