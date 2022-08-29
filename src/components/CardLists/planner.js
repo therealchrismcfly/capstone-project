@@ -9,9 +9,10 @@ import PlannerCard from '../Card/plannerCard';
 import StyledCardlist from './styled';
 
 function CardlistPlanner() {
-	const workoutPlan = useStore(state => state.workoutPlan);
+	const workouts = useStore(state => state.workouts);
 	const plannedDate = useStore(state => state.plannedDate);
-	const filteredCards = workoutPlan.filter(plannedCard => plannedCard.date.includes(plannedDate));
+	const filteredCards = workouts.filter(workout => workout.date.includes(plannedDate));
+
 	const sortedCards = filteredCards.sort((a, b) => Number(a.isDone) - Number(b.isDone));
 
 	return (
@@ -19,8 +20,8 @@ function CardlistPlanner() {
 			<h1>Geplante Übungen</h1>
 			<PlannerCalendar />
 			<StyledCardlist>
-				{sortedCards.map(workoutPlan => {
-					return <PlannerCard key={workoutPlan.id} exerciseCard={workoutPlan} />;
+				{sortedCards.map(workout => {
+					return <PlannerCard key={workout.id} workout={workout} />;
 				})}
 			</StyledCardlist>
 		</>

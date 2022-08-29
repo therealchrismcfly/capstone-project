@@ -26,7 +26,7 @@ const useStore = create(set => ({
 		},
 	],
 
-	workoutPlan: [],
+	workouts: [],
 
 	changeSets: (id, sets) => {
 		set(state => ({
@@ -52,12 +52,10 @@ const useStore = create(set => ({
 		}));
 	},
 
-	deleteWorkout: () => {
+	deleteWorkout: id => {
 		set(state => {
 			return {
-				workoutPlan: state.workoutPlan.filter(
-					workoutPlan => workoutPlan.id !== workoutPlan.id
-				),
+				workouts: state.workouts.filter(workout => id !== workout.id),
 			};
 		});
 	},
@@ -65,8 +63,8 @@ const useStore = create(set => ({
 	addToPlanner: (date, name) => {
 		set(state => {
 			return {
-				workoutPlan: [
-					...state.workoutPlan,
+				workouts: [
+					...state.workouts,
 					{id: nanoid(), date, name, sets: '0', reps: '0', weight: '0', isDone: false},
 				],
 			};
@@ -75,10 +73,8 @@ const useStore = create(set => ({
 
 	checkCard: id => {
 		set(state => ({
-			exerciseCards: state.exerciseCards.map(exerciseCard =>
-				exerciseCard.id === id
-					? {...exerciseCard, isDone: !exerciseCard.isDone}
-					: exerciseCard
+			workouts: state.workouts.map(workout =>
+				workout.id === id ? {...workout, isDone: !workout.isDone} : workout
 			),
 		}));
 	},
