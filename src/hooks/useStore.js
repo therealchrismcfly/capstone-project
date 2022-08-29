@@ -1,3 +1,4 @@
+import {nanoid} from 'nanoid';
 import create from 'zustand';
 
 const useStore = create(set => ({
@@ -6,42 +7,26 @@ const useStore = create(set => ({
 			id: 0,
 			name: 'Squats',
 			image: 'https://images.unsplash.com/photo-1574680178050-55c6a6a96e0a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80',
-			description: 'This is an instruction to do your exercise.',
-			sets: 0,
-			reps: 0,
-			weight: 0,
-			isDone: false,
+			instruction: 'This is an instruction to do your exercise.',
 			isBookmarked: false,
-			isPlanned: false,
-			date: [],
 		},
 		{
 			id: 1,
 			name: 'Biceps Curls',
 			image: 'https://images.unsplash.com/photo-1574680178050-55c6a6a96e0a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80',
-			description: 'This is an instruction to do your exercise.',
-			sets: 0,
-			reps: 0,
-			weight: 0,
-			isDone: false,
+			instruction: 'This is an instruction to do your exercise.',
 			isBookmarked: false,
-			isPlanned: false,
-			date: [],
 		},
 		{
 			id: 2,
 			name: 'Shoulder Press',
 			image: 'https://images.unsplash.com/photo-1574680178050-55c6a6a96e0a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80',
-			description: 'This is an instruction to do your exercise.',
-			sets: 0,
-			reps: 0,
-			weight: 0,
-			isDone: false,
+			instruction: 'This is an instruction to do your exercise.',
 			isBookmarked: false,
-			isPlanned: false,
-			date: [],
 		},
 	],
+
+	workoutPlan: [],
 
 	changeSets: (id, sets) => {
 		set(state => ({
@@ -67,22 +52,23 @@ const useStore = create(set => ({
 		}));
 	},
 
-	deleteFromPlanner: id => {
+	/* 	deleteFromPlanner: id => {
 		set(state => ({
 			exerciseCards: state.exerciseCards.map(exerciseCard =>
 				exerciseCard.id === id ? {...exerciseCard, isPlanned: false} : exerciseCard
 			),
 		}));
-	},
+	}, */
 
-	addToPlanner: (id, date) => {
-		set(state => ({
-			exerciseCards: state.exerciseCards.map(exerciseCard =>
-				exerciseCard.id === id
-					? {...exerciseCard, isPlanned: true, date: [...exerciseCard.date, date]}
-					: exerciseCard
-			),
-		}));
+	addToPlanner: (date, name) => {
+		set(state => {
+			return {
+				workoutPlan: [
+					...state.workoutPlan,
+					{id: nanoid(), date, name, sets: '0', reps: '0', weight: '0', isDone: false},
+				],
+			};
+		});
 	},
 
 	checkCard: id => {
@@ -101,18 +87,12 @@ const useStore = create(set => ({
 		}));
 	},
 
-	bookmarked: id => {
+	handleBookmark: id => {
 		set(state => ({
 			exerciseCards: state.exerciseCards.map(exerciseCard =>
-				exerciseCard.id === id ? {...exerciseCard, isBookmarked: true} : exerciseCard
-			),
-		}));
-	},
-
-	debookmark: id => {
-		set(state => ({
-			exerciseCards: state.exerciseCards.map(exerciseCard =>
-				exerciseCard.id === id ? {...exerciseCard, isBookmarked: false} : exerciseCard
+				exerciseCard.id === id
+					? {...exerciseCard, isBookmarked: !exerciseCard.isBookmarked}
+					: exerciseCard
 			),
 		}));
 	},

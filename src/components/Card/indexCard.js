@@ -23,16 +23,18 @@ export default function IndexCard({exerciseCard}) {
 	const changeSets = useStore(state => state.changeSets);
 	const changeReps = useStore(state => state.changeReps);
 	const changeWeight = useStore(state => state.changeWeight);
-	const bookmarked = useStore(state => state.bookmarked);
-	const [isShown, setIsShown] = useState(false);
-	const [showText, setShowText] = useState(false);
-	let [buttonText, setButtonText] = useState(true);
-	const [isBookmarked, setIsBookmarked] = useState(false);
-	const exerciseCards = useStore(state => state.exerciseCards);
+	const handleBookmark = useStore(state => state.handleBookmark);
+	const [isCalendarVisible, setIsCalendarVisible] = useState(false);
+	const [isInstructionVisible, setIsInstructionVisible] = useState(false);
+	const addToPlanner = useStore(state => state.addToPlanner);
+	const workoutPlan = useStore(state => state.workoutPlan);
+	console.log(workoutPlan);
 
-	const handleChange = () => {
-		return setButtonText(!buttonText);
-	};
+	function selectDate(selectedDate) {
+		const date = selectedDate.toDateString();
+		addToPlanner(date, exerciseCard.name);
+		setIsCalendarVisible(false);
+	}
 
 	function handleSubmit(event) {
 		event.preventDefault();
@@ -55,11 +57,10 @@ export default function IndexCard({exerciseCard}) {
 				<StyledCardHeadline>{exerciseCard.name}</StyledCardHeadline>
 				<BookmarkButton
 					onClick={() => {
-						bookmarked(exerciseCard.id);
-						setIsBookmarked(!isBookmarked);
+						handleBookmark(exerciseCard.id);
 					}}
 				>
-					{exerciseCards[exerciseCard.id].isBookmarked ? (
+					{exerciseCard.isBookmarked ? (
 						<FilledBookmarkIcon id={exerciseCard.id} />
 					) : (
 						<NotFilledBookmarkIcon id={exerciseCard.id} />
@@ -67,12 +68,12 @@ export default function IndexCard({exerciseCard}) {
 				</BookmarkButton>
 				<StyledCalendarButton
 					onClick={() => {
-						setIsShown(!isShown);
+						setIsCalendarVisible(!isCalendarVisible);
 					}}
 				>
 					add to planner
 				</StyledCalendarButton>
-				{isShown ? <IndexCalendar id={exerciseCard.id} /> : ''}
+				{isCalendarVisible && <IndexCalendar onSelectDate={selectDate} />}
 			</StyledCardHeader>
 			<StyledCardBody>
 				<Image
@@ -83,18 +84,13 @@ export default function IndexCard({exerciseCard}) {
 				/>
 				<StyledHideButton
 					onClick={() => {
-						setShowText(!showText);
-						handleChange();
+						setIsInstructionVisible(!isInstructionVisible);
 					}}
 				>
-					{buttonText ? 'Show instruction' : 'Hide instruction'}
+					{isInstructionVisible ? 'Hide instruction' : 'Show instruction'}
 				</StyledHideButton>
-				{showText ? (
-					<StyledCardDescription id={exerciseCard.id}>
-						{exerciseCard.description}
-					</StyledCardDescription>
-				) : (
-					''
+				{isInstructionVisible && (
+					<StyledCardDescription>{exerciseCard.instruction}</StyledCardDescription>
 				)}
 			</StyledCardBody>
 			<form onSubmit={handleSubmit}>

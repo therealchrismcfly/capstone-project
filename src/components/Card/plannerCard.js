@@ -12,7 +12,7 @@ import StyledCardHeader from '../CardHeader/styled';
 import StyledCardHeadline from '../CardHeadline/styled';
 import StyledCheckbox from '../Checkbox/styled';
 
-function PlannerCard({exerciseCard}) {
+function PlannerCard() {
 	const deleteFromPlanner = useStore(state => state.deleteFromPlanner);
 	const checkCard = useStore(state => state.checkCard);
 
@@ -21,6 +21,7 @@ function PlannerCard({exerciseCard}) {
 	const changeWeight = useStore(state => state.changeWeight);
 	const [showText, setShowText] = useState(false);
 	let [buttonText, setButtonText] = useState(true);
+	const workoutPlan = useStore(state => state.workoutPlan);
 
 	const handleChange = () => {
 		return setButtonText(!buttonText);
@@ -31,43 +32,38 @@ function PlannerCard({exerciseCard}) {
 	}
 
 	function handleSetInput(input) {
-		changeSets(exerciseCard.id, Number(input));
+		changeSets(workoutPlan.id, Number(input));
 	}
 
 	function handleRepInput(input) {
-		changeReps(exerciseCard.id, Number(input));
+		changeReps(workoutPlan.id, Number(input));
 	}
 
 	function handleWeightInput(input) {
-		changeWeight(exerciseCard.id, Number(input));
+		changeWeight(workoutPlan.id, Number(input));
 	}
 
 	return (
 		<StyledCard>
 			<StyledCardHeader>
-				<StyledCardHeadline>{exerciseCard.name}</StyledCardHeadline>
+				<StyledCardHeadline>{workoutPlan.name}</StyledCardHeadline>
 				<StyledDeleteButton
 					onClick={() => {
-						deleteFromPlanner(exerciseCard.id);
+						deleteFromPlanner(workoutPlan.id);
 					}}
 				>
 					x
 				</StyledDeleteButton>
 				<StyledCheckbox
-					checked={exerciseCard.checked}
+					checked={workoutPlan.checked}
 					type="checkbox"
 					onChange={() => {
-						checkCard(exerciseCard.id);
+						checkCard(workoutPlan.id);
 					}}
 				/>
 			</StyledCardHeader>
 			<StyledCardBody>
-				<Image
-					src={exerciseCard.image}
-					alt="dummy fitness image"
-					width={300}
-					height={200}
-				/>
+				<Image src={workoutPlan.image} alt="dummy fitness image" width={300} height={200} />
 				<StyledHideButton
 					onClick={() => {
 						setShowText(!showText);
@@ -77,8 +73,8 @@ function PlannerCard({exerciseCard}) {
 					{buttonText ? 'Show instruction' : 'Hide instruction'}
 				</StyledHideButton>
 				{showText ? (
-					<StyledCardDescription id={exerciseCard.id}>
-						{exerciseCard.description}
+					<StyledCardDescription id={workoutPlan.id}>
+						{workoutPlan.description}
 					</StyledCardDescription>
 				) : (
 					''
@@ -86,9 +82,9 @@ function PlannerCard({exerciseCard}) {
 			</StyledCardBody>
 			<form onSubmit={handleSubmit}>
 				<CardFooter
-					sets={exerciseCard.sets}
-					reps={exerciseCard.reps}
-					weight={exerciseCard.weight}
+					sets={workoutPlan.sets}
+					reps={workoutPlan.reps}
+					weight={workoutPlan.weight}
 					handleSetInput={handleSetInput}
 					handleRepInput={handleRepInput}
 					handleWeightInput={handleWeightInput}
