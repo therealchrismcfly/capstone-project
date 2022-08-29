@@ -11,6 +11,8 @@ const useStore = create(set => ({
 			reps: 0,
 			weight: 0,
 			isDone: false,
+			isBookmarked: false,
+			isPlanned: false,
 			date: [],
 		},
 		{
@@ -22,6 +24,8 @@ const useStore = create(set => ({
 			reps: 0,
 			weight: 0,
 			isDone: false,
+			isBookmarked: false,
+			isPlanned: false,
 			date: [],
 		},
 		{
@@ -33,6 +37,8 @@ const useStore = create(set => ({
 			reps: 0,
 			weight: 0,
 			isDone: false,
+			isBookmarked: false,
+			isPlanned: false,
 			date: [],
 		},
 	],
@@ -64,7 +70,7 @@ const useStore = create(set => ({
 	addToPlanner: (id, date) => {
 		set(state => ({
 			cards: state.cards.map(card =>
-				card.id === id ? {...card, date: [...card.date, date]} : card
+				card.id === id ? {...card, isPlanned: true, date: [...card.date, date]} : card
 			),
 		}));
 	},
@@ -80,6 +86,20 @@ const useStore = create(set => ({
 	handlePlannerDate: selectedDate => {
 		set(() => ({
 			plannedDate: selectedDate.toDateString(),
+		}));
+	},
+
+	bookmarked: id => {
+		set(state => ({
+			cards: state.cards.map(card => (card.id === id ? {...card, isBookmarked: true} : card)),
+		}));
+	},
+
+	debookmark: id => {
+		set(state => ({
+			cards: state.cards.map(card =>
+				card.id === id ? {...card, isBookmarked: false} : card
+			),
 		}));
 	},
 }));

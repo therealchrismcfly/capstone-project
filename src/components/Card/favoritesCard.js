@@ -19,16 +19,15 @@ import StyledCardHeadline from '../CardHeadline/styled';
 
 import StyledCard from './styled';
 
-export default function IndexCard({card}) {
+export default function FavoritesCard({card}) {
 	const changeSets = useStore(state => state.changeSets);
 	const changeReps = useStore(state => state.changeReps);
 	const changeWeight = useStore(state => state.changeWeight);
-	const bookmarked = useStore(state => state.bookmarked);
+	const debookmark = useStore(state => state.debookmark);
 	const [isShown, setIsShown] = useState(false);
 	const [showText, setShowText] = useState(false);
 	let [buttonText, setButtonText] = useState(true);
-	const [isBookmarked, setIsBookmarked] = useState(false);
-	const cards = useStore(state => state.cards);
+	const [isBookmarked, setIsBookmarked] = useState(true);
 
 	const handleChange = () => {
 		return setButtonText(!buttonText);
@@ -55,11 +54,11 @@ export default function IndexCard({card}) {
 				<StyledCardHeadline>{card.name}</StyledCardHeadline>
 				<BookmarkButton
 					onClick={() => {
-						bookmarked(card.id);
+						debookmark(card.id);
 						setIsBookmarked(!isBookmarked);
 					}}
 				>
-					{cards[card.id].isBookmarked ? (
+					{isBookmarked ? (
 						<FilledBookmarkIcon id={card.id} />
 					) : (
 						<NotFilledBookmarkIcon id={card.id} />
@@ -72,7 +71,7 @@ export default function IndexCard({card}) {
 				>
 					add to planner
 				</StyledCalendarButton>
-				{isShown ? <IndexCalendar id={card.id} /> : ''}
+				{isShown && <IndexCalendar id={card.id} />}
 			</StyledCardHeader>
 			<StyledCardBody>
 				<Image src={card.image} alt="dummy fitness image" width={300} height={200} />
@@ -84,10 +83,8 @@ export default function IndexCard({card}) {
 				>
 					{buttonText ? 'Show instruction' : 'Hide instruction'}
 				</StyledHideButton>
-				{showText ? (
+				{showText && (
 					<StyledCardDescription id={card.id}>{card.description}</StyledCardDescription>
-				) : (
-					''
 				)}
 			</StyledCardBody>
 			<form onSubmit={handleSubmit}>

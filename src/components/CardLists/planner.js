@@ -16,7 +16,7 @@ function CardlistPlanner() {
 
 	return (
 		<>
-			<h1>Ausgewählte Übungen</h1>
+			<h1>Geplante Übungen</h1>
 			<PlannerCalendar />
 			<StyledCardlist>
 				{sortedCards.map(card => {
