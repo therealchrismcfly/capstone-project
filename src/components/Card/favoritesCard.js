@@ -71,7 +71,7 @@ export default function FavoritesCard({card}) {
 				>
 					add to planner
 				</StyledCalendarButton>
-				{isShown ? <IndexCalendar id={card.id} /> : ''}
+				{isShown && <IndexCalendar id={card.id} />}
 			</StyledCardHeader>
 			<StyledCardBody>
 				<Image src={card.image} alt="dummy fitness image" width={300} height={200} />
@@ -83,10 +83,8 @@ export default function FavoritesCard({card}) {
 				>
 					{buttonText ? 'Show instruction' : 'Hide instruction'}
 				</StyledHideButton>
-				{showText ? (
+				{showText && (
 					<StyledCardDescription id={card.id}>{card.description}</StyledCardDescription>
-				) : (
-					''
 				)}
 			</StyledCardBody>
 			<form onSubmit={handleSubmit}>
