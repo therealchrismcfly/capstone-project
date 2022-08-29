@@ -13,9 +13,8 @@ import StyledCardHeadline from '../CardHeadline/styled';
 import StyledCheckbox from '../Checkbox/styled';
 
 function PlannerCard() {
-	const deleteFromPlanner = useStore(state => state.deleteFromPlanner);
+	const deleteWorkout = useStore(state => state.deleteWorkout);
 	const checkCard = useStore(state => state.checkCard);
-
 	const changeSets = useStore(state => state.changeSets);
 	const changeReps = useStore(state => state.changeReps);
 	const changeWeight = useStore(state => state.changeWeight);
@@ -49,7 +48,7 @@ function PlannerCard() {
 				<StyledCardHeadline>{workoutPlan.name}</StyledCardHeadline>
 				<StyledDeleteButton
 					onClick={() => {
-						deleteFromPlanner(workoutPlan.id);
+						deleteWorkout(workoutPlan.id);
 					}}
 				>
 					x

@@ -52,13 +52,15 @@ const useStore = create(set => ({
 		}));
 	},
 
-	/* 	deleteFromPlanner: id => {
-		set(state => ({
-			exerciseCards: state.exerciseCards.map(exerciseCard =>
-				exerciseCard.id === id ? {...exerciseCard, isPlanned: false} : exerciseCard
-			),
-		}));
-	}, */
+	deleteWorkout: () => {
+		set(state => {
+			return {
+				workoutPlan: state.workoutPlan.filter(
+					workoutPlan => workoutPlan.id !== workoutPlan.id
+				),
+			};
+		});
+	},
 
 	addToPlanner: (date, name) => {
 		set(state => {
