@@ -32,7 +32,7 @@ export default function IndexCard({exerciseCard}) {
 
 	function selectDate(selectedDate) {
 		const date = selectedDate.toDateString();
-		addToPlanner(date, exerciseCard.name, exerciseCard.instruction, exerciseCard.image);
+		addToPlanner(date, exerciseCard.name);
 		setIsCalendarVisible(false);
 	}
 

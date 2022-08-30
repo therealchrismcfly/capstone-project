@@ -19,6 +19,10 @@ function PlannerCard({workout}) {
 	const changeReps = useStore(state => state.changeReps);
 	const changeWeight = useStore(state => state.changeWeight);
 	const [isInstructionVisible, setIsInstructionVisible] = useState(false);
+	/* const exerciseCards = useStore(state => state.exerciseCards);
+	const selectedExerciseCard = exerciseCards.filter(exerciseCard => {
+		exerciseCard.name === workout.name;
+	});*/
 
 	function handleSubmit(event) {
 		event.preventDefault();
@@ -56,7 +60,7 @@ function PlannerCard({workout}) {
 				/>
 			</StyledCardHeader>
 			<StyledCardBody>
-				<Image src={workout.image} alt="dummy fitness image" width={300} height={200} />
+				{<Image src={workout.image} alt="dummy fitness image" width={300} height={200} />}
 				<StyledHideButton
 					onClick={() => {
 						setIsInstructionVisible(!isInstructionVisible);
