@@ -30,24 +30,24 @@ const useStore = create(set => ({
 
 	changeSets: (id, sets) => {
 		set(state => ({
-			exerciseCards: state.exerciseCards.map(exerciseCard =>
-				exerciseCard.id === id ? {...exerciseCard, sets} : exerciseCard
+			workouts: state.workouts.map(workout =>
+				workout.id === id ? {...workout, sets} : workout
 			),
 		}));
 	},
 
 	changeReps: (id, reps) => {
 		set(state => ({
-			exerciseCards: state.exerciseCards.map(exerciseCard =>
-				exerciseCard.id === id ? {...exerciseCard, reps} : exerciseCard
+			workouts: state.workouts.map(workout =>
+				workout.id === id ? {...workout, reps} : workout
 			),
 		}));
 	},
 
 	changeWeight: (id, weight) => {
 		set(state => ({
-			exerciseCards: state.exerciseCards.map(exerciseCard =>
-				exerciseCard.id === id ? {...exerciseCard, weight} : exerciseCard
+			workouts: state.workouts.map(workout =>
+				workout.id === id ? {...workout, weight} : workout
 			),
 		}));
 	},
