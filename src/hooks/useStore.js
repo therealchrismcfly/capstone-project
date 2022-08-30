@@ -60,12 +60,22 @@ const useStore = create(set => ({
 		});
 	},
 
-	addToPlanner: (date, name) => {
+	addToPlanner: (date, name, instruction, image) => {
 		set(state => {
 			return {
 				workouts: [
 					...state.workouts,
-					{id: nanoid(), date, name, sets: '0', reps: '0', weight: '0', isDone: false},
+					{
+						id: nanoid(),
+						date,
+						name,
+						instruction,
+						image,
+						sets: '0',
+						reps: '0',
+						weight: '0',
+						isDone: false,
+					},
 				],
 			};
 		});
