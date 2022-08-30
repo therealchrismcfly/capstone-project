@@ -60,7 +60,7 @@ const useStore = create(set => ({
 		});
 	},
 
-	addToPlanner: (date, name) => {
+	addToPlanner: (date, name, sets, reps, weight) => {
 		set(state => {
 			return {
 				workouts: [
@@ -69,9 +69,9 @@ const useStore = create(set => ({
 						id: nanoid(),
 						date,
 						name,
-						sets: '0',
-						reps: '0',
-						weight: '0',
+						sets,
+						reps,
+						weight,
 						isDone: false,
 					},
 				],

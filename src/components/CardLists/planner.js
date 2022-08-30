@@ -12,8 +12,8 @@ function CardlistPlanner() {
 	const workouts = useStore(state => state.workouts);
 	const plannedDate = useStore(state => state.plannedDate);
 	const filteredCards = workouts.filter(workout => workout.date.includes(plannedDate));
-
 	const sortedCards = filteredCards.sort((a, b) => Number(a.isDone) - Number(b.isDone));
+	console.log(workouts);
 
 	return (
 		<>

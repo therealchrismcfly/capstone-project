@@ -13,40 +13,36 @@ const IndexCalendar = dynamic(() => import('../Calendar/indexCalendar'), {
 import StyledHideButton from '../Buttons/HideButton/styled';
 import StyledCardBody from '../CardBody/styled';
 import StyledCardDescription from '../CardDescription/styled';
-import CardFooter from '../CardFooter';
+import StyledCardFooter from '../CardFooter/styled';
 import StyledCardHeader from '../CardHeader/styled';
 import StyledCardHeadline from '../CardHeadline/styled';
 
 import StyledCard from './styled';
 
 export default function FavoritesCard({exerciseCard}) {
-	const changeSets = useStore(state => state.changeSets);
-	const changeReps = useStore(state => state.changeReps);
-	const changeWeight = useStore(state => state.changeWeight);
 	const handleBookmark = useStore(state => state.handleBookmark);
 	const [isCalendarVisible, setIsCalendarVisible] = useState(false);
 	const [isInstructionVisible, setIsInstructionVisible] = useState(false);
 	const addToPlanner = useStore(state => state.addToPlanner);
+	const workouts = useStore(state => state.workouts);
+	const currentExercises = workouts.filter(workout => exerciseCard.name === workout.name);
+	const sortedCurrentExercises = currentExercises.sort(
+		(a, b) => new Date(b.date) - new Date(a.date)
+	);
+	const latestStats = sortedCurrentExercises.length
+		? sortedCurrentExercises[0]
+		: {sets: '0', reps: '0', weight: '0'};
 
 	function selectDate(selectedDate) {
 		const date = selectedDate.toDateString();
-		addToPlanner(date, exerciseCard.name);
+		addToPlanner(
+			date,
+			exerciseCard.name,
+			latestStats.sets,
+			latestStats.reps,
+			latestStats.weight
+		);
 		setIsCalendarVisible(false);
-	}
-
-	function handleSubmit(event) {
-		event.preventDefault();
-	}
-	function handleSetInput(input) {
-		changeSets(exerciseCard.id, Number(input));
-	}
-
-	function handleRepInput(input) {
-		changeReps(exerciseCard.id, Number(input));
-	}
-
-	function handleWeightInput(input) {
-		changeWeight(exerciseCard.id, Number(input));
 	}
 
 	return (
@@ -87,16 +83,10 @@ export default function FavoritesCard({exerciseCard}) {
 					<StyledCardDescription>{exerciseCard.instruction}</StyledCardDescription>
 				)}
 			</StyledCardBody>
-			<form onSubmit={handleSubmit}>
-				<CardFooter
-					sets={exerciseCard.sets}
-					reps={exerciseCard.reps}
-					weight={exerciseCard.weight}
-					handleSetInput={handleSetInput}
-					handleRepInput={handleRepInput}
-					handleWeightInput={handleWeightInput}
-				/>
-			</form>
+			<StyledCardFooter>
+				Latest sets: {latestStats.sets} Latest reps: {latestStats.reps} Latest weight:{' '}
+				{latestStats.weight}
+			</StyledCardFooter>
 		</StyledCard>
 	);
 }
