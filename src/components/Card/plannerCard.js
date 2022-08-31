@@ -12,81 +12,45 @@ import StyledCardHeader from '../CardHeader/styled';
 import StyledCardHeadline from '../CardHeadline/styled';
 import StyledCheckbox from '../Checkbox/styled';
 
-function PlannerCard({card}) {
-	const deleteFromPlanner = useStore(state => state.deleteFromPlanner);
+function PlannerCard({workout}) {
+	const deleteWorkout = useStore(state => state.deleteWorkout);
 	const checkCard = useStore(state => state.checkCard);
-
-	const changeSets = useStore(state => state.changeSets);
-	const changeReps = useStore(state => state.changeReps);
-	const changeWeight = useStore(state => state.changeWeight);
-	const [showText, setShowText] = useState(false);
-	let [buttonText, setButtonText] = useState(true);
-
-	const handleChange = () => {
-		return setButtonText(!buttonText);
-	};
-
-	function handleSubmit(event) {
-		event.preventDefault();
-	}
-
-	function handleSetInput(input) {
-		changeSets(card.id, Number(input));
-	}
-
-	function handleRepInput(input) {
-		changeReps(card.id, Number(input));
-	}
-
-	function handleWeightInput(input) {
-		changeWeight(card.id, Number(input));
-	}
+	const [isInstructionVisible, setIsInstructionVisible] = useState(false);
 
 	return (
 		<StyledCard>
 			<StyledCardHeader>
-				<StyledCardHeadline>{card.name}</StyledCardHeadline>
+				<StyledCardHeadline>{workout.name}</StyledCardHeadline>
 				<StyledDeleteButton
 					onClick={() => {
-						deleteFromPlanner(card.id);
+						deleteWorkout(workout.id);
 					}}
 				>
 					x
 				</StyledDeleteButton>
 				<StyledCheckbox
-					checked={card.checked}
+					checked={workout.checked}
 					type="checkbox"
 					onChange={() => {
-						checkCard(card.id);
+						checkCard(workout.id);
 					}}
 				/>
 			</StyledCardHeader>
 			<StyledCardBody>
-				<Image src={card.image} alt="dummy fitness image" width={300} height={200} />
+				{<Image src={workout.image} alt="dummy fitness image" width={300} height={200} />}
 				<StyledHideButton
 					onClick={() => {
-						setShowText(!showText);
-						handleChange();
+						setIsInstructionVisible(!isInstructionVisible);
 					}}
 				>
-					{buttonText ? 'Show instruction' : 'Hide instruction'}
+					{isInstructionVisible ? 'Hide instruction' : 'Show instruction'}
 				</StyledHideButton>
-				{showText ? (
-					<StyledCardDescription id={card.id}>{card.description}</StyledCardDescription>
-				) : (
-					''
+				{isInstructionVisible && (
+					<StyledCardDescription>{workout.instruction}</StyledCardDescription>
 				)}
 			</StyledCardBody>
-			<form onSubmit={handleSubmit}>
-				<CardFooter
-					sets={card.sets}
-					reps={card.reps}
-					weight={card.weight}
-					handleSetInput={handleSetInput}
-					handleRepInput={handleRepInput}
-					handleWeightInput={handleWeightInput}
-				/>
-			</form>
+
+			<CardFooter workout={workout} />
 		</StyledCard>
 	);
 }

@@ -4,13 +4,13 @@ import IndexCard from '../Card/indexCard';
 import StyledCardlist from './styled';
 
 function CardlistIndex() {
-	const cards = useStore(state => state.cards);
+	const exerciseCards = useStore(state => state.exerciseCards);
 	return (
 		<>
 			<h1>Alle Übungen</h1>
 			<StyledCardlist>
-				{cards.map(card => {
-					return <IndexCard key={card.id} card={card} />;
+				{exerciseCards.map(exerciseCard => {
+					return <IndexCard key={exerciseCard.id} exerciseCard={exerciseCard} />;
 				})}
 			</StyledCardlist>
 		</>

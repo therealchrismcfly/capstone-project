@@ -5,17 +5,16 @@ import useStore from '../../hooks/useStore';
 import StyledCalendar from './styled';
 
 import 'react-calendar/dist/Calendar.css';
-function IndexCalendar({id}) {
-	const addToPlanner = useStore(state => state.addToPlanner);
-
-	function handleChange(selectedDate) {
-		const date = selectedDate.toDateString();
-		addToPlanner(id, date);
-	}
-
+function IndexCalendar({exercise}) {
+	const setExerciseDate = useStore(state => state.setExerciseDate);
 	return (
 		<StyledCalendar>
-			<Calendar onChange={handleChange} />
+			<Calendar
+				onChange={date_ => {
+					setExerciseDate(exercise.id, date_);
+				}}
+				value={exercise.date}
+			/>
 		</StyledCalendar>
 	);
 }

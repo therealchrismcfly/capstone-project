@@ -4,16 +4,16 @@ import FavoritesCard from '../Card/favoritesCard';
 import StyledCardlist from './styled';
 
 function CardlistFavorites() {
-	const cards = useStore(state => state.cards);
-	const bookmarkedCards = cards.filter(card => card.isBookmarked);
+	const exerciseCards = useStore(state => state.exerciseCards);
+	const bookmarkedCards = exerciseCards.filter(exerciseCard => exerciseCard.isBookmarked);
 
 	return (
 		<>
 			<h1>Lieblingsübungen</h1>
 
 			<StyledCardlist>
-				{bookmarkedCards.map(card => {
-					return <FavoritesCard key={card.id} card={card} />;
+				{bookmarkedCards.map(exerciseCard => {
+					return <FavoritesCard key={exerciseCard.id} exerciseCard={exerciseCard} />;
 				})}
 			</StyledCardlist>
 		</>

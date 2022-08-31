@@ -1,12 +1,14 @@
-export default function CardInputReps({reps, handleRepInput}) {
+import useStore from '../../hooks/useStore';
+export default function CardInputReps({workout}) {
+	const changeReps = useStore(state => state.changeReps);
 	return (
 		<label>
 			Reps:{' '}
 			<input
-				type="text"
+				type="number"
 				name="reps"
-				value={reps}
-				onChange={event => handleRepInput(event.target.value)}
+				value={workout.reps}
+				onChange={event => changeReps(workout.id, event.target.value)}
 			/>
 		</label>
 	);
