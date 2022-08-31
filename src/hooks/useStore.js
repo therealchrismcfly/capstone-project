@@ -75,11 +75,10 @@ const useStore = create(set => ({
 			return {
 				workouts: [
 					...state.workouts,
-					...state.exerciseCards
-						.filter(exerciseCard => exerciseCard.id === id)
-						.map(exerciseCard =>
-							exerciseCard.id === id ? {...exerciseCard, id: nanoid()} : exerciseCard
-						),
+					{
+						...state.exerciseCards.find(exerciseCard => exerciseCard.id === id),
+						id: nanoid(),
+					},
 				],
 			};
 		});

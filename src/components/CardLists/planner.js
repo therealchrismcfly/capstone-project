@@ -15,7 +15,6 @@ function CardlistPlanner() {
 		workout => workout.date.toDateString() === plannedDate.toDateString()
 	);
 	const sortedCards = filteredCards.sort((a, b) => Number(a.isDone) - Number(b.isDone));
-	console.log(workouts);
 
 	return (
 		<>

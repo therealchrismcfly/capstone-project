@@ -13,7 +13,6 @@ const IndexCalendar = dynamic(() => import('../Calendar/indexCalendar'), {
 import StyledHideButton from '../Buttons/HideButton/styled';
 import StyledCardBody from '../CardBody/styled';
 import StyledCardDescription from '../CardDescription/styled';
-import StyledCardFooter from '../CardFooter/styled';
 import StyledCardHeader from '../CardHeader/styled';
 import StyledCardHeadline from '../CardHeadline/styled';
 
@@ -24,26 +23,6 @@ export default function FavoritesCard({exerciseCard}) {
 	const [isCalendarVisible, setIsCalendarVisible] = useState(false);
 	const [isInstructionVisible, setIsInstructionVisible] = useState(false);
 	const addToPlanner = useStore(state => state.addToPlanner);
-	const workouts = useStore(state => state.workouts);
-	const currentExercises = workouts.filter(workout => exerciseCard.name === workout.name);
-	const sortedCurrentExercises = currentExercises.sort(
-		(a, b) => new Date(b.date) - new Date(a.date)
-	);
-	const latestStats = sortedCurrentExercises.length
-		? sortedCurrentExercises[0]
-		: {sets: '0', reps: '0', weight: '0'};
-
-	function selectDate(selectedDate) {
-		const date = selectedDate.toDateString();
-		addToPlanner(
-			date,
-			exerciseCard.name,
-			latestStats.sets,
-			latestStats.reps,
-			latestStats.weight
-		);
-		setIsCalendarVisible(false);
-	}
 
 	return (
 		<StyledCard>
@@ -63,7 +42,20 @@ export default function FavoritesCard({exerciseCard}) {
 				>
 					add to planner
 				</StyledCalendarButton>
-				{isCalendarVisible && <IndexCalendar onSelectDate={selectDate} />}
+				{isCalendarVisible && (
+					<>
+						<IndexCalendar exercise={exerciseCard} />
+						<button
+							type="button"
+							onClick={() => {
+								addToPlanner(exerciseCard.id);
+								setIsCalendarVisible(false);
+							}}
+						>
+							add
+						</button>
+					</>
+				)}
 			</StyledCardHeader>
 			<StyledCardBody>
 				<Image
@@ -83,10 +75,6 @@ export default function FavoritesCard({exerciseCard}) {
 					<StyledCardDescription>{exerciseCard.instruction}</StyledCardDescription>
 				)}
 			</StyledCardBody>
-			<StyledCardFooter>
-				Latest sets: {latestStats.sets} Latest reps: {latestStats.reps} Latest weight:{' '}
-				{latestStats.weight}
-			</StyledCardFooter>
 		</StyledCard>
 	);
 }
