@@ -108,6 +108,10 @@ const useStore = create(set => ({
 			),
 		}));
 	},
+	suggestions: [],
+	setSuggestions: cards => {
+		set({suggestions: cards});
+	},
 }));
 
 export default useStore;
