@@ -33,18 +33,6 @@ export default function IndexCard({exerciseCard}) {
 		? sortedCurrentExercises[0]
 		: {sets: '0', reps: '0', weight: '0'};
 
-	function selectDate(selectedDate) {
-		const date = selectedDate.toDateString();
-		addToPlanner(
-			date,
-			exerciseCard.name,
-			latestStats.sets,
-			latestStats.reps,
-			latestStats.weight
-		);
-		setIsCalendarVisible(false);
-	}
-
 	return (
 		<StyledCard>
 			<StyledCardHeader>
@@ -67,7 +55,20 @@ export default function IndexCard({exerciseCard}) {
 				>
 					add to planner
 				</StyledCalendarButton>
-				{isCalendarVisible && <IndexCalendar onSelectDate={selectDate} />}
+				{isCalendarVisible && (
+					<>
+						<IndexCalendar exercise={exerciseCard} />
+						<button
+							type="button"
+							onClick={() => {
+								addToPlanner(exerciseCard.id);
+								setIsCalendarVisible(false);
+							}}
+						>
+							add
+						</button>
+					</>
+				)}
 			</StyledCardHeader>
 			<StyledCardBody>
 				<Image

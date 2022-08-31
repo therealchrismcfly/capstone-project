@@ -1,12 +1,14 @@
-export default function CardInputSets({sets, handleSetInput}) {
+import useStore from '../../hooks/useStore';
+export default function CardInputSets({workout}) {
+	const changeSets = useStore(state => state.changeSets);
 	return (
 		<label>
 			Sets:{' '}
 			<input
-				type="text"
+				type="number"
 				name="sets"
-				value={sets}
-				onChange={event => handleSetInput(event.target.value)}
+				value={workout.sets}
+				onChange={event => changeSets(workout.id, event.target.value)}
 			/>
 		</label>
 	);

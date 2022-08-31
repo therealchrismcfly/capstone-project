@@ -1,12 +1,14 @@
-export default function CardInputWeight({weight, handleWeightInput}) {
+import useStore from '../../hooks/useStore';
+export default function CardInputWeight({workout}) {
+	const changeWeight = useStore(state => state.changeWeight);
 	return (
 		<label>
 			Weight:{' '}
 			<input
-				type="text"
+				type="number"
 				name="weight"
-				value={weight}
-				onChange={event => handleWeightInput(event.target.value)}
+				value={workout.weight}
+				onChange={event => changeWeight(workout.id, event.target.value)}
 			/>
 		</label>
 	);
