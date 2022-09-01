@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const StyledSearchBar = styled.form`
+const StyledSearchBar = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
