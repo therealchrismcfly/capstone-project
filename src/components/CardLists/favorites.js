@@ -1,5 +1,5 @@
 import useStore from '../../hooks/useStore';
-import IndexCard from '../Card/indexCard';
+import IndexCard from '../Cards/indexCard';
 
 import StyledCardlist from './styled';
 
