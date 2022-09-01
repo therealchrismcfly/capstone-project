@@ -7,6 +7,7 @@ export default function Navbar() {
 		<StyledNavbar>
 			<Link href="/">Home</Link>
 			<Link href="/favorites">Favorites</Link>
+			<Link href="/progress">Progress</Link>
 			<Link href="/planner">Planner</Link>
 		</StyledNavbar>
 	);
