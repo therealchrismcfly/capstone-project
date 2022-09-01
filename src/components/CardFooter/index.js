@@ -7,29 +7,40 @@ import CardInputWeight from '../CardInputs/weight';
 import StyledCardFooter from './styled';
 
 function CardFooter({workout}) {
-	const [edit, setEdit] = useState(false);
+	const [editSets, setEditSets] = useState(false);
+	const [editReps, setEditReps] = useState(false);
+	const [editWeight, setEditWeight] = useState(false);
+
 	return (
 		<StyledCardFooter>
-			{edit ? (
-				<>
-					<CardInputSets workout={workout} />
-					<CardInputReps workout={workout} />
-					<CardInputWeight workout={workout} />
-				</>
-			) : (
-				<>
-					<p>Sets: {workout.sets}</p>
-					<p>Reps: {workout.reps}</p>
-					<p>Weight: {workout.weight}</p>
-				</>
-			)}
+			{editSets ? <CardInputSets workout={workout} /> : <p>Sets: {workout.sets}</p>}
 			<button
 				type="button"
 				onClick={() => {
-					setEdit(!edit);
+					setEditSets(!editSets);
 				}}
 			>
-				{edit ? 'save' : 'edit'}
+				{editSets ? 'save' : 'edit'}
+			</button>
+
+			{editReps ? <CardInputReps workout={workout} /> : <p>Reps: {workout.reps}</p>}
+			<button
+				type="button"
+				onClick={() => {
+					setEditReps(!editReps);
+				}}
+			>
+				{editReps ? 'save' : 'edit'}
+			</button>
+
+			{editWeight ? <CardInputWeight workout={workout} /> : <p>Weight: {workout.weight}</p>}
+			<button
+				type="button"
+				onClick={() => {
+					setEditWeight(!editWeight);
+				}}
+			>
+				{editWeight ? 'save' : 'edit'}
 			</button>
 		</StyledCardFooter>
 	);

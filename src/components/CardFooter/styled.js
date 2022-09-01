@@ -2,12 +2,12 @@ import styled from 'styled-components';
 
 const StyledCardFooter = styled.div`
 	display: flex;
-	flex-direction: column;
 	align-items: center;
-	justify-content: center;
+	justify-content: space-evenly;
 	width: 400px;
-	height: 140px;
+	height: 80px;
 	padding: 5px;
+	border-radius: 0 0 25px 25px;
 	background-color: lavender;
 `;
 export default StyledCardFooter;

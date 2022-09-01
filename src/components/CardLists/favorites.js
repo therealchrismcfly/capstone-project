@@ -1,5 +1,5 @@
 import useStore from '../../hooks/useStore';
-import FavoritesCard from '../Card/favoritesCard';
+import IndexCard from '../Card/indexCard';
 
 import StyledCardlist from './styled';
 
@@ -13,7 +13,7 @@ function CardlistFavorites() {
 
 			<StyledCardlist>
 				{bookmarkedCards.map(exerciseCard => {
-					return <FavoritesCard key={exerciseCard.id} exerciseCard={exerciseCard} />;
+					return <IndexCard key={exerciseCard.id} exerciseCard={exerciseCard} />;
 				})}
 			</StyledCardlist>
 		</>

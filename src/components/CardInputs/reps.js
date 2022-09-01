@@ -1,10 +1,12 @@
 import useStore from '../../hooks/useStore';
+
+import StyledInput from './styled';
 export default function CardInputReps({workout}) {
 	const changeReps = useStore(state => state.changeReps);
 	return (
 		<label>
 			Reps:{' '}
-			<input
+			<StyledInput
 				type="number"
 				name="reps"
 				value={workout.reps}

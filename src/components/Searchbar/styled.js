@@ -1,11 +1,14 @@
 import styled from 'styled-components';
 
-const StyledSearchBar = styled.form`
+const StyledSearchBar = styled.div`
 	display: flex;
+	position: fixed;
+	z-index: 20;
+	top: 0;
 	align-items: center;
 	justify-content: center;
 	width: 400px;
-	height: 50px;
+	height: 80px;
 	background-color: lightpink;
 `;
 

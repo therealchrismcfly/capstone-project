@@ -4,7 +4,6 @@ import {useState} from 'react';
 import useStore from '../../hooks/useStore';
 import StyledDeleteButton from '../Buttons/DeleteButton/styled';
 import StyledHideButton from '../Buttons/HideButton/styled';
-import StyledCard from '../Card/styled';
 import StyledCardBody from '../CardBody/styled';
 import StyledCardDescription from '../CardDescription/styled';
 import CardFooter from '../CardFooter';
@@ -12,13 +11,15 @@ import StyledCardHeader from '../CardHeader/styled';
 import StyledCardHeadline from '../CardHeadline/styled';
 import StyledCheckbox from '../Checkbox/styled';
 
+import StyledPlannerCard from './styledPlannerCard';
+
 function PlannerCard({workout}) {
 	const deleteWorkout = useStore(state => state.deleteWorkout);
 	const checkCard = useStore(state => state.checkCard);
 	const [isInstructionVisible, setIsInstructionVisible] = useState(false);
 
 	return (
-		<StyledCard>
+		<StyledPlannerCard>
 			<StyledCardHeader>
 				<StyledCardHeadline>{workout.name}</StyledCardHeadline>
 				<StyledDeleteButton
@@ -51,7 +52,7 @@ function PlannerCard({workout}) {
 			</StyledCardBody>
 
 			<CardFooter workout={workout} />
-		</StyledCard>
+		</StyledPlannerCard>
 	);
 }
 
