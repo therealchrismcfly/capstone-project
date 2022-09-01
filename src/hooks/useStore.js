@@ -78,6 +78,7 @@ const useStore = create(set => ({
 					{
 						...state.exerciseCards.find(exerciseCard => exerciseCard.id === id),
 						id: nanoid(),
+						isDone: false,
 					},
 				],
 			};
@@ -107,6 +108,10 @@ const useStore = create(set => ({
 					: exerciseCard
 			),
 		}));
+	},
+	suggestions: [],
+	setSuggestions: cards => {
+		set({suggestions: cards});
 	},
 }));
 
