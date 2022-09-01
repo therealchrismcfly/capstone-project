@@ -4,7 +4,7 @@ const PlannerCalendar = dynamic(() => import('../Calendar/plannerCalendar'), {
 	ssr: false,
 });
 import useStore from '../../hooks/useStore';
-import PlannerCard from '../Card/plannerCard';
+import PlannerCard from '../Cards/plannerCard';
 
 import StyledCardlist from './styled';
 

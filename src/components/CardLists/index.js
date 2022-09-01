@@ -1,5 +1,5 @@
 import useStore from '../../hooks/useStore';
-import IndexCard from '../Card/indexCard';
+import IndexCard from '../Cards/indexCard';
 import SearchBar from '../Searchbar/searchbar';
 
 import StyledCardlist from './styled';
@@ -10,7 +10,6 @@ function CardlistIndex() {
 	return (
 		<>
 			<SearchBar />
-			<h1>Alle Übungen</h1>
 			<StyledCardlist>
 				{suggestions.length
 					? suggestions.map(exerciseCard => {

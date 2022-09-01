@@ -13,15 +13,7 @@ function CardFooter({workout}) {
 
 	return (
 		<StyledCardFooter>
-			{editSets ? (
-				<>
-					<CardInputSets workout={workout} />
-				</>
-			) : (
-				<>
-					<p>Sets: {workout.sets}</p>
-				</>
-			)}
+			{editSets ? <CardInputSets workout={workout} /> : <p>Sets: {workout.sets}</p>}
 			<button
 				type="button"
 				onClick={() => {
@@ -31,15 +23,7 @@ function CardFooter({workout}) {
 				{editSets ? 'save' : 'edit'}
 			</button>
 
-			{editReps ? (
-				<>
-					<CardInputReps workout={workout} />
-				</>
-			) : (
-				<>
-					<p>Reps: {workout.reps}</p>
-				</>
-			)}
+			{editReps ? <CardInputReps workout={workout} /> : <p>Reps: {workout.reps}</p>}
 			<button
 				type="button"
 				onClick={() => {
@@ -49,15 +33,7 @@ function CardFooter({workout}) {
 				{editReps ? 'save' : 'edit'}
 			</button>
 
-			{editWeight ? (
-				<>
-					<CardInputWeight workout={workout} />
-				</>
-			) : (
-				<>
-					<p>Weight: {workout.weight}</p>
-				</>
-			)}
+			{editWeight ? <CardInputWeight workout={workout} /> : <p>Weight: {workout.weight}</p>}
 			<button
 				type="button"
 				onClick={() => {

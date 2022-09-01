@@ -3,6 +3,7 @@ import {useEffect} from 'react';
 import {useState} from 'react';
 
 import useStore from '../../hooks/useStore';
+import StyledInputField from '../SearchInputField/styled';
 
 import StyledSearchBar from './styled';
 
@@ -21,7 +22,7 @@ export default function SearchBar() {
 	return (
 		<StyledSearchBar>
 			<label htmlFor="inputName">
-				<input
+				<StyledInputField
 					type="text"
 					id="inputName"
 					placeholder="Search for an exercise!"
@@ -30,7 +31,7 @@ export default function SearchBar() {
 					onChange={event => {
 						setInputValue(event.target.value);
 					}}
-				></input>
+				></StyledInputField>
 			</label>
 		</StyledSearchBar>
 	);

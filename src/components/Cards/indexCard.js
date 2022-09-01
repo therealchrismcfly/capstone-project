@@ -16,7 +16,7 @@ import StyledCardDescription from '../CardDescription/styled';
 import StyledCardHeader from '../CardHeader/styled';
 import StyledCardHeadline from '../CardHeadline/styled';
 
-import StyledCard from './styled';
+import StyledIndexCard from './styledIndexCard';
 
 export default function IndexCard({exerciseCard}) {
 	const handleBookmark = useStore(state => state.handleBookmark);
@@ -25,7 +25,7 @@ export default function IndexCard({exerciseCard}) {
 	const addToPlanner = useStore(state => state.addToPlanner);
 
 	return (
-		<StyledCard>
+		<StyledIndexCard>
 			<StyledCardHeader>
 				<StyledCardHeadline>{exerciseCard.name}</StyledCardHeadline>
 				<BookmarkButton
@@ -79,6 +79,6 @@ export default function IndexCard({exerciseCard}) {
 					<StyledCardDescription>{exerciseCard.instruction}</StyledCardDescription>
 				)}
 			</StyledCardBody>
-		</StyledCard>
+		</StyledIndexCard>
 	);
 }
