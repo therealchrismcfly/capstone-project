@@ -2,9 +2,10 @@ import Calendar from 'react-calendar';
 
 import useStore from '../../hooks/useStore';
 
-import StyledCalendar from './styled';
+import StyledCalendar from './StyledCalendarBox';
 
 import 'react-calendar/dist/Calendar.css';
+
 function IndexCalendar({exercise}) {
 	const setExerciseDate = useStore(state => state.setExerciseDate);
 	return (

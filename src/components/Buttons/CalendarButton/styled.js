@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
 const StyledCalendarButton = styled.button`
-	margin-right: 10px;
-	padding: 5px;
-	border: 2px solid blue;
+	height: 30px;
+	border: 2px solid black;
+	background-color: transparent;
 `;
 
 export default StyledCalendarButton;
