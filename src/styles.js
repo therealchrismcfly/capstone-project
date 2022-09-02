@@ -41,6 +41,8 @@ export const GlobalStyle = createGlobalStyle`
 	}
 
 	body {
+		width: 375px;
+		height: 667px;
 		margin: 0;
 		font-size: 1rem;
 	}

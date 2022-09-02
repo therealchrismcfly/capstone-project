@@ -6,7 +6,7 @@ const StyledNavbar = styled.nav`
 	bottom: 0;
 	align-items: center;
 	justify-content: space-evenly;
-	width: 400px;
+	width: 375px;
 	height: 80px;
 	background-color: lightpink;
 `;

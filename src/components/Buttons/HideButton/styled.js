@@ -4,6 +4,7 @@ const StyledHideButton = styled.button`
 	width: 120px;
 	height: 40px;
 	margin: 10px;
+	border: none;
 	border-radius: 20px;
 	background-color: lightgreen;
 `;

@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 const StyledIndexCard = styled.li`
 	position: relative;
-	width: 400px;
-	height: 400px;
+	width: 330px;
+	height: 100%;
 	margin-bottom: 50px;
 	border-radius: 25px;
 	background-color: lightblue;

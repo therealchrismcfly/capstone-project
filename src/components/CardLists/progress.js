@@ -4,14 +4,16 @@ import ProgressHistoryCard from '../Cards/progressHistoryCard';
 import StyledCardlist from './styled';
 
 export default function CardlistProgress() {
-	const workouts = useStore(state => state.workouts);
+	const exerciseCards = useStore(state => state.exerciseCards);
 
 	return (
 		<>
 			<h1>Progress History</h1>
 			<StyledCardlist>
-				{workouts.map(workout => {
-					return <ProgressHistoryCard key={workout.id} workout={workout} />;
+				{exerciseCards.map(exerciseCard => {
+					return (
+						<ProgressHistoryCard key={exerciseCard.id} exerciseCard={exerciseCard} />
+					);
 				})}
 			</StyledCardlist>
 		</>
