@@ -76,7 +76,7 @@ const exerciseCards = [
 	{
 		id: 9,
 		name: 'Barbell Row',
-		image: 'https://images.unsplash.com/photo-1574680178050-55c6a6a96e0a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80',
+		image: '/pictures/row.jpeg',
 		instruction: 'This is an instruction to do your exercise.',
 		isBookmarked: false,
 		date: new Date(),

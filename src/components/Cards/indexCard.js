@@ -66,7 +66,7 @@ export default function IndexCard({exerciseCard}) {
 					src={exerciseCard.image}
 					alt="dummy fitness image"
 					width={300}
-					height={200}
+					height={300}
 				/>
 				<StyledHideButton
 					onClick={() => {
