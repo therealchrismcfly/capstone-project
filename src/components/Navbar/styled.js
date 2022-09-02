@@ -8,6 +8,6 @@ const StyledNavbar = styled.nav`
 	justify-content: space-evenly;
 	width: 375px;
 	height: 80px;
-	background-color: lightpink;
+	background-color: var(--chromaphobicBlack);
 `;
 export default StyledNavbar;

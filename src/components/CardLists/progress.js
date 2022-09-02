@@ -1,5 +1,5 @@
 import useStore from '../../hooks/useStore';
-import ProgressHistoryCard from '../Cards/progressHistoryCard';
+import ProgressHistoryCard from '../ProgressHistory/index';
 
 import StyledCardlist from './styled';
 

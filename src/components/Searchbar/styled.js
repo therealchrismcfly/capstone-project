@@ -9,7 +9,7 @@ const StyledSearchBar = styled.div`
 	justify-content: center;
 	width: 375px;
 	height: 80px;
-	background-color: lightpink;
+	background-color: var(--chromaphobicBlack);
 `;
 
 export default StyledSearchBar;

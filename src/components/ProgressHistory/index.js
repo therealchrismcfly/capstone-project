@@ -3,8 +3,9 @@ import {useState} from 'react';
 import useStore from '../../hooks/useStore';
 import StyledCardHeadline from '../CardHeadline/styled';
 
-import StyledProgressHistoryCard from './styledProgressHistoryCard';
-import StyledProgressHistoryCardName from './styledProgressHistoryCardName';
+import StyledProgressHistoryItem from './StyledProgressHistoryItem';
+import StyledProgressHistoryName from './StyledProgressHistoryName';
+import StyledProgressHistoryTable from './StyledProgressHistoryTable';
 
 export default function ProgressHistoryCard({exerciseCard}) {
 	const [isHistoryVisible, setIsHistoryVisible] = useState(false);
@@ -13,10 +14,10 @@ export default function ProgressHistoryCard({exerciseCard}) {
 	const sortedWorkouts = filteredWorkouts.sort((a, b) => Number(a.date) - Number(b.date));
 
 	return (
-		<>
-			<StyledProgressHistoryCardName>
+		<StyledProgressHistoryItem>
+			<StyledProgressHistoryName>
 				<StyledCardHeadline>{exerciseCard.name}</StyledCardHeadline>
-			</StyledProgressHistoryCardName>{' '}
+			</StyledProgressHistoryName>
 			<button
 				type="button"
 				onClick={() => {
@@ -26,7 +27,7 @@ export default function ProgressHistoryCard({exerciseCard}) {
 				{isHistoryVisible ? 'Hide' : 'Show'}
 			</button>
 			{isHistoryVisible && (
-				<StyledProgressHistoryCard>
+				<StyledProgressHistoryTable>
 					{
 						<tr>
 							<th>Date</th>
@@ -45,8 +46,8 @@ export default function ProgressHistoryCard({exerciseCard}) {
 							</tr>
 						);
 					})}
-				</StyledProgressHistoryCard>
+				</StyledProgressHistoryTable>
 			)}
-		</>
+		</StyledProgressHistoryItem>
 	);
 }

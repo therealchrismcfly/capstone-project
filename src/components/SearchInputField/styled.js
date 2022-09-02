@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
 const StyledInputField = styled.input`
-	width: 300px;
-	height: 35px;
+	width: 330px;
+	height: 40px;
 	padding: 15px;
 	border: none;
-	border-radius: 20px;
+	border-radius: 25px;
 `;
 
 export default StyledInputField;

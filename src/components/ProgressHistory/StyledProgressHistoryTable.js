@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const StyledProgressHistoryCard = styled.table`
+const StyledProgressHistoryTable = styled.table`
 	width: 330px;
 	height: 100%;
 	margin-bottom: 90px;
@@ -11,4 +11,4 @@ const StyledProgressHistoryCard = styled.table`
 	list-style: none;
 `;
 
-export default StyledProgressHistoryCard;
+export default StyledProgressHistoryTable;
