@@ -11,7 +11,7 @@ import StyledCardHeader from '../CardHeader/styled';
 import StyledCardHeadline from '../CardHeadline/styled';
 import StyledCheckbox from '../Checkbox/styled';
 
-import StyledPlannerCard from './styledPlannerCard';
+import StyledCard from './styled';
 
 function PlannerCard({workout}) {
 	const deleteWorkout = useStore(state => state.deleteWorkout);
@@ -19,7 +19,7 @@ function PlannerCard({workout}) {
 	const [isInstructionVisible, setIsInstructionVisible] = useState(false);
 
 	return (
-		<StyledPlannerCard>
+		<StyledCard>
 			<StyledCardHeader>
 				<StyledCardHeadline>{workout.name}</StyledCardHeadline>
 				<StyledDeleteButton
@@ -52,7 +52,7 @@ function PlannerCard({workout}) {
 			</StyledCardBody>
 
 			<CardFooter workout={workout} />
-		</StyledPlannerCard>
+		</StyledCard>
 	);
 }
 
