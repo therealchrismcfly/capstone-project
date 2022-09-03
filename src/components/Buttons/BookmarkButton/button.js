@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 const BookmarkButton = styled.button`
-	width: 24px;
-	height: 24px;
+	width: 40px;
+	height: 40px;
 	border: none;
 	background-color: transparent;
 `;

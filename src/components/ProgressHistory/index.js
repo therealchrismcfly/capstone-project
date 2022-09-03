@@ -1,6 +1,7 @@
 import {useState} from 'react';
 
 import useStore from '../../hooks/useStore';
+import StyledHideButton from '../Buttons/HideButton/styled';
 import StyledCardHeadline from '../CardHeadline/styled';
 
 import StyledProgressHistoryItem from './StyledProgressHistoryItem';
@@ -18,14 +19,14 @@ export default function ProgressHistoryCard({exerciseCard}) {
 			<StyledProgressHistoryName>
 				<StyledCardHeadline>{exerciseCard.name}</StyledCardHeadline>
 			</StyledProgressHistoryName>
-			<button
+			<StyledHideButton
 				type="button"
 				onClick={() => {
 					setIsHistoryVisible(!isHistoryVisible);
 				}}
 			>
-				{isHistoryVisible ? 'Hide' : 'Show'}
-			</button>
+				{isHistoryVisible ? 'Hide progress' : 'Show progress'}
+			</StyledHideButton>
 			{isHistoryVisible && (
 				<StyledProgressHistoryTable>
 					{

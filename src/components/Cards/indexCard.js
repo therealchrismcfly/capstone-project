@@ -5,14 +5,16 @@ import {useState} from 'react';
 import useStore from '../../hooks/useStore';
 import BookmarkButton from '../Buttons/BookmarkButton/button';
 import FilledBookmarkIcon from '../Buttons/BookmarkButton/filled';
-import NotFilledBookmarkIcon from '../Buttons/BookmarkButton/notfilled';
+import UnfilledBookmarkIcon from '../Buttons/BookmarkButton/unfilled';
 import StyledCalendarButton from '../Buttons/CalendarButton/styled';
+import UnfilledCalendarIcon from '../Buttons/CalendarButton/unfilled';
 const IndexCalendar = dynamic(() => import('../Calendar/indexCalendar'), {
 	ssr: false,
 });
 import StyledHideButton from '../Buttons/HideButton/styled';
 import StyledCardBody from '../CardBody/styled';
 import StyledCardDescription from '../CardDescription/styled';
+import CardFooter from '../CardFooter/styled';
 import StyledCardHeader from '../CardHeader/styled';
 import StyledCardHeadline from '../CardHeadline/styled';
 
@@ -34,9 +36,11 @@ export default function IndexCard({exerciseCard}) {
 					}}
 				>
 					{exerciseCard.isBookmarked ? (
-						<FilledBookmarkIcon id={exerciseCard.id} />
+						<>
+							<FilledBookmarkIcon id={exerciseCard.id} />
+						</>
 					) : (
-						<NotFilledBookmarkIcon id={exerciseCard.id} />
+						<UnfilledBookmarkIcon id={exerciseCard.id} />
 					)}
 				</BookmarkButton>
 				<StyledCalendarButton
@@ -44,20 +48,22 @@ export default function IndexCard({exerciseCard}) {
 						setIsCalendarVisible(!isCalendarVisible);
 					}}
 				>
-					add to planner
+					<UnfilledCalendarIcon />
 				</StyledCalendarButton>
 				{isCalendarVisible && (
 					<>
 						<IndexCalendar exercise={exerciseCard} />
-						<button
-							type="button"
-							onClick={() => {
-								addToPlanner(exerciseCard.id);
-								setIsCalendarVisible(false);
-							}}
-						>
-							+
-						</button>
+						{
+							<button
+								type="button"
+								onClick={() => {
+									addToPlanner(exerciseCard.id);
+									setIsCalendarVisible(false);
+								}}
+							>
+								+
+							</button>
+						}
 					</>
 				)}
 			</StyledCardHeader>
@@ -79,6 +85,7 @@ export default function IndexCard({exerciseCard}) {
 					<StyledCardDescription>{exerciseCard.instruction}</StyledCardDescription>
 				)}
 			</StyledCardBody>
+			<CardFooter>Letzter Wert für Sets, Weight, Reps</CardFooter>
 		</StyledCard>
 	);
 }

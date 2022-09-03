@@ -37,12 +37,12 @@ export const GlobalStyle = createGlobalStyle`
 	}
 
 	html {
+		width: 375px;
+		height: 667px;
 		font-size: 16px;
 	}
 
 	body {
-		width: 375px;
-		height: 667px;
 		margin: 0;
 		background-color: var(--lynxWhite);
 		font-family: "Poppins",sans-serif;
@@ -71,12 +71,12 @@ export const GlobalStyle = createGlobalStyle`
 	min-width: 44px;
 	margin-top: 8px;
 	background: none;
-	color: #6f48eb;
+	color: var(--chromaphobicBlack);
  font-size: 16px;
 }
 .react-calendar__navigation button:enabled:hover,
 .react-calendar__navigation button:enabled:focus {
- background-color: #f8f8fa;
+ background-color: var(--spoiledEgg);
 }
 .react-calendar__navigation button[disabled] {
  background-color: #f0f0f0;
@@ -93,7 +93,7 @@ abbr[title] {
 }
 .react-calendar__tile--now {
 	border-radius: 6px;
- background: #6f48eb33;
+ background: var(--lavender);
  color: #6f48eb;
  font-weight: bold;
 }

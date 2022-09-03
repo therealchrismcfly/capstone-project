@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
 const StyledCalendarButton = styled.button`
-	height: 30px;
-	border: 2px solid black;
+	width: 40px;
+	height: 40px;
+	border: none;
 	background-color: transparent;
 `;
 

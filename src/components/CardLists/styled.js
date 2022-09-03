@@ -5,7 +5,7 @@ const StyledCardlist = styled.ul`
 	flex-direction: column;
 	align-items: center;
 	height: 100%;
-	margin: 100px 0 100px 0;
+	margin-top: 100px;
 	padding-left: 0;
 `;
 export default StyledCardlist;

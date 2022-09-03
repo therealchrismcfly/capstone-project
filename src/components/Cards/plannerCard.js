@@ -2,11 +2,12 @@ import Image from 'next/image';
 import {useState} from 'react';
 
 import useStore from '../../hooks/useStore';
-import StyledDeleteButton from '../Buttons/DeleteButton/styled';
+import StyledDeleteButton from '../Buttons/DeleteButton/button';
+import DeleteIcon from '../Buttons/DeleteButton/delete';
 import StyledHideButton from '../Buttons/HideButton/styled';
 import StyledCardBody from '../CardBody/styled';
 import StyledCardDescription from '../CardDescription/styled';
-import CardFooter from '../CardFooter';
+import CardFooter from '../CardFooter/index';
 import StyledCardHeader from '../CardHeader/styled';
 import StyledCardHeadline from '../CardHeadline/styled';
 import StyledCheckbox from '../Checkbox/styled';
@@ -27,7 +28,7 @@ function PlannerCard({workout}) {
 						deleteWorkout(workout.id);
 					}}
 				>
-					x
+					<DeleteIcon />
 				</StyledDeleteButton>
 				<StyledCheckbox
 					checked={workout.checked}
@@ -38,7 +39,7 @@ function PlannerCard({workout}) {
 				/>
 			</StyledCardHeader>
 			<StyledCardBody>
-				{<Image src={workout.image} alt="dummy fitness image" width={300} height={200} />}
+				{<Image src={workout.image} alt="dummy fitness image" width={300} height={300} />}
 				<StyledHideButton
 					onClick={() => {
 						setIsInstructionVisible(!isInstructionVisible);
