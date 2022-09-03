@@ -4,7 +4,7 @@ const exerciseCards = [
 	{
 		id: 0,
 		name: 'Biceps Curl',
-		image: 'https://images.unsplash.com/photo-1574680178050-55c6a6a96e0a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80',
+		image: '/pictures/bicepsCurls.jpeg',
 		instruction: 'This is an instruction to do your exercise. ',
 		isBookmarked: false,
 		date: new Date(),
@@ -12,7 +12,7 @@ const exerciseCards = [
 	{
 		id: 1,
 		name: 'Shoulder Press',
-		image: 'https://images.unsplash.com/photo-1574680178050-55c6a6a96e0a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80',
+		image: '/pictures/shoulderPress.jpeg',
 		instruction: 'This is an instruction to do your exercise.',
 		isBookmarked: false,
 		date: new Date(),
@@ -20,7 +20,7 @@ const exerciseCards = [
 	{
 		id: 2,
 		name: 'Deadlifts',
-		image: 'https://images.unsplash.com/photo-1574680178050-55c6a6a96e0a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80',
+		image: '/pictures/deadlifts.jpeg',
 		instruction: 'This is an instruction to do your exercise.',
 		isBookmarked: false,
 		date: new Date(),
@@ -28,7 +28,7 @@ const exerciseCards = [
 	{
 		id: 3,
 		name: 'Triceps Curl',
-		image: 'https://images.unsplash.com/photo-1574680178050-55c6a6a96e0a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80',
+		image: '/pictures/tricepsCurls.jpeg',
 		instruction: 'This is an instruction to do your exercise.',
 		isBookmarked: false,
 		date: new Date(),
@@ -36,7 +36,7 @@ const exerciseCards = [
 	{
 		id: 4,
 		name: 'Russian Twist',
-		image: 'https://images.unsplash.com/photo-1574680178050-55c6a6a96e0a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80',
+		image: '/pictures/russianTwist.jpeg',
 		instruction: 'This is an instruction to do your exercise.',
 		isBookmarked: false,
 		date: new Date(),
@@ -44,7 +44,7 @@ const exerciseCards = [
 	{
 		id: 5,
 		name: 'Bench Press',
-		image: 'https://images.unsplash.com/photo-1574680178050-55c6a6a96e0a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80',
+		image: '/pictures/benchPress.jpeg',
 		instruction: 'This is an instruction to do your exercise.',
 		isBookmarked: false,
 		date: new Date(),
@@ -52,7 +52,7 @@ const exerciseCards = [
 	{
 		id: 6,
 		name: 'Crunches',
-		image: 'https://images.unsplash.com/photo-1574680178050-55c6a6a96e0a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80',
+		image: '/pictures/crunches.jpeg',
 		instruction: 'This is an instruction to do your exercise.',
 		isBookmarked: false,
 		date: new Date(),
@@ -60,7 +60,7 @@ const exerciseCards = [
 	{
 		id: 7,
 		name: 'Squats',
-		image: 'https://images.unsplash.com/photo-1574680178050-55c6a6a96e0a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80',
+		image: '/pictures/squats.jpeg',
 		instruction: 'This is an instruction to do your exercise.',
 		isBookmarked: false,
 		date: new Date(),
@@ -68,7 +68,7 @@ const exerciseCards = [
 	{
 		id: 8,
 		name: 'Calf Raises',
-		image: 'https://images.unsplash.com/photo-1574680178050-55c6a6a96e0a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80',
+		image: '/pictures/calfRaises.jpeg',
 		instruction: 'This is an instruction to do your exercise.',
 		isBookmarked: false,
 		date: new Date(),
