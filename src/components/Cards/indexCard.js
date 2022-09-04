@@ -1,3 +1,4 @@
+import closestTo from 'date-fns/closestTo';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import {useState} from 'react';
@@ -14,7 +15,7 @@ const IndexCalendar = dynamic(() => import('../Calendar/indexCalendar'), {
 import StyledHideButton from '../Buttons/HideButton/styled';
 import StyledCardBody from '../CardBody/styled';
 import StyledCardDescription from '../CardDescription/styled';
-import CardFooter from '../CardFooter/styled';
+import StyledCardFooter from '../CardFooter/styled';
 import StyledCardHeader from '../CardHeader/styled';
 import StyledCardHeadline from '../CardHeadline/styled';
 
@@ -25,6 +26,10 @@ export default function IndexCard({exerciseCard}) {
 	const [isCalendarVisible, setIsCalendarVisible] = useState(false);
 	const [isInstructionVisible, setIsInstructionVisible] = useState(false);
 	const addToPlanner = useStore(state => state.addToPlanner);
+	const workouts = useStore(state => state.workouts);
+	const correspondingExercises = workouts.filter(workout => exerciseCard.name === workout.name);
+	const dateToCompare = new Date();
+	const latestProgress = closestTo(dateToCompare, [correspondingExercises.date]);
 
 	return (
 		<StyledCard>
@@ -85,7 +90,7 @@ export default function IndexCard({exerciseCard}) {
 					<StyledCardDescription>{exerciseCard.instruction}</StyledCardDescription>
 				)}
 			</StyledCardBody>
-			<CardFooter>Letzter Wert für Sets, Weight, Reps</CardFooter>
+			<StyledCardFooter>{latestProgress.date}</StyledCardFooter>
 		</StyledCard>
 	);
 }
