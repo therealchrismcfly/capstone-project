@@ -5,7 +5,7 @@ const StyledProgressHistoryName = styled.div`
 	align-items: center;
 	justify-content: center;
 	width: 330px;
-	height: 70px;
+	height: 50px;
 	margin: 60px 0 10px 0;
 	border-radius: 25px;
 	background-color: var(--lavender);
