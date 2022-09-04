@@ -39,7 +39,6 @@ export const GlobalStyle = createGlobalStyle`
 	html {
 		width: 375px;
 		height: 667px;
-		font-size: 16px;
 	}
 
 	body {
@@ -58,8 +57,7 @@ export const GlobalStyle = createGlobalStyle`
 	}
 
 	.react-calendar {
- width: 400px;
- max-width: 100%;
+ width: 330px;
  border-radius: 8px;
  background-color: #fff;
  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
