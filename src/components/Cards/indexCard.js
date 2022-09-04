@@ -30,6 +30,7 @@ export default function IndexCard({exerciseCard}) {
 	const correspondingExercises = workouts.filter(workout => exerciseCard.name === workout.name);
 	const dateToCompare = new Date();
 	const latestProgress = closestTo(dateToCompare, [correspondingExercises.date]);
+	console.log(latestProgress);
 
 	return (
 		<StyledCard>
@@ -90,7 +91,7 @@ export default function IndexCard({exerciseCard}) {
 					<StyledCardDescription>{exerciseCard.instruction}</StyledCardDescription>
 				)}
 			</StyledCardBody>
-			<StyledCardFooter>{latestProgress.date}</StyledCardFooter>
+			<StyledCardFooter></StyledCardFooter>
 		</StyledCard>
 	);
 }
