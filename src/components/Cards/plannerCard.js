@@ -6,10 +6,10 @@ import StyledDeleteButton from '../Buttons/DeleteButton/button';
 import DeleteIcon from '../Buttons/DeleteButton/delete';
 import StyledHideButton from '../Buttons/HideButton/styled';
 import StyledCardBody from '../CardBody/styled';
-import StyledCardDescription from '../CardDescription/styled';
 import CardFooter from '../CardFooter/index';
 import StyledCardHeader from '../CardHeader/styled';
 import StyledCardHeadline from '../CardHeadline/styled';
+import StyledCardInstruction from '../CardInstruction/styled';
 import StyledCheckbox from '../Checkbox/styled';
 
 import StyledCard from './styled';
@@ -48,7 +48,7 @@ function PlannerCard({workout}) {
 					{isInstructionVisible ? 'Hide instruction' : 'Show instruction'}
 				</StyledHideButton>
 				{isInstructionVisible && (
-					<StyledCardDescription>{workout.instruction}</StyledCardDescription>
+					<StyledCardInstruction>{workout.instruction}</StyledCardInstruction>
 				)}
 			</StyledCardBody>
 
