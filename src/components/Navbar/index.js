@@ -1,17 +1,50 @@
 import Link from 'next/link';
-/*
-import UnfilledBookmarkIcon from '../Buttons/BookmarkButton/unfilled';
-import UnfilledCalendarIcon from '../Buttons/CalendarButton/unfilled'; */
+import {useRouter} from 'next/router';
+
+import Icon from '../Icons';
 
 import StyledNavbar from './styled';
 
 export default function Navbar() {
+	const router = useRouter();
 	return (
 		<StyledNavbar>
-			<Link href="/">Home</Link>
-			<Link href="/favorites">Favorites</Link>
-			<Link href="/progress">Progress</Link>
-			<Link href="/planner">Planner</Link>
+			<Link href="/">
+				<a>
+					{router.pathname === '/' ? (
+						<Icon variant="homeFilled" size="40px" color="var(--spoiledEgg)" />
+					) : (
+						<Icon variant="home" size="40px" color="var(--plainWhite)" />
+					)}
+				</a>
+			</Link>
+			<Link href="/favorites">
+				<a>
+					{router.pathname === '/favorites' ? (
+						<Icon variant="bookmarkFilled" size="40px" color="var(--spoiledEgg)" />
+					) : (
+						<Icon variant="bookmark" size="40px" color="var(--plainWhite)" />
+					)}
+				</a>
+			</Link>
+			<Link href="/progress">
+				<a>
+					{router.pathname === '/progress' ? (
+						<Icon variant="progress" size="40px" color="var(--spoiledEgg)" />
+					) : (
+						<Icon variant="progress" size="40px" color="var(--plainWhite)" />
+					)}
+				</a>
+			</Link>
+			<Link href="/planner">
+				<a>
+					{router.pathname === '/planner' ? (
+						<Icon variant="calendar" size="40px" color="var(--spoiledEgg)" />
+					) : (
+						<Icon variant="calendar" size="40px" color="var(--plainWhite)" />
+					)}
+				</a>
+			</Link>
 		</StyledNavbar>
 	);
 }

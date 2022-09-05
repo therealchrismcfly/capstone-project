@@ -2,12 +2,13 @@ import styled from 'styled-components';
 
 const StyledHideButton = styled.button`
 	padding: 12px 15px;
-	border: 1.5px solid black;
+	border: none;
 	border-radius: 20px;
-	background-color: var(--plainWhite);
+	background-color: var(--spoiledEgg);
 	font-size: 14px;
 	&:hover {
-		background-color: var(--spoiledEgg);
+		border: 1.5px solid black;
+		background-color: var(--plainWhite);
 	}
 `;
 

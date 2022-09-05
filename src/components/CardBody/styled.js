@@ -4,7 +4,7 @@ const StyledCardBody = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding-bottom: 20px;
+	padding: 15px;
 `;
 
 export default StyledCardBody;

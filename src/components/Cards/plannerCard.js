@@ -2,15 +2,15 @@ import Image from 'next/image';
 import {useState} from 'react';
 
 import useStore from '../../hooks/useStore';
-import StyledDeleteButton from '../Buttons/DeleteButton/button';
-import DeleteIcon from '../Buttons/DeleteButton/delete';
 import StyledHideButton from '../Buttons/HideButton/styled';
+import StyledIconButton from '../Buttons/IconButton/styled';
 import StyledCardBody from '../CardBody/styled';
 import CardFooter from '../CardFooter/index';
 import StyledCardHeader from '../CardHeader/styled';
 import StyledCardHeadline from '../CardHeadline/styled';
 import StyledCardInstruction from '../CardInstruction/styled';
 import StyledCheckbox from '../Checkbox/styled';
+import Icon from '../Icons';
 
 import StyledCard from './styled';
 
@@ -23,13 +23,13 @@ function PlannerCard({workout}) {
 		<StyledCard>
 			<StyledCardHeader>
 				<StyledCardHeadline>{workout.name}</StyledCardHeadline>
-				<StyledDeleteButton
+				<StyledIconButton
 					onClick={() => {
 						deleteWorkout(workout.id);
 					}}
 				>
-					<DeleteIcon />
-				</StyledDeleteButton>
+					<Icon variant="delete" size="35px" color="black" />
+				</StyledIconButton>
 				<StyledCheckbox
 					checked={workout.checked}
 					type="checkbox"

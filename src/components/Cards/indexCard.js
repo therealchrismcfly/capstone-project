@@ -4,20 +4,17 @@ import Image from 'next/image';
 import {useState} from 'react';
 
 import useStore from '../../hooks/useStore';
-import BookmarkButton from '../Buttons/BookmarkButton/button';
-import FilledBookmarkIcon from '../Buttons/BookmarkButton/filled';
-import UnfilledBookmarkIcon from '../Buttons/BookmarkButton/unfilled';
-import StyledCalendarButton from '../Buttons/CalendarButton/styled';
-import UnfilledCalendarIcon from '../Buttons/CalendarButton/unfilled';
+import StyledHideButton from '../Buttons/HideButton/styled';
+import StyledIconButton from '../Buttons/IconButton/styled';
 const IndexCalendar = dynamic(() => import('../Calendar/indexCalendar'), {
 	ssr: false,
 });
-import StyledHideButton from '../Buttons/HideButton/styled';
 import StyledCardBody from '../CardBody/styled';
 import StyledCardFooter from '../CardFooter/styled';
 import StyledCardHeader from '../CardHeader/styled';
 import StyledCardHeadline from '../CardHeadline/styled';
 import StyledCardInstruction from '../CardInstruction/styled';
+import Icon from '../Icons';
 
 import StyledCard from './styled';
 
@@ -36,26 +33,31 @@ export default function IndexCard({exerciseCard}) {
 		<StyledCard>
 			<StyledCardHeader>
 				<StyledCardHeadline>{exerciseCard.name}</StyledCardHeadline>
-				<BookmarkButton
+				<StyledIconButton
 					onClick={() => {
 						handleBookmark(exerciseCard.id);
 					}}
 				>
 					{exerciseCard.isBookmarked ? (
 						<>
-							<FilledBookmarkIcon id={exerciseCard.id} />
+							<Icon
+								variant="bookmarkFilled"
+								size="35px"
+								color="var(--spoiledEgg)"
+								id={exerciseCard.id}
+							/>
 						</>
 					) : (
-						<UnfilledBookmarkIcon id={exerciseCard.id} />
+						<Icon variant="bookmark" size="35px" color="black" id={exerciseCard.id} />
 					)}
-				</BookmarkButton>
-				<StyledCalendarButton
+				</StyledIconButton>
+				<StyledIconButton
 					onClick={() => {
 						setIsCalendarVisible(!isCalendarVisible);
 					}}
 				>
-					<UnfilledCalendarIcon />
-				</StyledCalendarButton>
+					<Icon variant="calendar" size="35px" color="black" />
+				</StyledIconButton>
 				{isCalendarVisible && (
 					<>
 						<IndexCalendar exercise={exerciseCard} />
