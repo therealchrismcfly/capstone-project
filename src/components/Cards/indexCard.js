@@ -1,4 +1,5 @@
 import closestTo from 'date-fns/closestTo';
+import isEqual from 'date-fns/isEqual';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import {useState} from 'react';
@@ -27,7 +28,9 @@ export default function IndexCard({exerciseCard}) {
 	const correspondingExercises = workouts.filter(workout => exerciseCard.name === workout.name);
 	const dateToCompare = new Date();
 	const latestProgress = closestTo(dateToCompare, [correspondingExercises.date]);
-	console.log(latestProgress);
+	const lastWorkouts = correspondingExercises.find(workout =>
+		isEqual(workout.date, latestProgress)
+	);
 
 	return (
 		<StyledCard>
@@ -102,7 +105,19 @@ export default function IndexCard({exerciseCard}) {
 					<StyledCardInstruction>{exerciseCard.instruction}</StyledCardInstruction>
 				)}
 			</StyledCardBody>
-			<StyledCardFooter></StyledCardFooter>
+
+			<StyledCardFooter>
+				{lastWorkouts.map(lastWorkout => {
+					return (
+						<p key={lastWorkout.id}>
+							<p>{lastWorkout.date.toDateString()}</p>
+							<p>{lastWorkout.sets}</p>
+							<p>{lastWorkout.reps}</p>
+							<p>{lastWorkout.weight}</p>
+						</p>
+					);
+				})}
+			</StyledCardFooter>
 		</StyledCard>
 	);
 }
