@@ -1,5 +1,9 @@
+import dynamic from 'next/dynamic';
+
 import useStore from '../../hooks/useStore';
-import IndexCard from '../Cards/indexCard';
+const IndexCard = dynamic(() => import('../Cards/indexCard'), {
+	ssr: false,
+});
 import StyledHeadline from '../Headline/styled';
 
 import StyledCardlist from './styled';

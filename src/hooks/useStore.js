@@ -102,7 +102,28 @@ const useStore = create(set => ({
 		}));
 	},
 
-	workouts: [],
+	workouts: [
+		/* {
+			name: 'Biceps Curl',
+			image: '/pictures/bicepsCurls.jpeg',
+			instruction:
+				'Hold a dumbbell in each hand and stand with your feet as wide apart as your hips. Pull your abdominals in, stand tall, and keep your knees slightly bent. Curl both arms upward until they are in front of your shoulders. Slowly lower the dumbbells back down. ',
+			isBookmarked: false,
+			date: '2022-09-05T16:21:10.44Z',
+			id: nanoid(),
+			isDone: false,
+		},
+		{
+			name: 'Biceps Curl',
+			image: '/pictures/bicepsCurls.jpeg',
+			instruction:
+				'Hold a dumbbell in each hand and stand with your feet as wide apart as your hips. Pull your abdominals in, stand tall, and keep your knees slightly bent. Curl both arms upward until they are in front of your shoulders. Slowly lower the dumbbells back down. ',
+			isBookmarked: false,
+			date: '2022-09-01T16:21:10.44Z',
+			id: nanoid(),
+			isDone: false,
+		}, */
+	],
 
 	changeSets: (id, sets) => {
 		set(state => ({

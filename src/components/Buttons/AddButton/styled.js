@@ -7,7 +7,8 @@ const StyledAddButton = styled.button`
 	height: 40px;
 	border: none;
 	border-radius: 50%;
-	background-color: var(--spoiledEgg);
+	background-color: #6f48eb;
+	color: white;
 	&:hover {
 		border: 1.5px solid black;
 	}

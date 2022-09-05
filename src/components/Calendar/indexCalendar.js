@@ -2,8 +2,6 @@ import Calendar from 'react-calendar';
 
 import useStore from '../../hooks/useStore';
 import StyledAddButton from '../Buttons/AddButton/styled';
-import StyledExitButton from '../Buttons/ExitButton/styled';
-import Icon from '../Icons';
 
 import StyledCalendar from './StyledCalendarBox';
 
@@ -31,13 +29,6 @@ function IndexCalendar({exercise, onCalendarHide}) {
 			>
 				+
 			</StyledAddButton>
-			<StyledExitButton
-				onClick={() => {
-					onCalendarHide();
-				}}
-			>
-				<Icon variant="closeBox" size="20px" color="var(--chromaphobicBlack)" />
-			</StyledExitButton>
 		</StyledCalendar>
 	);
 }

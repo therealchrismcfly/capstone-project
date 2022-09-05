@@ -26,8 +26,12 @@ export default function IndexCard({exerciseCard}) {
 	/* const workouts = useStore(state => state.workouts);
 	const correspondingExercises = workouts.filter(workout => exerciseCard.name === workout.name);
 	const dateToCompare = new Date();
-	const latestProgress = closestTo(dateToCompare, [correspondingExercises.date]);
-	const lastWorkouts = correspondingExercises.find(workout =>
+	const latestProgress = closestTo(
+		dateToCompare,
+		correspondingExercises.map(correspondingExercise => correspondingExercise.date)
+	);
+	console.log(latestProgress);
+	const lastWorkout = correspondingExercises.find(workout =>
 		isEqual(workout.date, latestProgress)
 	); */
 	function hideCalendar() {
@@ -96,16 +100,12 @@ export default function IndexCard({exerciseCard}) {
 			</StyledCardBody>
 
 			<StyledCardFooter>
-				{/* 	{lastWorkouts.map(lastWorkout => {
-					return (
-						<p key={lastWorkout.id}>
-							<p>{lastWorkout.date.toDateString()}</p>
-							<p>{lastWorkout.sets}</p>
-							<p>{lastWorkout.reps}</p>
-							<p>{lastWorkout.weight}</p>
-						</p>
-					);
-				})} */}
+				{/* <ul key={lastWorkout.id}>
+					<li>{lastWorkout.date.toDateString()}</li>
+					<li>{lastWorkout.sets}</li>
+					<li>{lastWorkout.reps}</li>
+					<li>{lastWorkout.weight}</li>
+				</ul> */}
 			</StyledCardFooter>
 		</StyledCard>
 	);
