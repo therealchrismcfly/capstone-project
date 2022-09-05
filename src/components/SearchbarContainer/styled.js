@@ -1,10 +1,9 @@
 import styled from 'styled-components';
 
-const StyledHeadline = styled.div`
+const StyledSearchbarContainer = styled.div`
 	display: flex;
 	justify-content: center;
-	height: 100px;
+	margin-bottom: 100px;
 	color: var(--chromaphobicBlack);
-	font-size: 12px;
 `;
-export default StyledHeadline;
+export default StyledSearchbarContainer;

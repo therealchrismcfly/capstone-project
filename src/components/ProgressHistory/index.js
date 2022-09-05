@@ -1,15 +1,16 @@
 import {useState} from 'react';
 
 import useStore from '../../hooks/useStore';
-import StyledHideButton from '../Buttons/HideButton/styled';
+import StyledIconButton from '../Buttons/IconButton/styled';
 import StyledCardHeadline from '../CardHeadline/styled';
+import Icon from '../Icons';
 
 import StyledProgressHistoryItem from './StyledProgressHistoryItem';
 import StyledProgressHistoryName from './StyledProgressHistoryName';
 import StyledProgressHistoryTable from './StyledProgressHistoryTable';
 
 export default function ProgressHistoryCard({exerciseCard}) {
-	const [isHistoryVisible, setIsHistoryVisible] = useState(false);
+	const [isHistoryVisible, setIsHistoryVisible] = useState(true);
 	const workouts = useStore(state => state.workouts);
 	const filteredWorkouts = workouts.filter(workout => workout.name === exerciseCard.name);
 	const sortedWorkouts = filteredWorkouts.sort((a, b) => Number(a.date) - Number(b.date));
@@ -18,15 +19,18 @@ export default function ProgressHistoryCard({exerciseCard}) {
 		<StyledProgressHistoryItem>
 			<StyledProgressHistoryName>
 				<StyledCardHeadline>{exerciseCard.name}</StyledCardHeadline>
+				<StyledIconButton
+					onClick={() => {
+						setIsHistoryVisible(!isHistoryVisible);
+					}}
+				>
+					{isHistoryVisible ? (
+						<Icon variant="arrowUp" size="20px" color="black" />
+					) : (
+						<Icon variant="arrowDown" size="20px" color="black" />
+					)}
+				</StyledIconButton>
 			</StyledProgressHistoryName>
-			<StyledHideButton
-				type="button"
-				onClick={() => {
-					setIsHistoryVisible(!isHistoryVisible);
-				}}
-			>
-				{isHistoryVisible ? 'Hide progress' : 'Show progress'}
-			</StyledHideButton>
 			{isHistoryVisible && (
 				<StyledProgressHistoryTable>
 					{

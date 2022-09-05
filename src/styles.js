@@ -45,7 +45,6 @@ export const GlobalStyle = createGlobalStyle`
 		margin: 0;
 		background-color: var(--lynxWhite);
 		font-family: "Poppins",sans-serif;
-		font-size: 1rem;
 	}
 
 	:root {
@@ -62,7 +61,7 @@ export const GlobalStyle = createGlobalStyle`
  background-color: #fff;
  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
  color: #222;
- font-family: Arial, Helvetica, sans-serif;
+ font-family: Poppins, sans-serif;
  line-height: 1.125em;
 }
 .react-calendar__navigation button {
@@ -74,7 +73,8 @@ export const GlobalStyle = createGlobalStyle`
 }
 .react-calendar__navigation button:enabled:hover,
 .react-calendar__navigation button:enabled:focus {
- background-color: var(--spoiledEgg);
+ background-color: #6f48eb;
+ color: white;
 }
 .react-calendar__navigation button[disabled] {
  background-color: #f0f0f0;

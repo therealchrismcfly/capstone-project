@@ -5,7 +5,7 @@ const StyledCardHeader = styled.div`
 	align-items: center;
 	justify-content: space-evenly;
 	height: 70px;
-	padding: 0 20px;
+	padding: 10px 20px;
 	border-radius: 25px 25px 0 0;
 	background-color: var(--lavender);
 `;

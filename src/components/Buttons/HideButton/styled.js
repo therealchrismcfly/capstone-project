@@ -8,7 +8,6 @@ const StyledHideButton = styled.button`
 	font-size: 14px;
 	&:hover {
 		border: 1.5px solid black;
-		background-color: var(--plainWhite);
 	}
 `;
 

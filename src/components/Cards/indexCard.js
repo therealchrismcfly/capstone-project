@@ -1,5 +1,5 @@
-import closestTo from 'date-fns/closestTo';
-import isEqual from 'date-fns/isEqual';
+/* import closestTo from 'date-fns/closestTo';
+import isEqual from 'date-fns/isEqual'; */
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import {useState} from 'react';
@@ -23,14 +23,16 @@ export default function IndexCard({exerciseCard}) {
 	const handleBookmark = useStore(state => state.handleBookmark);
 	const [isCalendarVisible, setIsCalendarVisible] = useState(false);
 	const [isInstructionVisible, setIsInstructionVisible] = useState(false);
-	const addToPlanner = useStore(state => state.addToPlanner);
-	const workouts = useStore(state => state.workouts);
+	/* const workouts = useStore(state => state.workouts);
 	const correspondingExercises = workouts.filter(workout => exerciseCard.name === workout.name);
 	const dateToCompare = new Date();
 	const latestProgress = closestTo(dateToCompare, [correspondingExercises.date]);
 	const lastWorkouts = correspondingExercises.find(workout =>
 		isEqual(workout.date, latestProgress)
-	);
+	); */
+	function hideCalendar() {
+		setIsCalendarVisible(false);
+	}
 
 	return (
 		<StyledCard>
@@ -71,20 +73,7 @@ export default function IndexCard({exerciseCard}) {
 					)}
 				</StyledIconButton>
 				{isCalendarVisible && (
-					<>
-						<IndexCalendar exercise={exerciseCard} />
-						{
-							<button
-								type="button"
-								onClick={() => {
-									addToPlanner(exerciseCard.id);
-									setIsCalendarVisible(false);
-								}}
-							>
-								+
-							</button>
-						}
-					</>
+					<IndexCalendar exercise={exerciseCard} onCalendarHide={hideCalendar} />
 				)}
 			</StyledCardHeader>
 			<StyledCardBody>
@@ -107,7 +96,7 @@ export default function IndexCard({exerciseCard}) {
 			</StyledCardBody>
 
 			<StyledCardFooter>
-				{lastWorkouts.map(lastWorkout => {
+				{/* 	{lastWorkouts.map(lastWorkout => {
 					return (
 						<p key={lastWorkout.id}>
 							<p>{lastWorkout.date.toDateString()}</p>
@@ -116,7 +105,7 @@ export default function IndexCard({exerciseCard}) {
 							<p>{lastWorkout.weight}</p>
 						</p>
 					);
-				})}
+				})} */}
 			</StyledCardFooter>
 		</StyledCard>
 	);

@@ -5,7 +5,8 @@ const StyledCalendar = styled.div`
 	position: absolute;
 	z-index: 10;
 	top: 60px;
-	justify-content: center;
+	flex-direction: column;
+	align-items: center;
 `;
 
 export default StyledCalendar;
