@@ -8,7 +8,7 @@ const StyledSearchBar = styled.div`
 	align-items: center;
 	justify-content: center;
 	width: 375px;
-	height: 80px;
+	height: 70px;
 	background-color: var(--chromaphobicBlack);
 `;
 

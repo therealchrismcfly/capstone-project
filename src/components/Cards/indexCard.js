@@ -48,7 +48,12 @@ export default function IndexCard({exerciseCard}) {
 							/>
 						</>
 					) : (
-						<Icon variant="bookmark" size="35px" color="black" id={exerciseCard.id} />
+						<Icon
+							variant="bookmark"
+							size="35px"
+							color="var(--chromaphobicBlack)"
+							id={exerciseCard.id}
+						/>
 					)}
 				</StyledIconButton>
 				<StyledIconButton
@@ -56,7 +61,11 @@ export default function IndexCard({exerciseCard}) {
 						setIsCalendarVisible(!isCalendarVisible);
 					}}
 				>
-					<Icon variant="calendar" size="35px" color="black" />
+					{isCalendarVisible ? (
+						<Icon variant="calendarFilled" size="35px" color="var(--spoiledEgg)" />
+					) : (
+						<Icon variant="calendar" size="35px" color="var(--chromaphobicBlack)" />
+					)}
 				</StyledIconButton>
 				{isCalendarVisible && (
 					<>

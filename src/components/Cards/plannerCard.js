@@ -28,7 +28,7 @@ function PlannerCard({workout}) {
 						deleteWorkout(workout.id);
 					}}
 				>
-					<Icon variant="delete" size="35px" color="black" />
+					<Icon variant="delete" size="35px" color="var(--chromaphobicBlack)" />
 				</StyledIconButton>
 				<StyledCheckbox
 					checked={workout.checked}

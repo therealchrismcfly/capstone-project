@@ -12,36 +12,36 @@ export default function Navbar() {
 			<Link href="/">
 				<a>
 					{router.pathname === '/' ? (
-						<Icon variant="homeFilled" size="40px" color="var(--spoiledEgg)" />
+						<Icon variant="homeFilled" size="30px" color="var(--spoiledEgg)" />
 					) : (
-						<Icon variant="home" size="40px" color="var(--plainWhite)" />
+						<Icon variant="home" size="30px" color="var(--plainWhite)" />
 					)}
 				</a>
 			</Link>
 			<Link href="/favorites">
 				<a>
 					{router.pathname === '/favorites' ? (
-						<Icon variant="bookmarkFilled" size="40px" color="var(--spoiledEgg)" />
+						<Icon variant="bookmarkFilled" size="30px" color="var(--spoiledEgg)" />
 					) : (
-						<Icon variant="bookmark" size="40px" color="var(--plainWhite)" />
+						<Icon variant="bookmark" size="30px" color="var(--plainWhite)" />
 					)}
 				</a>
 			</Link>
 			<Link href="/progress">
 				<a>
 					{router.pathname === '/progress' ? (
-						<Icon variant="progress" size="40px" color="var(--spoiledEgg)" />
+						<Icon variant="progress" size="30px" color="var(--spoiledEgg)" />
 					) : (
-						<Icon variant="progress" size="40px" color="var(--plainWhite)" />
+						<Icon variant="progress" size="30px" color="var(--plainWhite)" />
 					)}
 				</a>
 			</Link>
 			<Link href="/planner">
 				<a>
 					{router.pathname === '/planner' ? (
-						<Icon variant="calendar" size="40px" color="var(--spoiledEgg)" />
+						<Icon variant="calendarFilled" size="30px" color="var(--spoiledEgg)" />
 					) : (
-						<Icon variant="calendar" size="40px" color="var(--plainWhite)" />
+						<Icon variant="calendar" size="30px" color="var(--plainWhite)" />
 					)}
 				</a>
 			</Link>
