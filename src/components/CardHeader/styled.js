@@ -3,11 +3,14 @@ import styled from 'styled-components';
 const StyledCardHeader = styled.div`
 	display: flex;
 	align-items: center;
-	justify-content: space-evenly;
+	justify-content: space-between;
 	height: 70px;
-	padding: 10px 20px;
 	border-radius: 25px 25px 0 0;
 	background-color: var(--lavender);
 `;
 
-export default StyledCardHeader;
+const StyledCardHeaderIconContainer = styled.div`
+	margin-right: 25px;
+`;
+
+export {StyledCardHeader, StyledCardHeaderIconContainer};

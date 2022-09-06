@@ -7,4 +7,5 @@ const StyledHeadline = styled.div`
 	color: var(--chromaphobicBlack);
 	font-size: 12px;
 `;
+
 export default StyledHeadline;

@@ -12,7 +12,7 @@ const IndexCalendar = dynamic(() => import('../Calendar/indexCalendar'), {
 });
 import StyledCardBody from '../CardBody/styled';
 import StyledCardFooter from '../CardFooter/styled';
-import StyledCardHeader from '../CardHeader/styled';
+import {StyledCardHeader, StyledCardHeaderIconContainer} from '../CardHeader/styled';
 import StyledCardHeadline from '../CardHeadline/styled';
 import StyledCardInstruction from '../CardInstruction/styled';
 import Icon from '../Icons';
@@ -42,43 +42,45 @@ export default function IndexCard({exerciseCard}) {
 		<StyledCard>
 			<StyledCardHeader>
 				<StyledCardHeadline>{exerciseCard.name}</StyledCardHeadline>
-				<StyledIconButton
-					onClick={() => {
-						handleBookmark(exerciseCard.id);
-					}}
-				>
-					{exerciseCard.isBookmarked ? (
-						<>
+				<StyledCardHeaderIconContainer>
+					<StyledIconButton
+						onClick={() => {
+							handleBookmark(exerciseCard.id);
+						}}
+					>
+						{exerciseCard.isBookmarked ? (
+							<>
+								<Icon
+									variant="bookmarkFilled"
+									size="35px"
+									color="var(--spoiledEgg)"
+									id={exerciseCard.id}
+								/>
+							</>
+						) : (
 							<Icon
-								variant="bookmarkFilled"
+								variant="bookmark"
 								size="35px"
-								color="var(--spoiledEgg)"
+								color="var(--chromaphobicBlack)"
 								id={exerciseCard.id}
 							/>
-						</>
-					) : (
-						<Icon
-							variant="bookmark"
-							size="35px"
-							color="var(--chromaphobicBlack)"
-							id={exerciseCard.id}
-						/>
+						)}
+					</StyledIconButton>
+					<StyledIconButton
+						onClick={() => {
+							setIsCalendarVisible(!isCalendarVisible);
+						}}
+					>
+						{isCalendarVisible ? (
+							<Icon variant="calendarFilled" size="35px" color="var(--spoiledEgg)" />
+						) : (
+							<Icon variant="calendar" size="35px" color="var(--chromaphobicBlack)" />
+						)}
+					</StyledIconButton>
+					{isCalendarVisible && (
+						<IndexCalendar exercise={exerciseCard} onCalendarHide={hideCalendar} />
 					)}
-				</StyledIconButton>
-				<StyledIconButton
-					onClick={() => {
-						setIsCalendarVisible(!isCalendarVisible);
-					}}
-				>
-					{isCalendarVisible ? (
-						<Icon variant="calendarFilled" size="35px" color="var(--spoiledEgg)" />
-					) : (
-						<Icon variant="calendar" size="35px" color="var(--chromaphobicBlack)" />
-					)}
-				</StyledIconButton>
-				{isCalendarVisible && (
-					<IndexCalendar exercise={exerciseCard} onCalendarHide={hideCalendar} />
-				)}
+				</StyledCardHeaderIconContainer>
 			</StyledCardHeader>
 			<StyledCardBody>
 				<Image

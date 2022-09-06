@@ -9,8 +9,9 @@ const StyledAddButton = styled.button`
 	border-radius: 50%;
 	background-color: #6f48eb;
 	color: white;
+	font-size: 20px;
 	&:hover {
-		border: 1.5px solid black;
+		border: 2px solid var(--chromaphobicBlack);
 	}
 `;
 
