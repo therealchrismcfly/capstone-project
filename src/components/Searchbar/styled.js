@@ -10,6 +10,8 @@ const StyledSearchBar = styled.div`
 	width: 375px;
 	height: 70px;
 	background-color: var(--chromaphobicBlack);
+	color: var(--plainWhite);
+	font-size: 12px;
 `;
 
 export default StyledSearchBar;

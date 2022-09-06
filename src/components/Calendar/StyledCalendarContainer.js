@@ -10,10 +10,4 @@ const StyledCalendarContainerIndex = styled.div`
 	align-items: center;
 `;
 
-const StyledCalendarContainerPlanner = styled.div`
-	display: flex;
-	justify-content: center;
-	margin-bottom: 30px;
-`;
-
-export {StyledCalendarContainerIndex, StyledCalendarContainerPlanner};
+export default StyledCalendarContainerIndex;

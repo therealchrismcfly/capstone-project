@@ -1,11 +1,7 @@
-import dynamic from 'next/dynamic';
-
 import useStore from '../../hooks/useStore';
-const IndexCard = dynamic(() => import('../Cards/indexCard'), {
-	ssr: false,
-});
+import IndexCard from '../Cards/indexCard';
 import SearchBar from '../Searchbar/searchbar';
-import StyledSearchbarContainer from '../SearchbarContainer/styled';
+import StyledSearchBar from '../SearchBar/styled';
 
 import StyledCardlist from './styled';
 
@@ -14,10 +10,9 @@ function CardlistIndex() {
 	const exerciseCards = useStore(state => state.exerciseCards);
 	return (
 		<>
-			<StyledSearchbarContainer>
+			<StyledSearchBar>
 				<SearchBar />
-			</StyledSearchbarContainer>
-
+			</StyledSearchBar>
 			<StyledCardlist>
 				{suggestions.length
 					? suggestions.map(exerciseCard => {

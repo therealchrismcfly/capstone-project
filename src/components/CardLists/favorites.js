@@ -4,7 +4,7 @@ import useStore from '../../hooks/useStore';
 const IndexCard = dynamic(() => import('../Cards/indexCard'), {
 	ssr: false,
 });
-import StyledHeadline from '../Headline/styled';
+import StyledSearchBar from '../SearchBar/styled';
 
 import StyledCardlist from './styled';
 
@@ -14,9 +14,9 @@ function CardlistFavorites() {
 
 	return (
 		<>
-			<StyledHeadline>
+			<StyledSearchBar>
 				<h1>Favorite Exercises</h1>
-			</StyledHeadline>
+			</StyledSearchBar>
 			<StyledCardlist>
 				{bookmarkedCards.map(exerciseCard => {
 					return <IndexCard key={exerciseCard.id} exerciseCard={exerciseCard} />;
