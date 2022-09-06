@@ -2,14 +2,15 @@ import Image from 'next/image';
 import {useState} from 'react';
 
 import useStore from '../../hooks/useStore';
-import StyledDeleteButton from '../Buttons/DeleteButton/styled';
 import StyledHideButton from '../Buttons/HideButton/styled';
+import StyledIconButton from '../Buttons/IconButton/styled';
 import StyledCardBody from '../CardBody/styled';
-import StyledCardDescription from '../CardDescription/styled';
-import CardFooter from '../CardFooter';
-import StyledCardHeader from '../CardHeader/styled';
+import CardFooter from '../CardFooter/index';
+import {StyledCardHeader, StyledCardHeaderIconContainer} from '../CardHeader/styled';
 import StyledCardHeadline from '../CardHeadline/styled';
+import StyledCardInstruction from '../CardInstruction/styled';
 import StyledCheckbox from '../Checkbox/styled';
+import Icon from '../Icons';
 
 import StyledCard from './styled';
 
@@ -22,23 +23,25 @@ function PlannerCard({workout}) {
 		<StyledCard>
 			<StyledCardHeader>
 				<StyledCardHeadline>{workout.name}</StyledCardHeadline>
-				<StyledDeleteButton
-					onClick={() => {
-						deleteWorkout(workout.id);
-					}}
-				>
-					x
-				</StyledDeleteButton>
-				<StyledCheckbox
-					checked={workout.checked}
-					type="checkbox"
-					onChange={() => {
-						checkCard(workout.id);
-					}}
-				/>
+				<StyledCardHeaderIconContainer>
+					<StyledIconButton
+						onClick={() => {
+							deleteWorkout(workout.id);
+						}}
+					>
+						<Icon variant="delete" size="30px" color="var(--chromaphobicBlack)" />
+					</StyledIconButton>
+					<StyledCheckbox
+						checked={workout.checked}
+						type="checkbox"
+						onChange={() => {
+							checkCard(workout.id);
+						}}
+					/>
+				</StyledCardHeaderIconContainer>
 			</StyledCardHeader>
 			<StyledCardBody>
-				{<Image src={workout.image} alt="dummy fitness image" width={300} height={200} />}
+				{<Image src={workout.image} alt="dummy fitness image" width={300} height={300} />}
 				<StyledHideButton
 					onClick={() => {
 						setIsInstructionVisible(!isInstructionVisible);
@@ -47,7 +50,7 @@ function PlannerCard({workout}) {
 					{isInstructionVisible ? 'Hide instruction' : 'Show instruction'}
 				</StyledHideButton>
 				{isInstructionVisible && (
-					<StyledCardDescription>{workout.instruction}</StyledCardDescription>
+					<StyledCardInstruction>{workout.instruction}</StyledCardInstruction>
 				)}
 			</StyledCardBody>
 

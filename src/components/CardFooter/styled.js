@@ -1,13 +1,14 @@
 import styled from 'styled-components';
 
-const StyledCardFooter = styled.div`
+const StyledCardFooter = styled.footer`
 	display: flex;
 	align-items: center;
 	justify-content: space-evenly;
 	width: 330px;
-	height: 80px;
-	padding: 5px;
+	height: 70px;
+	padding: 10px;
 	border-radius: 0 0 25px 25px;
-	background-color: lavender;
+	background-color: var(--lavender);
+	font-size: 14px;
 `;
 export default StyledCardFooter;

@@ -1,5 +1,6 @@
 import useStore from '../../hooks/useStore';
 import ProgressHistoryCard from '../ProgressHistory/index';
+import StyledSearchBar from '../Searchbar/styled';
 
 import StyledCardlist from './styled';
 
@@ -8,7 +9,9 @@ export default function CardlistProgress() {
 
 	return (
 		<>
-			<h1>Progress History</h1>
+			<StyledSearchBar>
+				<h1>Workout Progress</h1>
+			</StyledSearchBar>
 			<StyledCardlist>
 				{exerciseCards.map(exerciseCard => {
 					return (
