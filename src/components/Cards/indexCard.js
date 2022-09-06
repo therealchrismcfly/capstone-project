@@ -100,8 +100,8 @@ export default function IndexCard({exerciseCard}) {
 
 			<StyledCardFooter>
 				<div>
-					Sets: {latestWorkout.sets}
-					Reps: {latestWorkout.reps}
+					Sets: {latestWorkout.sets} {''}
+					Reps: {latestWorkout.reps} {''}
 					Weight: {latestWorkout.weight}
 				</div>
 			</StyledCardFooter>
