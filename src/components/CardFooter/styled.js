@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const StyledCardFooter = styled.div`
+const StyledCardFooter = styled.footer`
 	display: flex;
 	align-items: center;
 	justify-content: space-evenly;
