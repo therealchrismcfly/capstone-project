@@ -1,9 +1,5 @@
-import dynamic from 'next/dynamic';
-
 import useStore from '../../hooks/useStore';
-const IndexCard = dynamic(() => import('../Cards/indexCard'), {
-	ssr: false,
-});
+import IndexCard from '../Cards/indexCard';
 import StyledSearchBar from '../SearchBar/styled';
 
 import StyledCardlist from './styled';
