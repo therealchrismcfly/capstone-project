@@ -1,5 +1,3 @@
-/* import closestTo from 'date-fns/closestTo';
-import isEqual from 'date-fns/isEqual'; */
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import {useState} from 'react';
@@ -23,17 +21,16 @@ export default function IndexCard({exerciseCard}) {
 	const handleBookmark = useStore(state => state.handleBookmark);
 	const [isCalendarVisible, setIsCalendarVisible] = useState(false);
 	const [isInstructionVisible, setIsInstructionVisible] = useState(false);
-	/* const workouts = useStore(state => state.workouts);
-	const correspondingExercises = workouts.filter(workout => exerciseCard.name === workout.name);
-	const dateToCompare = new Date();
-	const latestProgress = closestTo(
-		dateToCompare,
-		correspondingExercises.map(correspondingExercise => correspondingExercise.date)
+	const workouts = useStore(state => state.workouts);
+	const correspondingWorkouts = workouts.filter(workout => exerciseCard.name === workout.name);
+	const pastWorkouts = correspondingWorkouts.filter(
+		correspondingWorkout => new Date(correspondingWorkout.date).getTime() < new Date().getTime()
 	);
-	console.log(latestProgress);
-	const lastWorkout = correspondingExercises.find(workout =>
-		isEqual(workout.date, latestProgress)
-	); */
+	const sortedPastWorkouts = pastWorkouts.sort((a, b) => new Date(b.date) - new Date(a.date));
+	const latestWorkout = sortedPastWorkouts.length
+		? sortedPastWorkouts[0]
+		: {sets: '0', reps: '0', weight: '0'};
+
 	function hideCalendar() {
 		setIsCalendarVisible(false);
 	}
@@ -102,12 +99,11 @@ export default function IndexCard({exerciseCard}) {
 			</StyledCardBody>
 
 			<StyledCardFooter>
-				{/* <ul key={lastWorkout.id}>
-					<li>{lastWorkout.date.toDateString()}</li>
-					<li>{lastWorkout.sets}</li>
-					<li>{lastWorkout.reps}</li>
-					<li>{lastWorkout.weight}</li>
-				</ul> */}
+				<div>
+					Sets: {latestWorkout.sets}
+					Reps: {latestWorkout.reps}
+					Weight: {latestWorkout.weight}
+				</div>
 			</StyledCardFooter>
 		</StyledCard>
 	);
