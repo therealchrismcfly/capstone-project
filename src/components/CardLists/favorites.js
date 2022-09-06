@@ -1,6 +1,6 @@
 import useStore from '../../hooks/useStore';
 import IndexCard from '../Cards/indexCard';
-import StyledSearchBar from '../SearchBar/styled';
+import StyledSearchBar from '../Searchbar/styled';
 
 import StyledCardlist from './styled';
 
