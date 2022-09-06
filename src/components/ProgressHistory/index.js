@@ -13,7 +13,7 @@ export default function ProgressHistoryCard({exerciseCard}) {
 	const [isHistoryVisible, setIsHistoryVisible] = useState(true);
 	const workouts = useStore(state => state.workouts);
 	const filteredWorkouts = workouts.filter(workout => workout.name === exerciseCard.name);
-	const sortedWorkouts = filteredWorkouts.sort((a, b) => Number(a.date) - Number(b.date));
+	const sortedWorkouts = filteredWorkouts.sort((a, b) => Number(b.date) - Number(a.date));
 
 	return (
 		<StyledProgressHistoryItem>
