@@ -48,7 +48,8 @@ export const GlobalStyle = createGlobalStyle`
 	}
 
 	:root {
-		--lavender:#D1C3F3;
+		--lavender:#c3b6f3;
+		--darkLavender: #6a49e3;
 		--spoiledEgg:#E0FE2B;
 		--lynxWhite:#f7f7f7;
 		--plainWhite:#fff;
@@ -57,7 +58,6 @@ export const GlobalStyle = createGlobalStyle`
 
 	.react-calendar {
  width: 330px;
- border-radius: 8px;
  background-color: #fff;
  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
  color: #222;
@@ -75,11 +75,11 @@ export const GlobalStyle = createGlobalStyle`
 .react-calendar__navigation button:enabled:hover,
 .react-calendar__navigation button:enabled:focus {
  background-color: #f8f8fa;
- color: #6f48eb;
+ color: #6a49e3;
 }
 .react-calendar__navigation button[disabled] {
 	background: #f8f8fa;
- color: #6f48eb;
+ color: #6a49e3;
 }
 abbr[title] {
  text-decoration: none;
@@ -89,19 +89,19 @@ abbr[title] {
 .react-calendar__tile:enabled:focus {
 	border-radius: 6px;
  background: #f8f8fa;
- color: #6f48eb;
+ color: #6a49e3;
 }
 .react-calendar__tile--now {
 	border-radius: 6px;
  background: var(--lavender);
- color: #6f48eb;
+ color: #6a49e3;
  font-weight: bold;
 }
 .react-calendar__tile--now:enabled:hover,
 .react-calendar__tile--now:enabled:focus {
 	border-radius: 6px;
  background: #6f48eb33;
- color: #6f48eb;
+ color: #6a49e3;
  font-weight: bold;
 }
 .react-calendar__tile--hasActive:enabled:hover,
@@ -110,13 +110,13 @@ abbr[title] {
 }
 .react-calendar__tile--active {
 	border-radius: 6px;
- background: #6f48eb;
+ background: #6a49e3;
  color: white;
  font-weight: bold;
 }
 .react-calendar__tile--active:enabled:hover,
 .react-calendar__tile--active:enabled:focus {
- background: #6f48eb;
+ background: #6a49e3;
  color: white;
 }
 .react-calendar--selectRange .react-calendar__tile--hover {
@@ -125,16 +125,16 @@ abbr[title] {
 .react-calendar__tile--range {
 	border-radius: 0;
  background: #f8f8fa;
- color: #6f48eb;
+ color: #6a49e3;
 }
 .react-calendar__tile--rangeStart {
 	border-radius: 6px;
- background: #6f48eb;
+ background: #6a49e3;
  color: white;
 }
 .react-calendar__tile--rangeEnd {
 	border-radius: 6px;
- background: #6f48eb;
+ background: #6a49e3;
  color: white;
 }
 

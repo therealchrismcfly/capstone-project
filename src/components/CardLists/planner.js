@@ -7,7 +7,7 @@ import useStore from '../../hooks/useStore';
 import PlannerCard from '../Cards/plannerCard';
 import StyledSearchBar from '../Searchbar/styled';
 
-import StyledCardlist from './styled';
+import {StyledCardlistPlanner} from './styled';
 
 function CardlistPlanner() {
 	const workouts = useStore(state => state.workouts);
@@ -23,11 +23,11 @@ function CardlistPlanner() {
 				<h1>Workout Plan</h1>
 			</StyledSearchBar>
 			<PlannerCalendar />
-			<StyledCardlist>
+			<StyledCardlistPlanner>
 				{sortedCards.map(workout => {
 					return <PlannerCard key={workout.id} workout={workout} />;
 				})}
-			</StyledCardlist>
+			</StyledCardlistPlanner>
 		</>
 	);
 }

@@ -2,7 +2,7 @@ import useStore from '../../hooks/useStore';
 import IndexCard from '../Cards/indexCard';
 import StyledSearchBar from '../Searchbar/styled';
 
-import StyledCardlist from './styled';
+import {StyledCardlist} from './styled';
 
 function CardlistFavorites() {
 	const exerciseCards = useStore(state => state.exerciseCards);

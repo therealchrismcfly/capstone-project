@@ -8,6 +8,7 @@ export default function CardInputSets({workout}) {
 			Sets:{' '}
 			<StyledInput
 				type="number"
+				min="0"
 				name="sets"
 				value={workout.sets}
 				onChange={event => changeSets(workout.id, event.target.value)}

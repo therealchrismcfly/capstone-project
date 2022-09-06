@@ -2,7 +2,7 @@ import useStore from '../../hooks/useStore';
 import ProgressHistoryCard from '../ProgressHistory/index';
 import StyledSearchBar from '../Searchbar/styled';
 
-import StyledCardlist from './styled';
+import {StyledCardlistProgress} from './styled';
 
 export default function CardlistProgress() {
 	const exerciseCards = useStore(state => state.exerciseCards);
@@ -12,13 +12,13 @@ export default function CardlistProgress() {
 			<StyledSearchBar>
 				<h1>Workout Progress</h1>
 			</StyledSearchBar>
-			<StyledCardlist>
+			<StyledCardlistProgress>
 				{exerciseCards.map(exerciseCard => {
 					return (
 						<ProgressHistoryCard key={exerciseCard.id} exerciseCard={exerciseCard} />
 					);
 				})}
-			</StyledCardlist>
+			</StyledCardlistProgress>
 		</>
 	);
 }

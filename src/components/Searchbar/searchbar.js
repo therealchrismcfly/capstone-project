@@ -3,6 +3,7 @@ import {useEffect} from 'react';
 import {useState} from 'react';
 
 import useStore from '../../hooks/useStore';
+import Icon from '../Icons';
 import StyledInputField from '../SearchInputField/styled';
 
 import StyledSearchBar from './styled';
@@ -21,11 +22,12 @@ export default function SearchBar() {
 
 	return (
 		<StyledSearchBar>
+			<Icon variant="search" size="30px" color="var(--plainWhite)" />
 			<label htmlFor="inputName">
 				<StyledInputField
 					type="text"
 					id="inputName"
-					placeholder="Search for an exercise!"
+					placeholder="Search for an exercise"
 					required
 					value={inputValue}
 					onChange={event => {
