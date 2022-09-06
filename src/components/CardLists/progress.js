@@ -1,6 +1,6 @@
 import useStore from '../../hooks/useStore';
 import ProgressHistoryCard from '../ProgressHistory/index';
-import StyledSearchBar from '../SearchBar/styled';
+import StyledSearchBar from '../Searchbar/styled';
 
 import StyledCardlist from './styled';
 
