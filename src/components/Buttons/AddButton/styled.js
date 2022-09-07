@@ -9,7 +9,7 @@ const StyledAddButton = styled.button`
 	border-radius: 50%;
 	background-color: var(--darkLavender);
 	color: white;
-	font-size: 20px;
+	font-size: 24px;
 `;
 
 export default StyledAddButton;

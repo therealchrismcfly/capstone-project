@@ -6,6 +6,7 @@ const StyledProgressHistoryTable = styled.table`
 	padding: 15px;
 	background-color: var(--plainWhite);
 	box-shadow: 0 4px 40px rgba(0, 0, 0, 0.25);
+	font-size: 14px;
 `;
 
 export default StyledProgressHistoryTable;

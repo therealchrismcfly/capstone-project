@@ -6,7 +6,7 @@ const StyledCardFooter = styled.div`
 	justify-content: space-evenly;
 	width: 330px;
 	height: 70px;
-	padding: 10px;
+	padding: 15px;
 	border-radius: 0 0 25px 25px;
 	background-color: var(--lavender);
 	font-size: 14px;

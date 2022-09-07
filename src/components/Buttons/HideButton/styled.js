@@ -5,6 +5,7 @@ const StyledHideButton = styled.button`
 	border: none;
 	border-radius: 20px;
 	background-color: var(--spoiledEgg);
+	color: var(--chromaphobicBlack);
 	font-size: 14px;
 `;
 
