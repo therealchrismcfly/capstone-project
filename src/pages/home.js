@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-import CardlistIndex from '../components/CardLists/index';
+import CardlistIndex from '../components/CardLists';
 import Layout from '../components/Layout';
 
 export default function HomePage() {

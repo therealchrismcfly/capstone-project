@@ -1,6 +1,5 @@
 import {search} from 'fast-fuzzy';
-import {useEffect} from 'react';
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 
 import useStore from '../../hooks/useStore';
 import StyledHeader from '../Header/styled';
