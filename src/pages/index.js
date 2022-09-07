@@ -14,7 +14,7 @@ export default function HomePage() {
 		function handleSlogan() {
 			setSlogan("YOU'VE GOT TO");
 		}
-		const timeOutID = setTimeout(handleSlogan, 3500);
+		const timeOutID = setTimeout(handleSlogan, 3000);
 
 		return () => {
 			clearTimeout(timeOutID);

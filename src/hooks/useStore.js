@@ -3,13 +3,14 @@ import create from 'zustand';
 const exerciseCards = [
 	{
 		id: 0,
-		name: 'Biceps Curl',
-		image: '/pictures/bicepsCurls.jpeg',
+		name: 'Deadlifts',
+		image: '/pictures/deadlifts.jpeg',
 		instruction:
-			'Hold a dumbbell in each hand and stand with your feet as wide apart as your hips. Pull your abdominals in, stand tall, and keep your knees slightly bent. Curl both arms upward until they are in front of your shoulders. Slowly lower the dumbbells back down. ',
+			'Stand with your mid-foot under the barbell. Bend over and grab the bar with a shoulder-width grip. Bend your knees until your shins touch the bar. Lift your chest up and straighten your lower back.Take a big breath, hold it, and stand up with the weight.',
 		isBookmarked: false,
 		date: new Date(),
 	},
+
 	{
 		id: 1,
 		name: 'Shoulder Press',
@@ -21,10 +22,10 @@ const exerciseCards = [
 	},
 	{
 		id: 2,
-		name: 'Deadlifts',
-		image: '/pictures/deadlifts.jpeg',
+		name: 'Biceps Curl',
+		image: '/pictures/bicepsCurls.jpeg',
 		instruction:
-			'Stand with your mid-foot under the barbell. Bend over and grab the bar with a shoulder-width grip. Bend your knees until your shins touch the bar. Lift your chest up and straighten your lower back.Take a big breath, hold it, and stand up with the weight.',
+			'Hold a dumbbell in each hand and stand with your feet as wide apart as your hips. Pull your abdominals in, stand tall, and keep your knees slightly bent. Curl both arms upward until they are in front of your shoulders. Slowly lower the dumbbells back down. ',
 		isBookmarked: false,
 		date: new Date(),
 	},

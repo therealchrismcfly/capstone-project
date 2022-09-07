@@ -99,12 +99,14 @@ export default function IndexCard({exerciseCard}) {
 			</StyledCardBody>
 
 			<StyledCardFooter>
-				<b>Sets:</b>
-				{latestWorkout.sets}
-				<b>Reps:</b>
-				{latestWorkout.reps}
-				<b>Weight:</b>
-				{latestWorkout.weight}
+				<p>
+					<b>Sets:</b>
+					{latestWorkout.sets}
+					<b>Reps:</b>
+					{latestWorkout.reps}
+					<b>Weight:</b>
+					{latestWorkout.weight}
+				</p>
 			</StyledCardFooter>
 		</StyledCard>
 	);
