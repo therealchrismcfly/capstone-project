@@ -9,9 +9,9 @@ export default function Navbar() {
 	const router = useRouter();
 	return (
 		<StyledNavbar>
-			<Link href="/">
+			<Link href="/home">
 				<a>
-					{router.pathname === '/' ? (
+					{router.pathname === '/home' ? (
 						<Icon variant="homeFilled" size="30px" color="var(--spoiledEgg)" />
 					) : (
 						<Icon variant="home" size="30px" color="var(--plainWhite)" />
