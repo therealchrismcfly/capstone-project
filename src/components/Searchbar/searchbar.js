@@ -24,7 +24,7 @@ export default function Searchbar() {
 		<StyledHeader>
 			<StyledWrapper>
 				<Icon variant="search" size="25px" color="#757575" />
-				<StyledLabel hidden for="search">
+				<StyledLabel hidden htmlFor="search">
 					Search:
 				</StyledLabel>
 				<StyledInputField
