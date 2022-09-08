@@ -1,4 +1,4 @@
-import CardlistFavorites from '../components/Cardlists/favoritesCardlist.js';
+import CardlistFavorites from '../components/CardLists/favoritesCardlist.js';
 import Layout from '../components/Layout';
 
 export default function FavoritesPage() {
