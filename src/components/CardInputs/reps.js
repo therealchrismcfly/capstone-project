@@ -1,7 +1,7 @@
 import useStore from '../../hooks/useStore';
 
 import StyledInput from './styled';
-export default function CardInputReps({workout}) {
+function CardInputReps({workout}) {
 	const changeReps = useStore(state => state.changeReps);
 	return (
 		<label>
@@ -16,3 +16,5 @@ export default function CardInputReps({workout}) {
 		</label>
 	);
 }
+
+export default CardInputReps;

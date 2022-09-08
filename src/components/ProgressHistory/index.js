@@ -9,7 +9,7 @@ import StyledProgressHistoryItem from './StyledProgressHistoryItem';
 import StyledProgressHistoryName from './StyledProgressHistoryName';
 import StyledProgressHistoryTable from './StyledProgressHistoryTable';
 
-export default function ProgressHistoryCard({exerciseCard}) {
+function ProgressHistoryCard({exerciseCard}) {
 	const [isHistoryVisible, setIsHistoryVisible] = useState(false);
 	const workouts = useStore(state => state.workouts);
 	const filteredWorkouts = workouts.filter(workout => workout.name === exerciseCard.name);
@@ -56,3 +56,4 @@ export default function ProgressHistoryCard({exerciseCard}) {
 		</StyledProgressHistoryItem>
 	);
 }
+export default ProgressHistoryCard;

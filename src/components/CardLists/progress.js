@@ -5,7 +5,7 @@ import ProgressHistoryCard from '../ProgressHistory/index';
 
 import {StyledCardlistProgress} from './styled';
 
-export default function CardlistProgress() {
+function CardlistProgress() {
 	const exerciseCards = useStore(state => state.exerciseCards);
 
 	return (
@@ -23,3 +23,5 @@ export default function CardlistProgress() {
 		</>
 	);
 }
+
+export default CardlistProgress;

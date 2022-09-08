@@ -17,7 +17,7 @@ import Icon from '../Icons';
 
 import StyledCard from './styled';
 
-export default function Card({exerciseCard}) {
+function Card({exerciseCard}) {
 	const handleBookmark = useStore(state => state.handleBookmark);
 	const [isCalendarVisible, setIsCalendarVisible] = useState(false);
 	const [isInstructionVisible, setIsInstructionVisible] = useState(false);
@@ -113,3 +113,5 @@ export default function Card({exerciseCard}) {
 		</StyledCard>
 	);
 }
+
+export default Card;
