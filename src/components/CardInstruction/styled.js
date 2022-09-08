@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const StyledCardInstruction = styled.p`
-	padding: 0 20px;
+	padding: 20px 30px 0 30px;
 	font-size: 14px;
 `;
 export default StyledCardInstruction;

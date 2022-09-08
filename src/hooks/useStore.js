@@ -6,7 +6,7 @@ const exerciseCards = [
 		name: 'Deadlifts',
 		image: '/pictures/Deadlifts.jpeg',
 		instruction:
-			'Stand with your mid-foot under the barbell. Bend over and grab the bar with a shoulder-width grip. Bend your knees until your shins touch the bar. Lift your chest up and straighten your lower back.Take a big breath, hold it, and stand up with the weight.',
+			'Stand with your mid-foot under the barbell. Bend over and grab the bar with a shoulder-width grip. Bend your knees until your shins touch the bar. Lift your chest up and straighten your lower back. Take a big breath, hold it, and stand up with the weight.',
 		isBookmarked: false,
 		date: new Date(),
 	},
