@@ -1,14 +1,17 @@
 import styled from 'styled-components';
 
-const StyledNavbar = styled.nav`
+const StyledHeader = styled.div`
 	display: flex;
 	position: fixed;
-	z-index: 10;
-	bottom: 0;
+	z-index: 20;
+	top: 0;
 	align-items: center;
-	justify-content: space-evenly;
+	justify-content: center;
 	width: 100%;
 	height: 70px;
 	background-color: var(--chromaphobicBlack);
+	color: var(--plainWhite);
+	font-size: 12px;
 `;
-export default StyledNavbar;
+
+export default StyledHeader;

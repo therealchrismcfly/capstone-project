@@ -1,17 +1,25 @@
 import styled from 'styled-components';
 
-const StyledSearchBar = styled.div`
+const StyledWrapper = styled.div`
 	display: flex;
-	position: fixed;
-	z-index: 20;
-	top: 0;
+	display: grid;
+	grid-template-columns: 1.5rem 4fr;
 	align-items: center;
-	justify-content: center;
-	width: 375px;
-	height: 70px;
-	background-color: var(--chromaphobicBlack);
-	color: var(--plainWhite);
-	font-size: 12px;
+	width: 70%;
+	padding-left: 15px;
+	overflow: hidden;
+	border-radius: 25px;
+	background-color: var(--plainWhite);
 `;
 
-export default StyledSearchBar;
+const StyledLabel = styled.label`
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	border: 0;
+`;
+
+export {StyledWrapper, StyledLabel};

@@ -5,4 +5,10 @@ const StyledCardHeadline = styled.h2`
 	color: var(--chromaphobicBlack);
 	font-size: 22px;
 `;
-export default StyledCardHeadline;
+
+const StyledCardHeadlineProgress = styled.h2`
+	color: var(--chromaphobicBlack);
+	font-size: 22px;
+`;
+
+export {StyledCardHeadline, StyledCardHeadlineProgress};

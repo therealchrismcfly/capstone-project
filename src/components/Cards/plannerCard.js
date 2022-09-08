@@ -7,7 +7,7 @@ import StyledIconButton from '../Buttons/IconButton/styled';
 import StyledCardBody from '../CardBody/styled';
 import CardFooter from '../CardFooter/index';
 import {StyledCardHeader, StyledCardHeaderIconContainer} from '../CardHeader/styled';
-import StyledCardHeadline from '../CardHeadline/styled';
+import {StyledCardHeadline} from '../CardHeadline/styled';
 import StyledCardInstruction from '../CardInstruction/styled';
 import StyledCheckbox from '../Checkbox/styled';
 import Icon from '../Icons';
@@ -47,7 +47,7 @@ function PlannerCard({workout}) {
 						setIsInstructionVisible(!isInstructionVisible);
 					}}
 				>
-					{isInstructionVisible ? 'Hide instruction' : 'Show instruction'}
+					{isInstructionVisible ? 'HIDE INSTRUCTION' : 'SHOW INSTRUCTION'}
 				</StyledHideButton>
 				{isInstructionVisible && (
 					<StyledCardInstruction>{workout.instruction}</StyledCardInstruction>

@@ -7,9 +7,9 @@ const StyledAddButton = styled.button`
 	height: 45px;
 	border: none;
 	border-radius: 50%;
-	background-color: #6f48eb;
+	background-color: var(--darkLavender);
 	color: white;
-	font-size: 20px;
+	font-size: 24px;
 `;
 
 export default StyledAddButton;

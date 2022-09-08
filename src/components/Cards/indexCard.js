@@ -11,7 +11,7 @@ const IndexCalendar = dynamic(() => import('../Calendar/indexCalendar'), {
 import StyledCardBody from '../CardBody/styled';
 import StyledCardFooter from '../CardFooter/styled';
 import {StyledCardHeader, StyledCardHeaderIconContainer} from '../CardHeader/styled';
-import StyledCardHeadline from '../CardHeadline/styled';
+import {StyledCardHeadline} from '../CardHeadline/styled';
 import StyledCardInstruction from '../CardInstruction/styled';
 import Icon from '../Icons';
 
@@ -91,7 +91,7 @@ export default function IndexCard({exerciseCard}) {
 						setIsInstructionVisible(!isInstructionVisible);
 					}}
 				>
-					{isInstructionVisible ? 'Hide instruction' : 'Show instruction'}
+					{isInstructionVisible ? 'HIDE INSTRUCTION' : 'SHOW INSTRUCTION'}
 				</StyledHideButton>
 				{isInstructionVisible && (
 					<StyledCardInstruction>{exerciseCard.instruction}</StyledCardInstruction>

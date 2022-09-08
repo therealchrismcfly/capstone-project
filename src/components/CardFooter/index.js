@@ -9,51 +9,33 @@ import Icon from '../Icons';
 import StyledCardFooter from './styled';
 
 function CardFooter({workout}) {
-	const [editSets, setEditSets] = useState(false);
-	const [editReps, setEditReps] = useState(false);
-	const [editWeight, setEditWeight] = useState(false);
+	const [editProgress, seteditProgress] = useState(false);
 
 	return (
 		<StyledCardFooter>
-			{editSets ? <CardInputSets workout={workout} /> : <p>Sets: {workout.sets}</p>}
+			{editProgress ? (
+				<>
+					<CardInputSets workout={workout} />
+					<CardInputReps workout={workout} />
+					<CardInputWeight workout={workout} />
+				</>
+			) : (
+				<>
+					<b>Sets:</b> {workout.sets}
+					<b>Reps:</b> {workout.reps}
+					<b>Weight:</b> {workout.weight}
+				</>
+			)}
 			<StyledIconButton
 				type="button"
 				onClick={() => {
-					setEditSets(!editSets);
+					seteditProgress(!editProgress);
 				}}
 			>
-				{editSets ? (
-					<Icon variant="save" size="20px" color="black" />
+				{editProgress ? (
+					<Icon variant="save" size="25px" color="var(--spoiledEgg)" />
 				) : (
-					<Icon variant="edit" size="20px" color="black" />
-				)}
-			</StyledIconButton>
-
-			{editReps ? <CardInputReps workout={workout} /> : <p>Reps: {workout.reps}</p>}
-			<StyledIconButton
-				type="button"
-				onClick={() => {
-					setEditReps(!editReps);
-				}}
-			>
-				{editReps ? (
-					<Icon variant="save" size="20px" color="black" />
-				) : (
-					<Icon variant="edit" size="20px" color="black" />
-				)}
-			</StyledIconButton>
-
-			{editWeight ? <CardInputWeight workout={workout} /> : <p>Weight: {workout.weight}</p>}
-			<StyledIconButton
-				type="button"
-				onClick={() => {
-					setEditWeight(!editWeight);
-				}}
-			>
-				{editWeight ? (
-					<Icon variant="save" size="20px" color="black" />
-				) : (
-					<Icon variant="edit" size="20px" color="black" />
+					<Icon variant="edit" size="25px" color="var(--spoiledEgg)" />
 				)}
 			</StyledIconButton>
 		</StyledCardFooter>

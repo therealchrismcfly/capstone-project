@@ -1,13 +1,14 @@
 import {search} from 'fast-fuzzy';
-import {useEffect} from 'react';
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 
 import useStore from '../../hooks/useStore';
+import StyledHeader from '../Header/styled';
+import Icon from '../Icons';
 import StyledInputField from '../SearchInputField/styled';
 
-import StyledSearchBar from './styled';
+import {StyledLabel, StyledWrapper} from './styled';
 
-export default function SearchBar() {
+function Searchbar() {
 	const [inputValue, setInputValue] = useState('');
 	const setSuggestions = useStore(state => state.setSuggestions);
 	const exerciseCards = useStore(state => state.exerciseCards);
@@ -20,19 +21,25 @@ export default function SearchBar() {
 	}, [exerciseCards, inputValue, setSuggestions]);
 
 	return (
-		<StyledSearchBar>
-			<label htmlFor="inputName">
+		<StyledHeader>
+			<StyledWrapper>
+				<Icon variant="search" size="25px" color="#757575" />
+				<StyledLabel hidden htmlFor="search">
+					Search:
+				</StyledLabel>
 				<StyledInputField
 					type="text"
-					id="inputName"
-					placeholder="Search for an exercise!"
+					id="search"
+					placeholder="Search for an exercise"
 					required
 					value={inputValue}
 					onChange={event => {
 						setInputValue(event.target.value);
 					}}
-				></StyledInputField>
-			</label>
-		</StyledSearchBar>
+				/>
+			</StyledWrapper>
+		</StyledHeader>
 	);
 }
+
+export default Searchbar;

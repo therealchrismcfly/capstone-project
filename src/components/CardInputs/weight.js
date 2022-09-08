@@ -8,6 +8,7 @@ export default function CardInputWeight({workout}) {
 			Weight:{' '}
 			<StyledInput
 				type="number"
+				min="0"
 				name="weight"
 				value={workout.weight}
 				onChange={event => changeWeight(workout.id, event.target.value)}
