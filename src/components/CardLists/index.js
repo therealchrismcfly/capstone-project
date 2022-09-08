@@ -1,5 +1,6 @@
 import useStore from '../../hooks/useStore';
 import IndexCard from '../Cards/indexCard';
+import Searchbar from '../Searchbar/searchbar';
 
 import {StyledCardlist} from './styled';
 
@@ -8,15 +9,18 @@ function CardlistIndex() {
 	const exerciseCards = useStore(state => state.exerciseCards);
 
 	return (
-		<StyledCardlist>
-			{suggestions.length
-				? suggestions.map(exerciseCard => {
-						return <IndexCard key={exerciseCard.id} exerciseCard={exerciseCard} />;
-				  })
-				: exerciseCards.map(exerciseCard => {
-						return <IndexCard key={exerciseCard.id} exerciseCard={exerciseCard} />;
-				  })}
-		</StyledCardlist>
+		<>
+			<Searchbar />
+			<StyledCardlist>
+				{suggestions.length
+					? suggestions.map(exerciseCard => {
+							return <IndexCard key={exerciseCard.id} exerciseCard={exerciseCard} />;
+					  })
+					: exerciseCards.map(exerciseCard => {
+							return <IndexCard key={exerciseCard.id} exerciseCard={exerciseCard} />;
+					  })}
+			</StyledCardlist>
+		</>
 	);
 }
 
