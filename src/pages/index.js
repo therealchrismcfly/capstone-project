@@ -28,7 +28,7 @@ export default function HomePage() {
 			</Head>
 			<StyledWelcomePage>
 				<StyledWelcomeText>{slogan}</StyledWelcomeText>
-				<Image src="/pictures/Logo.png" alt="logo" width={230} height={230} />
+				<Image src="/pictures/logo.png" alt="logo" width={230} height={230} />
 				<Link href="/home">
 					<StyledWelcomeButton>START YOUR WORKOUT</StyledWelcomeButton>
 				</Link>

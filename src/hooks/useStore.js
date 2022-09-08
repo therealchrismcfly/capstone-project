@@ -86,7 +86,7 @@ const exerciseCards = [
 	{
 		id: 9,
 		name: 'Barbell Row',
-		image: '/pictures/row.jpeg',
+		image: '/pictures/barbellRow.jpeg',
 		instruction:
 			'Stand with your mid-foot under the bar (medium stance). Bend over and grab the bar (palms down, medium-grip). Unlock your knees while keeping your hips high. Lift your chest and straighten your back. Pull the bar against your lower chest.',
 		isBookmarked: false,
