@@ -1,6 +1,7 @@
 import useStore from '../../hooks/useStore';
 import IndexCard from '../Cards/indexCard';
 import StyledHeader from '../Header/styled';
+import StyledHeadline from '../Headline/styled';
 
 import {StyledCardlist} from './styled';
 
@@ -11,7 +12,7 @@ function CardlistFavorites() {
 	return (
 		<>
 			<StyledHeader>
-				<h1>Favorite Exercises</h1>
+				<StyledHeadline>Favorite Exercises</StyledHeadline>
 			</StyledHeader>
 			<StyledCardlist>
 				{bookmarkedCards.map(exerciseCard => {

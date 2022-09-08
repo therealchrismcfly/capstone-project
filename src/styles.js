@@ -37,6 +37,8 @@ export const GlobalStyle = createGlobalStyle`
 
 
 	body {
+		max-width: 375px;
+		max-height: 667px;
 		margin: 0;
 		background-color: var(--lynxWhite);
 		color: var(--chromaphobicBlack);

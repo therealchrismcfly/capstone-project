@@ -2,6 +2,7 @@ import Image from 'next/image';
 import {useState} from 'react';
 
 import useStore from '../../hooks/useStore';
+import StyledCheckbox from '../Buttons/Checkbox/styled';
 import StyledHideButton from '../Buttons/HideButton/styled';
 import StyledIconButton from '../Buttons/IconButton/styled';
 import StyledCardBody from '../CardBody/styled';
@@ -9,7 +10,6 @@ import CardFooter from '../CardFooter/index';
 import {StyledCardHeader, StyledCardHeaderIconContainer} from '../CardHeader/styled';
 import {StyledCardHeadline} from '../CardHeadline/styled';
 import StyledCardInstruction from '../CardInstruction/styled';
-import StyledCheckbox from '../Checkbox/styled';
 import Icon from '../Icons';
 
 import StyledCard from './styled';

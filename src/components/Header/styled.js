@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const StyledHeader = styled.div`
+const StyledHeader = styled.header`
 	display: flex;
 	position: fixed;
 	z-index: 20;
@@ -10,8 +10,6 @@ const StyledHeader = styled.div`
 	width: 100%;
 	height: 70px;
 	background-color: var(--chromaphobicBlack);
-	color: var(--plainWhite);
-	font-size: 12px;
 `;
 
 export default StyledHeader;
