@@ -4,7 +4,7 @@ import Searchbar from '../Searchbar/searchbar';
 
 import {StyledCardlist} from './styled';
 
-function CardlistIndex() {
+function CardlistHome() {
 	const suggestions = useStore(state => state.suggestions);
 	const exerciseCards = useStore(state => state.exerciseCards);
 
@@ -24,4 +24,4 @@ function CardlistIndex() {
 	);
 }
 
-export default CardlistIndex;
+export default CardlistHome;
