@@ -8,7 +8,7 @@ import StyledInputField from '../SearchInputField/styled';
 
 import {StyledLabel, StyledWrapper} from './styled';
 
-function Searchbar() {
+export default function Searchbar() {
 	const [inputValue, setInputValue] = useState('');
 	const setSuggestions = useStore(state => state.setSuggestions);
 	const exerciseCards = useStore(state => state.exerciseCards);
@@ -41,5 +41,3 @@ function Searchbar() {
 		</StyledHeader>
 	);
 }
-
-export default Searchbar;

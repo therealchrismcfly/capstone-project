@@ -9,7 +9,7 @@ export default function CardInputReps({workout}) {
 			<StyledInput
 				type="number"
 				min="0"
-				name="reps5"
+				name="reps"
 				value={workout.reps}
 				onChange={event => changeReps(workout.id, event.target.value)}
 			/>
