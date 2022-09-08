@@ -8,7 +8,7 @@ const StyledHeader = styled.header`
 	align-items: center;
 	justify-content: center;
 	width: 100%;
-	height: 70px;
+	height: 60px;
 	background-color: var(--chromaphobicBlack);
 `;
 
