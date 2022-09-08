@@ -11,7 +11,7 @@ function CardlistFavorites() {
 	return (
 		<>
 			<StyledHeader>
-				<h1>Favorite Exercises</h1>
+				<h1>FFFFavorite Exercises</h1>
 			</StyledHeader>
 			<StyledCardlist>
 				{bookmarkedCards.map(exerciseCard => {
