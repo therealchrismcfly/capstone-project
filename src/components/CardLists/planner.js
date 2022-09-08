@@ -4,7 +4,7 @@ const PlannerCalendar = dynamic(() => import('../Calendar/plannerCalendar'), {
 	ssr: false,
 });
 import useStore from '../../hooks/useStore';
-import PlannerCard from '../Cards/plannerCard';
+import PlannedCard from '../Cards/plannedCard';
 import StyledHeader from '../Header/styled';
 import StyledHeadline from '../Headline/styled';
 
@@ -26,7 +26,7 @@ function CardlistPlanner() {
 			<PlannerCalendar />
 			<StyledCardlistPlanner>
 				{sortedCards.map(workout => {
-					return <PlannerCard key={workout.id} workout={workout} />;
+					return <PlannedCard key={workout.id} workout={workout} />;
 				})}
 			</StyledCardlistPlanner>
 		</>

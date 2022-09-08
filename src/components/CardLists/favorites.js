@@ -1,5 +1,5 @@
 import useStore from '../../hooks/useStore';
-import IndexCard from '../Cards/indexCard';
+import Card from '../Cards/card';
 import StyledHeader from '../Header/styled';
 import StyledHeadline from '../Headline/styled';
 
@@ -16,7 +16,7 @@ function CardlistFavorites() {
 			</StyledHeader>
 			<StyledCardlist>
 				{bookmarkedCards.map(exerciseCard => {
-					return <IndexCard key={exerciseCard.id} exerciseCard={exerciseCard} />;
+					return <Card key={exerciseCard.id} exerciseCard={exerciseCard} />;
 				})}
 			</StyledCardlist>
 		</>

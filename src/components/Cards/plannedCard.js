@@ -14,7 +14,7 @@ import Icon from '../Icons';
 
 import StyledCard from './styled';
 
-function PlannerCard({workout}) {
+function PlannedCard({workout}) {
 	const deleteWorkout = useStore(state => state.deleteWorkout);
 	const checkCard = useStore(state => state.checkCard);
 	const [isInstructionVisible, setIsInstructionVisible] = useState(false);
@@ -59,4 +59,4 @@ function PlannerCard({workout}) {
 	);
 }
 
-export default PlannerCard;
+export default PlannedCard;
