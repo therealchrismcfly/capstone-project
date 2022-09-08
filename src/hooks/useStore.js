@@ -59,7 +59,7 @@ const exerciseCards = [
 	{
 		id: 6,
 		name: 'Crunches',
-		image: '/pictures/crunches.jpeg',
+		image: '/pictures/Crunches.jpeg',
 		instruction:
 			'Lie down on the mat, keep your knees bent, your back and feet flat, and your hands supporting your head. Lift your shoulders, squeeze your abdominal muscles and hold for 1 to 2 seconds. Slowly return to the starting position and repeat until set is complete.',
 		isBookmarked: false,
