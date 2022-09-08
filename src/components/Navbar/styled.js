@@ -7,7 +7,7 @@ const StyledNavbar = styled.nav`
 	bottom: 0;
 	align-items: center;
 	justify-content: space-evenly;
-	width: 375px;
+	width: 100%;
 	height: 70px;
 	background-color: var(--chromaphobicBlack);
 `;

@@ -23,6 +23,7 @@ const StyledCardlistProgress = styled.ul`
 	align-items: center;
 	height: 100%;
 	margin-top: 70px;
+	margin-bottom: 70px;
 	padding-left: 0;
 `;
 

@@ -7,7 +7,7 @@ const StyledHeader = styled.div`
 	top: 0;
 	align-items: center;
 	justify-content: center;
-	width: 375px;
+	width: 100%;
 	height: 70px;
 	background-color: var(--chromaphobicBlack);
 	color: var(--plainWhite);

@@ -31,15 +31,10 @@ export const GlobalStyle = createGlobalStyle`
 
 
 	*,
-	*::before,
 	*::after {
 		box-sizing: border-box;
 	}
 
-	html {
-		width: 375px;
-		height: 667px;
-	}
 
 	body {
 		margin: 0;
