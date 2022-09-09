@@ -2,8 +2,6 @@ import Calendar from 'react-calendar';
 
 import useStore from '../../hooks/useStore';
 
-import 'react-calendar/dist/Calendar.css';
-
 import StyledCalendarContainerPlanner from './StyledCalendarContainerPlanner';
 
 function PlannerCalendar() {
