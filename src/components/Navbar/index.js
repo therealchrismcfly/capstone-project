@@ -5,7 +5,7 @@ import Icon from '../Icons';
 
 import StyledNavbar from './styled';
 
-export default function Navbar() {
+function Navbar() {
 	const router = useRouter();
 	return (
 		<StyledNavbar>
@@ -48,3 +48,5 @@ export default function Navbar() {
 		</StyledNavbar>
 	);
 }
+
+export default Navbar;

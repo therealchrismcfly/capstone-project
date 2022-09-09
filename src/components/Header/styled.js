@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const StyledHeader = styled.div`
+const StyledHeader = styled.header`
 	display: flex;
 	position: fixed;
 	z-index: 20;
@@ -8,10 +8,8 @@ const StyledHeader = styled.div`
 	align-items: center;
 	justify-content: center;
 	width: 100%;
-	height: 70px;
+	height: 60px;
 	background-color: var(--chromaphobicBlack);
-	color: var(--plainWhite);
-	font-size: 12px;
 `;
 
 export default StyledHeader;

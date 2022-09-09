@@ -22,8 +22,8 @@ const StyledCardlistProgress = styled.ul`
 	flex-direction: column;
 	align-items: center;
 	height: 100%;
-	margin-top: 70px;
-	margin-bottom: 70px;
+	margin-top: 60px;
+	margin-bottom: 60px;
 	padding-left: 0;
 `;
 

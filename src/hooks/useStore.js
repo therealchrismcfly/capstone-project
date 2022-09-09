@@ -4,9 +4,9 @@ const exerciseCards = [
 	{
 		id: 0,
 		name: 'Deadlifts',
-		image: '/pictures/deadlifts.jpeg',
+		image: '/pictures/Deadlifts.jpeg',
 		instruction:
-			'Stand with your mid-foot under the barbell. Bend over and grab the bar with a shoulder-width grip. Bend your knees until your shins touch the bar. Lift your chest up and straighten your lower back.Take a big breath, hold it, and stand up with the weight.',
+			'Stand with your mid-foot under the barbell. Bend over and grab the bar with a shoulder-width grip. Bend your knees until your shins touch the bar. Lift your chest up and straighten your lower back. Take a big breath, hold it, and stand up with the weight.',
 		isBookmarked: false,
 		date: new Date(),
 	},
@@ -59,7 +59,7 @@ const exerciseCards = [
 	{
 		id: 6,
 		name: 'Crunches',
-		image: '/pictures/crunches.jpeg',
+		image: '/pictures/Crunches.jpeg',
 		instruction:
 			'Lie down on the mat, keep your knees bent, your back and feet flat, and your hands supporting your head. Lift your shoulders, squeeze your abdominal muscles and hold for 1 to 2 seconds. Slowly return to the starting position and repeat until set is complete.',
 		isBookmarked: false,
@@ -68,7 +68,7 @@ const exerciseCards = [
 	{
 		id: 7,
 		name: 'Squats',
-		image: '/pictures/squats.jpeg',
+		image: '/pictures/Squats.jpeg',
 		instruction:
 			'Safely load the barbell onto your traps and shoulders. Stand with your feet shoulder-width apart, toes slightly out, core braced, and chest up. Initiate a basic squat movement — hips back, knees bent, ensuring they fall out, not in. Pause when your thighs reach about parallel to the ground. Push through your entire foot to return to start.',
 		isBookmarked: false,
@@ -86,7 +86,7 @@ const exerciseCards = [
 	{
 		id: 9,
 		name: 'Barbell Row',
-		image: '/pictures/row.jpeg',
+		image: '/pictures/barbellRow.jpeg',
 		instruction:
 			'Stand with your mid-foot under the bar (medium stance). Bend over and grab the bar (palms down, medium-grip). Unlock your knees while keeping your hips high. Lift your chest and straighten your back. Pull the bar against your lower chest.',
 		isBookmarked: false,
