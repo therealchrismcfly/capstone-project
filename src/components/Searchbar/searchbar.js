@@ -5,8 +5,6 @@ import useStore from '../../hooks/useStore';
 import StyledHeader from '../Header/styled';
 import Icon from '../Icons';
 
-/* import StyledInputField from '../SearchInputField/styled';
- */
 import {StyledLabel, StyledWrapper, StyledInputField} from './styled';
 
 function Searchbar() {
