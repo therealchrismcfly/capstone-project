@@ -2,7 +2,7 @@ import Calendar from 'react-calendar';
 
 import useStore from '../../hooks/useStore';
 
-import StyledCalendarContainerPlanner from './StyledCalendarContainerPlanner';
+import {StyledCalendarContainerPlanner} from './StyledCalendarContainer';
 
 function PlannerCalendar() {
 	const handlePlannerDate = useStore(state => state.handlePlannerDate);

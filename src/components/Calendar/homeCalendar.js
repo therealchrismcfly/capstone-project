@@ -3,13 +3,13 @@ import Calendar from 'react-calendar';
 import useStore from '../../hooks/useStore';
 import StyledAddButton from '../Buttons/AddButton/styled';
 
-import StyledCalendarContainerIndex from './StyledCalendarContainer';
+import {StyledCalendarContainerHome} from './StyledCalendarContainer';
 
-function IndexCalendar({exercise, onCalendarHide}) {
+function HomeCalendar({exercise, onCalendarHide}) {
 	const setExerciseDate = useStore(state => state.setExerciseDate);
 	const addToPlanner = useStore(state => state.addToPlanner);
 	return (
-		<StyledCalendarContainerIndex>
+		<StyledCalendarContainerHome>
 			<Calendar
 				next2Label={null}
 				prev2Label={null}
@@ -27,8 +27,8 @@ function IndexCalendar({exercise, onCalendarHide}) {
 			>
 				+
 			</StyledAddButton>
-		</StyledCalendarContainerIndex>
+		</StyledCalendarContainerHome>
 	);
 }
 
-export default IndexCalendar;
+export default HomeCalendar;
