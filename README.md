@@ -13,7 +13,7 @@ I've always been looking for a lean and structured way to plan my workouts. That
 -   [Eslint](https://eslint.org/)
 -   [Prettier](https://prettier.io/)
 -   [Husky](https://typicode.github.io/husky/)
-- 	[Styled Components] (https://styled-components.com/)
+- 	[Styled Components](https://styled-components.com/)
 -   [Zustand](https://zustand-demo.pmnd.rs/)
 - 	[React-Calendar](https://www.npmjs.com/package/react-calendar)
 - 	[Fast-Fuzzy](https://www.npmjs.com/package/fast-fuzzy)
