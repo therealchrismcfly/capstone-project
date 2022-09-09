@@ -5,7 +5,7 @@ const StyledCardlist = styled.ul`
 	flex-direction: column;
 	align-items: center;
 	height: 100%;
-	margin-top: 100px;
+	margin: 90px 0 55px 0;
 	padding-left: 0;
 `;
 const StyledCardlistPlanner = styled.ul`
@@ -13,7 +13,7 @@ const StyledCardlistPlanner = styled.ul`
 	flex-direction: column;
 	align-items: center;
 	height: 100%;
-	margin-top: 35px;
+	margin: 55px 0;
 	padding-left: 0;
 `;
 

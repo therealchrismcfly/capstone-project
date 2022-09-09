@@ -5,6 +5,7 @@ const StyledProgressHistoryItem = styled.li`
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	width: 100%;
 	list-style: none;
 `;
 
