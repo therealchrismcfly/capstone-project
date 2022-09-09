@@ -5,7 +5,7 @@ import {useState} from 'react';
 import useStore from '../../hooks/useStore';
 import StyledHideButton from '../Buttons/HideButton/styled';
 import StyledIconButton from '../Buttons/IconButton/styled';
-const IndexCalendar = dynamic(() => import('../Calendar/indexCalendar'), {
+const HomeCalendar = dynamic(() => import('../Calendar/homeCalendar'), {
 	ssr: false,
 });
 import StyledCardBody from '../CardBody/styled';
@@ -75,7 +75,7 @@ function Card({exerciseCard}) {
 						)}
 					</StyledIconButton>
 					{isCalendarVisible && (
-						<IndexCalendar exercise={exerciseCard} onCalendarHide={hideCalendar} />
+						<HomeCalendar exercise={exerciseCard} onCalendarHide={hideCalendar} />
 					)}
 				</StyledCardHeaderIconContainer>
 			</StyledCardHeader>

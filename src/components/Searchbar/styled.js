@@ -22,4 +22,11 @@ const StyledLabel = styled.label`
 	border: 0;
 `;
 
-export {StyledWrapper, StyledLabel};
+const StyledInputField = styled.input`
+	height: 30px;
+	padding: 15px;
+	border: none;
+	outline: none;
+`;
+
+export {StyledWrapper, StyledLabel, StyledInputField};

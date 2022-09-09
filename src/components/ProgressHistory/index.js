@@ -5,9 +5,11 @@ import StyledIconButton from '../Buttons/IconButton/styled';
 import {StyledCardHeadlineProgress} from '../CardHeadline/styled';
 import Icon from '../Icons';
 
-import StyledProgressHistoryItem from './StyledProgressHistoryItem';
-import StyledProgressHistoryName from './StyledProgressHistoryName';
-import StyledProgressHistoryTable from './StyledProgressHistoryTable';
+import {
+	StyledProgressHistoryItem,
+	StyledProgressHistoryName,
+	StyledProgressHistoryTable,
+} from './styled';
 
 function ProgressHistoryCard({exerciseCard}) {
 	const [isHistoryVisible, setIsHistoryVisible] = useState(false);

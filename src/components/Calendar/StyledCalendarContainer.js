@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const StyledCalendarContainerIndex = styled.div`
+const StyledCalendarContainerHome = styled.div`
 	display: flex;
 	position: absolute;
 	z-index: 10;
@@ -11,4 +11,10 @@ const StyledCalendarContainerIndex = styled.div`
 	justify-content: center;
 `;
 
-export default StyledCalendarContainerIndex;
+const StyledCalendarContainerPlanner = styled.div`
+	display: flex;
+	justify-content: center;
+	margin-top: 90px;
+`;
+
+export {StyledCalendarContainerHome, StyledCalendarContainerPlanner};
