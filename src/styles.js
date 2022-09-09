@@ -69,16 +69,19 @@ export const GlobalStyle = createGlobalStyle`
   display: flex;
   margin: -0.5em;
 }
+
+.react-calendar *,
+.react-calendar,
+.react-calendar *::before,
+.react-calendar *::after {
+  box-sizing: border-box;
+}
+
 .react-calendar--doubleView .react-calendar__viewContainer > * {
   width: 50%;
   margin: 0.5em;
 }
-.react-calendar *,
-.react-calendar,
-.react-calendar *:before,
-.react-calendar *:after {
-  box-sizing: border-box;
-}
+
 .react-calendar button {
   margin: 0;
   border: 0;
