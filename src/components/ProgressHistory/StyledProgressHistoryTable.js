@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const StyledProgressHistoryTable = styled.table`
-	width: 375px;
+	width: 100%;
 	height: 100%;
 	padding: 15px;
 	background-color: var(--plainWhite);

@@ -5,7 +5,7 @@ const StyledWrapper = styled.div`
 	display: grid;
 	grid-template-columns: 1.5rem 4fr;
 	align-items: center;
-	width: 280px;
+	width: 66.6%;
 	padding-left: 15px;
 	overflow: hidden;
 	border-radius: 25px;

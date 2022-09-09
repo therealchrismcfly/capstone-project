@@ -8,6 +8,7 @@ const StyledCalendarContainerIndex = styled.div`
 	right: 0;
 	flex-direction: column;
 	align-items: center;
+	justify-content: center;
 `;
 
 export default StyledCalendarContainerIndex;
