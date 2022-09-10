@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const StyledHideButton = styled.button`
+const StyledShowButton = styled.button`
 	padding: 12px 15px;
 	border: none;
 	border-radius: 20px;
@@ -9,4 +9,4 @@ const StyledHideButton = styled.button`
 	font-size: 14px;
 `;
 
-export default StyledHideButton;
+export default StyledShowButton;

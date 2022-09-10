@@ -3,8 +3,8 @@ import Image from 'next/image';
 import {useState} from 'react';
 
 import useStore from '../../hooks/useStore';
-import StyledHideButton from '../Buttons/HideButton/styled';
 import StyledIconButton from '../Buttons/IconButton/styled';
+import StyledShowButton from '../Buttons/ShowButton/styled';
 const HomeCalendar = dynamic(() => import('../Calendar/homeCalendar'), {
 	ssr: false,
 });
@@ -86,13 +86,13 @@ function Card({exerciseCard}) {
 					width={300}
 					height={300}
 				/>
-				<StyledHideButton
+				<StyledShowButton
 					onClick={() => {
 						setIsInstructionVisible(!isInstructionVisible);
 					}}
 				>
 					{isInstructionVisible ? 'HIDE INSTRUCTION' : 'SHOW INSTRUCTION'}
-				</StyledHideButton>
+				</StyledShowButton>
 				{isInstructionVisible && (
 					<StyledCardInstruction>{exerciseCard.instruction}</StyledCardInstruction>
 				)}
