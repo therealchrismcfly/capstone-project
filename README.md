@@ -11,7 +11,6 @@ I've always been looking for a lean and structured way to plan my workouts. That
 ## Tech-Stack
 - 	[React](https://reactjs.org/)
 -   [Next.js](https://nextjs.org/)
--   [Storybook](https://storybook.js.org/)
 -   [Jest](https://jestjs.io/)
 -   [Testing Library](https://testing-library.com/)
 -   [Stylelint](https://stylelint.io/)
