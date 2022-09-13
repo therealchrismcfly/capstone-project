@@ -1,6 +1,10 @@
+import dynamic from 'next/dynamic';
 import Head from 'next/head';
 
-import CardlistProgress from '../components/CardLists/cardlistProgress';
+const CardlistProgress = dynamic(() => import('../components/CardLists/cardlistProgress.js'), {
+	ssr: false,
+});
+
 import Layout from '../components/Layout';
 
 export default function ProgressPage() {

@@ -1,6 +1,10 @@
+import dynamic from 'next/dynamic';
 import Head from 'next/head';
 
-import CardlistFavorites from '../components/CardLists/cardlistFavorites.js';
+const CardlistFavorites = dynamic(() => import('../components/CardLists/cardlistFavorites.js'), {
+	ssr: false,
+});
+
 import Layout from '../components/Layout';
 
 export default function FavoritesPage() {
