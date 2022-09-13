@@ -1,10 +1,6 @@
-import dynamic from 'next/dynamic';
 import Head from 'next/head';
 
-const CardlistPlanner = dynamic(() => import('../components/CardLists/cardlistPlanner.js'), {
-	ssr: false,
-});
-
+import CardlistPlanner from '../components/CardLists/cardlistPlanner.js';
 import Layout from '../components/Layout';
 
 export default function PlannerPage() {

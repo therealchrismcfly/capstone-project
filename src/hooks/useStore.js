@@ -1,6 +1,5 @@
 import {nanoid} from 'nanoid';
 import create from 'zustand';
-import {persist} from 'zustand/middleware';
 
 const exerciseCards = [
 	{
@@ -95,101 +94,96 @@ const exerciseCards = [
 		date: new Date(),
 	},
 ];
-const useStore = create(
-	persist(
-		set => ({
-			exerciseCards,
-			setExerciseDate: (id, date) => {
-				set(state => ({
-					exerciseCards: state.exerciseCards.map(exerciseCard =>
-						exerciseCard.id === id ? {...exerciseCard, date} : exerciseCard
-					),
-				}));
-			},
+const useStore = create(set => ({
+	exerciseCards,
+	setExerciseDate: (id, date) => {
+		set(state => ({
+			exerciseCards: state.exerciseCards.map(exerciseCard =>
+				exerciseCard.id === id ? {...exerciseCard, date} : exerciseCard
+			),
+		}));
+	},
 
-			workouts: [],
+	workouts: [],
 
-			changeSets: (id, sets) => {
-				set(state => ({
-					workouts: state.workouts.map(workout =>
-						workout.id === id ? {...workout, sets} : workout
-					),
-				}));
-			},
+	changeSets: (id, sets) => {
+		set(state => ({
+			workouts: state.workouts.map(workout =>
+				workout.id === id ? {...workout, sets} : workout
+			),
+		}));
+	},
 
-			changeReps: (id, reps) => {
-				set(state => ({
-					workouts: state.workouts.map(workout =>
-						workout.id === id ? {...workout, reps} : workout
-					),
-				}));
-			},
+	changeReps: (id, reps) => {
+		set(state => ({
+			workouts: state.workouts.map(workout =>
+				workout.id === id ? {...workout, reps} : workout
+			),
+		}));
+	},
 
-			changeWeight: (id, weight) => {
-				set(state => ({
-					workouts: state.workouts.map(workout =>
-						workout.id === id ? {...workout, weight} : workout
-					),
-				}));
-			},
+	changeWeight: (id, weight) => {
+		set(state => ({
+			workouts: state.workouts.map(workout =>
+				workout.id === id ? {...workout, weight} : workout
+			),
+		}));
+	},
 
-			deleteWorkout: id => {
-				set(state => {
-					return {
-						workouts: state.workouts.filter(workout => id !== workout.id),
-					};
-				});
-			},
+	deleteWorkout: id => {
+		set(state => {
+			return {
+				workouts: state.workouts.filter(workout => id !== workout.id),
+			};
+		});
+	},
 
-			addToPlanner: id => {
-				set(state => {
-					return {
-						workouts: [
-							...state.workouts,
-							{
-								...state.exerciseCards.find(exerciseCard => exerciseCard.id === id),
-								id: nanoid(),
-								isDone: false,
-								sets: '0',
-								reps: '0',
-								weight: '0',
-							},
-						],
-					};
-				});
-			},
+	addToPlanner: id => {
+		set(state => {
+			return {
+				workouts: [
+					...state.workouts,
+					{
+						...state.exerciseCards.find(exerciseCard => exerciseCard.id === id),
+						id: nanoid(),
+						isDone: false,
+						sets: '0',
+						reps: '0',
+						weight: '0',
+					},
+				],
+			};
+		});
+	},
 
-			checkCard: id => {
-				set(state => ({
-					workouts: state.workouts.map(workout =>
-						workout.id === id ? {...workout, isDone: !workout.isDone} : workout
-					),
-				}));
-			},
+	checkCard: id => {
+		set(state => ({
+			workouts: state.workouts.map(workout =>
+				workout.id === id ? {...workout, isDone: !workout.isDone} : workout
+			),
+		}));
+	},
 
-			plannedDate: new Date(),
-			handlePlannerDate: selectedDate => {
-				set(() => ({
-					plannedDate: selectedDate,
-				}));
-			},
+	plannedDate: new Date(),
+	handlePlannerDate: selectedDate => {
+		set(() => ({
+			plannedDate: selectedDate,
+		}));
+	},
 
-			handleBookmark: id => {
-				set(state => ({
-					exerciseCards: state.exerciseCards.map(exerciseCard =>
-						exerciseCard.id === id
-							? {...exerciseCard, isBookmarked: !exerciseCard.isBookmarked}
-							: exerciseCard
-					),
-				}));
-			},
-			suggestions: [],
-			setSuggestions: cards => {
-				set({suggestions: cards});
-			},
-		}),
-		{name: 'localStorage'}
-	)
-);
+	handleBookmark: id => {
+		set(state => ({
+			exerciseCards: state.exerciseCards.map(exerciseCard =>
+				exerciseCard.id === id
+					? {...exerciseCard, isBookmarked: !exerciseCard.isBookmarked}
+					: exerciseCard
+			),
+		}));
+	},
+	suggestions: [],
+	setSuggestions: cards => {
+		set({suggestions: cards});
+	},
+}));
 
 export default useStore;
