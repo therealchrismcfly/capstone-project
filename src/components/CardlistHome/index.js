@@ -1,8 +1,7 @@
 import useStore from '../../hooks/useStore';
-import Card from '../Cards/card';
-import Searchbar from '../Searchbar/searchbar';
-
-import {StyledCardlist} from './styled';
+import Card from '../Card';
+import Searchbar from '../Searchbar';
+import {StyledCardlist} from '../StyledCardlist/styled';
 
 function CardlistHome() {
 	const suggestions = useStore(state => state.suggestions);

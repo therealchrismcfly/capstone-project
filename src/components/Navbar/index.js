@@ -2,8 +2,7 @@ import Link from 'next/link';
 import {useRouter} from 'next/router';
 
 import Icon from '../Icons';
-
-import StyledNavbar from './styled';
+import StyledNavbar from '../StyledNavbar/styled';
 
 function Navbar() {
 	const router = useRouter();

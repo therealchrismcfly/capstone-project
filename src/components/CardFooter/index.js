@@ -1,15 +1,14 @@
 import {useState} from 'react';
 
 import StyledIconButton from '../Buttons/IconButton/styled';
-import CardInputReps from '../CardInputs/reps';
-import CardInputSets from '../CardInputs/sets';
-import CardInputWeight from '../CardInputs/weight';
+import CardInputReps from '../CardInputReps';
+import CardInputSets from '../CardInputSets';
+import CardInputWeight from '../CardInputWeight';
 import Icon from '../Icons';
-
-import StyledCardFooter from './styled';
+import StyledCardFooter from '../StyledCardFooter/styled';
 
 function CardFooter({workout}) {
-	const [editProgress, seteditProgress] = useState(false);
+	const [editProgress, setEditProgress] = useState(false);
 
 	return (
 		<StyledCardFooter>
@@ -29,7 +28,7 @@ function CardFooter({workout}) {
 			<StyledIconButton
 				type="button"
 				onClick={() => {
-					seteditProgress(!editProgress);
+					setEditProgress(!editProgress);
 				}}
 			>
 				{editProgress ? (

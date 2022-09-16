@@ -1,9 +1,8 @@
 import useStore from '../../hooks/useStore';
-import Card from '../Cards/card';
-import StyledHeader from '../Header/styled';
-import StyledHeadline from '../Headline/styled';
-
-import {StyledCardlist} from './styled';
+import Card from '../Card';
+import {StyledCardlist} from '../StyledCardlist/styled';
+import StyledHeader from '../StyledHeader/styled';
+import StyledHeadline from '../StyledHeadline/styled';
 
 function CardlistFavorites() {
 	const exerciseCards = useStore(state => state.exerciseCards);

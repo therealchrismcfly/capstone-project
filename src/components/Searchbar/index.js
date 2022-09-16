@@ -2,10 +2,9 @@ import {search} from 'fast-fuzzy';
 import {useEffect, useState} from 'react';
 
 import useStore from '../../hooks/useStore';
-import StyledHeader from '../Header/styled';
 import Icon from '../Icons';
-
-import {StyledLabel, StyledWrapper, StyledInputField} from './styled';
+import StyledHeader from '../StyledHeader/styled';
+import {StyledLabel, StyledWrapper, StyledInputField} from '../StyledSearchbar/styled';
 
 function Searchbar() {
 	const [inputValue, setInputValue] = useState('');

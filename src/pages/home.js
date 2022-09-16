@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-import CardlistHome from '../components/CardLists/cardlistHome.js';
+import CardlistHome from '../components/CardlistHome/index.js';
 import Layout from '../components/Layout';
 
 export default function HomePage() {

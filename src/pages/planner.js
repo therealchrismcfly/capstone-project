@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-import CardlistPlanner from '../components/CardLists/cardlistPlanner.js';
+import CardlistPlanner from '../components/CardlistPlanner/index.js';
 import Layout from '../components/Layout';
 
 export default function PlannerPage() {

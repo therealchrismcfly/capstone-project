@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-import CardlistFavorites from '../components/CardLists/cardlistFavorites.js';
+import CardlistFavorites from '../components/CardlistFavorites/index.js';
 import Layout from '../components/Layout';
 
 export default function FavoritesPage() {
