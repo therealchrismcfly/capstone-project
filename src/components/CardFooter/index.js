@@ -1,9 +1,9 @@
 import {useState} from 'react';
 
 import StyledIconButton from '../Buttons/IconButton/styled';
-import CardInputReps from '../CardInputs/reps';
-import CardInputSets from '../CardInputs/sets';
-import CardInputWeight from '../CardInputs/weight';
+import CardInputReps from '../CardInputReps';
+import CardInputSets from '../CardInputSets';
+import CardInputWeight from '../CardInputWeight';
 import Icon from '../Icons';
 import StyledCardFooter from '../StyledCardFooter/styled';
 

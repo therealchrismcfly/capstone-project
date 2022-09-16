@@ -4,15 +4,14 @@ import {useState} from 'react';
 import useStore from '../../hooks/useStore';
 import StyledIconButton from '../Buttons/IconButton/styled';
 import StyledShowButton from '../Buttons/ShowButton/styled';
-import StyledCardBody from '../CardBody/styled';
 import CardFooter from '../CardFooter/index';
-import {StyledCardHeader, StyledCardHeaderIconContainer} from '../CardHeader/styled';
-import {StyledCardHeadline} from '../CardHeadline/styled';
-import StyledCardInstruction from '../CardInstruction/styled';
-import StyledCheckbox from '../Checkbox/styled';
 import Icon from '../Icons';
-
-import StyledCard from './styled';
+import StyledCard from '../StyledCard/styled';
+import StyledCardBody from '../StyledCardBody/styled';
+import {StyledCardHeader, StyledCardHeaderIconContainer} from '../StyledCardHeader/styled';
+import {StyledCardHeadline} from '../StyledCardHeadline/styled';
+import StyledCardInstruction from '../StyledCardInstruction/styled';
+import StyledCheckbox from '../StyledCheckbox/styled';
 
 function PlannedCard({workout}) {
 	const deleteWorkout = useStore(state => state.deleteWorkout);

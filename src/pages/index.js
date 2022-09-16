@@ -4,8 +4,8 @@ import Link from 'next/link';
 import {useState, useEffect} from 'react';
 
 import StyledWelcomeButton from '../components/Buttons/WelcomeButton/styled';
-import StyledWelcomePage from '../components/WelcomePage/styled';
-import StyledWelcomeText from '../components/WelcomeText/styled';
+import StyledWelcomePage from '../components/StyledWelcomePage/styled';
+import StyledWelcomeText from '../components/StyledWelcomeText/styled';
 
 export default function HomePage() {
 	const [slogan, setSlogan] = useState("DON'T YOU KNOW?");

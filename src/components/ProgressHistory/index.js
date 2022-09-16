@@ -2,14 +2,13 @@ import {useState} from 'react';
 
 import useStore from '../../hooks/useStore';
 import StyledIconButton from '../Buttons/IconButton/styled';
-import {StyledCardHeadlineProgress} from '../CardHeadline/styled';
 import Icon from '../Icons';
-
+import {StyledCardHeadlineProgress} from '../StyledCardHeadline/styled';
 import {
 	StyledProgressHistoryItem,
 	StyledProgressHistoryName,
 	StyledProgressHistoryTable,
-} from './styled';
+} from '../StyledProgressHistory/styled';
 
 function ProgressHistoryCard({exerciseCard}) {
 	const [isHistoryVisible, setIsHistoryVisible] = useState(false);

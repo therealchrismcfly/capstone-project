@@ -1,12 +1,11 @@
 import useStore from '../../hooks/useStore';
-
-import StyledInput from './styled';
+import StyledCardInput from '../StyledCardInput/styled';
 function CardInputReps({workout}) {
 	const changeReps = useStore(state => state.changeReps);
 	return (
 		<label>
 			Reps:{' '}
-			<StyledInput
+			<StyledCardInput
 				type="number"
 				min="0"
 				name="reps"

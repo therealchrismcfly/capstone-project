@@ -5,17 +5,16 @@ import {useState} from 'react';
 import useStore from '../../hooks/useStore';
 import StyledIconButton from '../Buttons/IconButton/styled';
 import StyledShowButton from '../Buttons/ShowButton/styled';
-const HomeCalendar = dynamic(() => import('../Calendar/homeCalendar'), {
+const HomeCalendar = dynamic(() => import('../HomeCalendar/index'), {
 	ssr: false,
 });
-import StyledCardBody from '../CardBody/styled';
-import {StyledCardHeader, StyledCardHeaderIconContainer} from '../CardHeader/styled';
-import {StyledCardHeadline} from '../CardHeadline/styled';
-import StyledCardInstruction from '../CardInstruction/styled';
 import Icon from '../Icons';
+import StyledCard from '../StyledCard/styled';
+import StyledCardBody from '../StyledCardBody/styled';
 import StyledCardFooter from '../StyledCardFooter/styled';
-
-import StyledCard from './styled';
+import {StyledCardHeader, StyledCardHeaderIconContainer} from '../StyledCardHeader/styled';
+import {StyledCardHeadline} from '../StyledCardHeadline/styled';
+import StyledCardInstruction from '../StyledCardInstruction/styled';
 
 function Card({exerciseCard}) {
 	const handleBookmark = useStore(state => state.handleBookmark);

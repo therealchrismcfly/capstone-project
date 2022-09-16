@@ -2,8 +2,7 @@ import Calendar from 'react-calendar';
 
 import useStore from '../../hooks/useStore';
 import StyledAddButton from '../Buttons/AddButton/styled';
-
-import {StyledCalendarContainerHome} from './StyledCalendarContainer';
+import {StyledCalendarContainerHome} from '../StyledCalendarContainer/styled';
 
 function HomeCalendar({exercise, onCalendarHide}) {
 	const setExerciseDate = useStore(state => state.setExerciseDate);

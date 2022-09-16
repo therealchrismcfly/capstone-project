@@ -1,14 +1,13 @@
 import dynamic from 'next/dynamic';
 
-const PlannerCalendar = dynamic(() => import('../Calendar/plannerCalendar'), {
+const PlannerCalendar = dynamic(() => import('../PlannerCalendar/index'), {
 	ssr: false,
 });
 import useStore from '../../hooks/useStore';
-import PlannedCard from '../Cards/plannedCard';
-import StyledHeader from '../Header/styled';
-import StyledHeadline from '../Headline/styled';
-
-import {StyledCardlistPlanner} from './styled';
+import PlannedCard from '../PlannedCard';
+import {StyledCardlistPlanner} from '../StyledCardlist/styled';
+import StyledHeader from '../StyledHeader/styled';
+import StyledHeadline from '../StyledHeadline/styled';
 
 function CardlistPlanner() {
 	const workouts = useStore(state => state.workouts);

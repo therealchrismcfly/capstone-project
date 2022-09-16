@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-import CardlistProgress from '../components/CardLists/cardlistProgress.js';
+import CardlistProgress from '../components/CardlistProgress/index.js';
 import Layout from '../components/Layout';
 
 export default function ProgressPage() {

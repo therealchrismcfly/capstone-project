@@ -1,12 +1,11 @@
 import useStore from '../../hooks/useStore';
-
-import StyledInput from './styled';
+import StyledCardInput from '../StyledCardInput/styled';
 function CardInputWeight({workout}) {
 	const changeWeight = useStore(state => state.changeWeight);
 	return (
 		<label>
 			Weight:{' '}
-			<StyledInput
+			<StyledCardInput
 				type="number"
 				min="0"
 				name="weight"

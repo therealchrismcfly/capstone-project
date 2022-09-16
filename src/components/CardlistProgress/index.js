@@ -1,9 +1,8 @@
 import useStore from '../../hooks/useStore';
-import StyledHeader from '../Header/styled';
-import StyledHeadline from '../Headline/styled';
 import ProgressHistoryCard from '../ProgressHistory/index';
-
-import {StyledCardlistProgress} from './styled';
+import {StyledCardlistProgress} from '../StyledCardlist/styled';
+import StyledHeader from '../StyledHeader/styled';
+import StyledHeadline from '../StyledHeadline/styled';
 
 function CardlistProgress() {
 	const exerciseCards = useStore(state => state.exerciseCards);
