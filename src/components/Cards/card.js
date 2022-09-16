@@ -9,11 +9,11 @@ const HomeCalendar = dynamic(() => import('../Calendar/homeCalendar'), {
 	ssr: false,
 });
 import StyledCardBody from '../CardBody/styled';
-import StyledCardFooter from '../CardFooter/styled';
 import {StyledCardHeader, StyledCardHeaderIconContainer} from '../CardHeader/styled';
 import {StyledCardHeadline} from '../CardHeadline/styled';
 import StyledCardInstruction from '../CardInstruction/styled';
 import Icon from '../Icons';
+import StyledCardFooter from '../StyledCardFooter/styled';
 
 import StyledCard from './styled';
 
